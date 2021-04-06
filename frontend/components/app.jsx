@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import SessionFormContainer from './session/session_form_container'
+import SessionFormContainer from './session/signup_form_container'
 // import Modal from "./modal/modal";
 
 const App = () => (
