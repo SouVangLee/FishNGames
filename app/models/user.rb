@@ -3,8 +3,7 @@
 # Table name: users
 #
 #  id              :bigint           not null, primary key
-#  first_name      :string           not null
-#  last_name       :string           not null
+#  name            :string           not null
 #  email           :string           not null
 #  password_digest :string           not null
 #  session_token   :string           not null
@@ -20,9 +19,9 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
-  def self.find_by_credentials(username, password)
-    user = User.find_by(username: username)
-    (user && user.is_password(password)) ? user : nil
+  def self.find_by_credentials(email, password)
+    user = User.find_by(email: email)
+    (user && user.is_password?(password)) ? user : nil
   end
 
   def password=(password)

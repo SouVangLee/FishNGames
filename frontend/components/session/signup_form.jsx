@@ -27,7 +27,6 @@ class SignupForm extends React.Component {
   }
   
   render() {
-    console.log('sessionForm', this.props);
     return (
       <div className="signup-form-container">
         <h2>Create an Account!</h2>

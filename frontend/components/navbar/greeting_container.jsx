@@ -6,11 +6,11 @@ import Greeting from './greeting';
 
 const mSTP = ({ session }) => {
   return {
-    currentUser: session.currentUser;
-  }
-}
+    currentUser: session.currentUser
+  };
+};
 
-const mSTP = dispatch => ({
+const mDTP = dispatch => ({
   logout: () => dispatch(logout()),
   openModal: modal => dispatch(openModal(modal))
 });

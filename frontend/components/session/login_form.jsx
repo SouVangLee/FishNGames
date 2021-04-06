@@ -5,7 +5,6 @@ class LoginForm extends React.Component {
     super(props);
 
     this.state = {
-      name: '',
       email: '',
       password: ''
      };
@@ -27,7 +26,6 @@ class LoginForm extends React.Component {
   }
 
   render() {
-    console.log('loginForm', this.props);
     return (
       <div className="login-form-container">
         <h2>Sign In!</h2>
