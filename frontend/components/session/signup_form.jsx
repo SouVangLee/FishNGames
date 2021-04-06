@@ -1,6 +1,6 @@
 import React from 'react';
 
-class SessionForm extends React.Component {
+class SignupForm extends React.Component {
   constructor(props) {
     super(props);
 
@@ -27,26 +27,18 @@ class SessionForm extends React.Component {
   
   render() {
     console.log('sessionForm', this.props);
-    let nameLabel = "";
-    if (this.props.formType === 'signup') {
-      nameLabel = (
-        <label>Name:
-        <input 
-          type="text"
-          value={this.state.name}
-          onChange={this.handleChange('name')}
-        />
-      </label>
-      )
-    }
-
-    console.log("nameLabel", nameLabel);
-
     return (
       <div className="session-form">
         <h2>Create an Account!</h2>
         <form onSubmit={this.handleSubmit}>
-          { nameLabel }
+          <label>Name:
+            <input 
+              type="text"
+              value={this.state.name}
+              onChange={this.handleChange('name')}
+            />
+          </label> <br/>
+          
           <label>Email:
             <input 
               type="text"
@@ -70,4 +62,4 @@ class SessionForm extends React.Component {
   }
 };
 
-export default SessionForm;
+export default SignupForm;
