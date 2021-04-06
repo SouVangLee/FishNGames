@@ -22,13 +22,13 @@ class SignupForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.processForm(this.state)
-      // .then(close modal
+      // .then(this.props.closeModal())
   }
   
   render() {
     console.log('sessionForm', this.props);
     return (
-      <div className="session-form">
+      <div className="signup-form-container">
         <h2>Create an Account!</h2>
         <form onSubmit={this.handleSubmit}>
           <label>Name:
