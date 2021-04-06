@@ -1,6 +1,4 @@
 import React from 'react';
-import { closeModal } from '../../actions/modal_actions';
-import { connect } from 'react-redux';
 import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from '../session/signup_form_container';
 
@@ -29,17 +27,4 @@ function Modal({modal, closeModal}) {
   );
 }
 
-
-const mSTP = state => {
-  return {
-    modal: state.ui.modal
-  };
-};
-
-const mDTP = dispatch => {
-  return {
-    closeModal: () => dispatch(closeModal())
-  };
-};
-
-export default connect(mSTP, mDTP)(Modal);
+export default Modal;

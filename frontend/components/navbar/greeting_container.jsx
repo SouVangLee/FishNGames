@@ -6,7 +6,7 @@ import Greeting from './greeting';
 
 const mSTP = ({ session }) => {
   return {
-    currentUser: session.currentUser
+    currentUser: session.currentUserId
   };
 };
 
