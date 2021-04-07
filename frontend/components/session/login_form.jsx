@@ -38,9 +38,8 @@ class LoginForm extends React.Component {
   render() {
 
     return (
-      <div>
-        <h2>Sign In!</h2>
         <div className="login-form-container">
+          <h2>Sign In!</h2>
 
           {this.renderErrors()}
 
@@ -67,8 +66,8 @@ class LoginForm extends React.Component {
 
             <button className="login-button">Log In</button>
           </form>
+            <a href=""></a>
         </div>
-      </div>
     );
   }  
 }

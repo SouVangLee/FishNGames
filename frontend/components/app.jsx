@@ -7,17 +7,17 @@ import LoginFormContainer from './session/login_form_container';
 import ModalContainer from "./modal/modal_container";
 import GreetingContainer from './navbar/greeting_container';
 import Greeting from './navbar/greeting';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
   <div>
     <ModalContainer />
     <h1>Fish N Games</h1>
     <header>
-      {/* <Link to="/" className="header-link">
-      </Link> */}
       <GreetingContainer />
     </header>
-    <Route path="/signup" component={SessionFormContainer} />
+    <ProtectedRoute exact path="/cart" component={LoginFormContainer} />
+    <AuthRoute path="/signup" component={SessionFormContainer} />
   </div>
 );
 
