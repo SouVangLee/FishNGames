@@ -9,11 +9,14 @@
   align-items: center;
   width: 10%;
   padding: 10px;
-  border: 1px solid black;
+  border: 1px solid brown;
 }
 
 .login-logo {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
 }
 
+.login-container:hover {
+  cursor: pointer;
+}
