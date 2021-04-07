@@ -11,6 +11,7 @@ class LoginForm extends React.Component {
 
      this.handleSubmit = this.handleSubmit.bind(this);
      this.demoUser = this.demoUser.bind(this);
+     this.handleKeypress = this.handleKeypress.bind(this);
   }
 
   
@@ -26,6 +27,12 @@ class LoginForm extends React.Component {
       .then(() => this.props.closeModal())
   }
 
+  handleKeypress(e) {
+    if (e.keyCode === 13) {
+      this.handleSubmit();
+    }
+  }
+
   renderErrors() {
     return (
       <ul>
@@ -34,6 +41,11 @@ class LoginForm extends React.Component {
         ))}
       </ul>
     );
+  }
+
+  componentWillUnmount() {
+    const errors = [];
+    this.props.deleteErrors(errors);
   }
 
   demoUser() {
