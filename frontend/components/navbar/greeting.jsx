@@ -12,7 +12,7 @@ const Greeting = ({ currentUser, logout, openModal }) => {
 
   const personalGreeting = () => (
     <div>
-      <h2>Welcome, {currentUser.name}!</h2>
+      <h2>Welcome, {this.props.currentUser.name}!</h2>
       <button onClick={logout}>Log Out</button>
     </div>
   )
