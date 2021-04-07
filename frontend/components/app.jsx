@@ -16,8 +16,8 @@ const App = () => (
     <header>
       <GreetingContainer />
     </header>
-    <AuthRoute path="/signup" component={SessionFormContainer} />
     <ProtectedRoute exact path="/cart" component={LoginFormContainer} />
+    <AuthRoute path="/signup" component={SessionFormContainer} />
   </div>
 );
 
