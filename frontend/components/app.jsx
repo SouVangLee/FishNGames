@@ -7,7 +7,7 @@ import LoginFormContainer from './session/login_form_container';
 import ModalContainer from "./modal/modal_container";
 import GreetingContainer from './navbar/greeting_container';
 import Greeting from './navbar/greeting';
-import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import { AuthRoute, ProtectedRoute } from '../util/route_utils';
 
 const App = () => (
   <div>
