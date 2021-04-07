@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let store;
   let preloadedState = undefined;
   if (window.currentUser) {
-    debugger
     preloadedState = {
       session: { currentUserId: window.currentUser.id }
     };

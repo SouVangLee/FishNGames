@@ -10,6 +10,7 @@ class LoginForm extends React.Component {
      };
 
      this.handleSubmit = this.handleSubmit.bind(this);
+     this.demoUser = this.demoUser.bind(this);
   }
 
   
@@ -35,12 +36,17 @@ class LoginForm extends React.Component {
     );
   }
 
+  demoUser() {
+    const user = { email: "guest@guest.com", password: "password"}
+    this.props.processForm(user).then(this.props.closeModal)
+  }
+
   render() {
 
     return (
       <div>
-        <h2>Sign In!</h2>
         <div className="login-form-container">
+        <h2>Sign In!</h2>
 
           {this.renderErrors()}
 
@@ -65,9 +71,14 @@ class LoginForm extends React.Component {
             </label>
             <br/>
 
-            <button className="login-button">Log In</button>
+            <button className="login-button">LOG IN</button>
           </form>
         </div>
+        <button className="demo-user" onClick={this.demoUser}>DEMO USER</button>
+        <button 
+          className="signup-modal-page"
+          onClick={() => this.props.openModal('signup')}
+          >CREATE AN ACCOUNT</button>
       </div>
     );
   }  
