@@ -83,6 +83,7 @@ class LoginForm extends React.Component {
 <<<<<<< HEAD
 =======
         <button className="demo-user" onClick={this.demoUser}>DEMO USER</button>
+        <br/>
         <button 
           className="signup-modal-page"
           onClick={() => this.props.openModal('signup')}
