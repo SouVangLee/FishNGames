@@ -12,8 +12,13 @@
 }
 
 .logo {
-  width: 10%;
+  width: 100px;
   border: 1px solid orange;
+}
+
+.signin-cart-container {
+  display: flex;
+  width: 180px;
 }
 
 
@@ -21,14 +26,13 @@
   width: 40px;
   height: 40px;
   padding: 10px;
-  border: 1px solid white;
 }
 
 .cart-icon {
   display: block;
   margin-top: 5px;
   margin-left: 5px;
-  width: 30px;
-  height: 30px;
-  
+  width: 35px;
+  height: 35px;
 }
+
