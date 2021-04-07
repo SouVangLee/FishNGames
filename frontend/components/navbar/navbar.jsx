@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Category from './category_list';
+import CategoryList from './category_list';
 import GreetingContainer from './greeting_container';
 import SearchBar from './search_bar';
 
@@ -8,10 +8,10 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <h1 className="logo">FISH N GAMES</h1>
-      <Category />
+      <CategoryList />
       <SearchBar />
       <GreetingContainer />
-      <a className="shopping-cart" href="#">CART</a>
+      <a className="shopping-cart" href="/cart">CART</a>
     </div>
   )
 }

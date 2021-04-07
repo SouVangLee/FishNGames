@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Category = () => {
+const CategoryList = () => {
   return (
-    <div className="category">
+    <div className="category-list">
     <a href="#">FISHING</a>
     <a href="#">BOATING</a>
     <a href="#">SHOOTING</a>
@@ -14,4 +14,4 @@ const Category = () => {
   )
 }
 
-export default Category;
+export default CategoryList;
