@@ -5,7 +5,7 @@ const Greeting = ({ currentUser, logout, openModal }) => {
     <div>
       <nav className="login-signup">
         <button onClick={() => openModal('login')}>Sign In</button>
-        <button onClick={() => openModal('signup')}>Create An Account</button>
+        {/* <button onClick={() => openModal('signup')}>Create An Account</button> */}
       </nav>
     </div>
   )
