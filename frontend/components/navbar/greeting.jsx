@@ -2,16 +2,16 @@ import React from 'react';
 
 const Greeting = ({ currentUser, logout, openModal }) => {
   const sessionLinks = () => (
-    <div className="login-container">
-      <nav className="login">
-        <button onClick={() => openModal('login')}>Sign In</button>
-        {/* <button onClick={() => openModal('signup')}>Create An Account</button> */}
-      </nav>
+    <div className="login-container" onClick={() => openModal('login')}>
+      <div className="h2-signin">Sign In</div>
+      <div className="login-button">
+        <img className="login-logo" src={window.userLoginIcon}/>
+      </div>
     </div>
   )
 
   const personalGreeting = () => (
-    <div>
+    <div className="login-greeting">
       <h2>Welcome, {currentUser.name}!</h2>
       <button onClick={logout}>Log Out</button>
     </div>

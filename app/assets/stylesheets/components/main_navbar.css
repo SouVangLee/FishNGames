@@ -1,0 +1,31 @@
+.navbar {
+  display: flex;
+  position: sticky;
+  top: 0;
+  width: 80%;
+  height: 60px;
+  border: 1px solid black;
+  padding: 20px 20px 10px 20px;
+  justify-content: space-around;
+  left: 10%;
+  background-color: teal;
+}
+
+.logo {
+  width: 10%;
+  border: 1px solid orange;
+}
+
+
+.shopping-cart {
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  margin-top: 5px;
+  border: 1px solid gainsboro;
+}
+
+.cart-icon {
+  width: 40px;
+  height: 40px;
+}
