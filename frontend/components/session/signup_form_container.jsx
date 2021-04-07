@@ -16,7 +16,7 @@ const mDTP = () => dispatch => ({
       Login
     </button>
   ),
-  closeModal: () => dispatch(closeModal())
+  closeModal: () => dispatch(closeModal()),
 });
 
 export default connect(mSTP, mDTP)(SignupForm);

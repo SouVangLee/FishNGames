@@ -22,7 +22,7 @@ class LoginForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.processForm(this.state)
-      .then(this.props.closeModal())
+      .then(() => this.props.closeModal())
   }
 
   renderErrors() {
@@ -38,35 +38,36 @@ class LoginForm extends React.Component {
   render() {
 
     return (
-      <div className="login-form-container">
+      <div>
         <h2>Sign In!</h2>
-        <br/>
+        <div className="login-form-container">
 
-        {this.renderErrors()}
-        
-        <form onSubmit={this.handleSubmit}>
-          <label>Email: 
+          {this.renderErrors()}
+
+          <form onSubmit={this.handleSubmit}>
+            <label className="login-label">Email
+              <br/>
+              <input 
+                type="text"
+                value={this.state.email}
+                onChange={this.handleChange('email')}
+              />
+            </label>
             <br/>
-            <input 
-              type="text"
-              value={this.state.email}
-              onChange={this.handleChange('email')}
-            />
-          </label>
-          <br/>
 
-          <label>Password: 
+            <label className="login-label last">Password
+              <br/>
+              <input 
+                type="password"
+                value={this.state.password}
+                onChange={this.handleChange('password')}
+              />
+            </label>
             <br/>
-            <input 
-              type="password"
-              value={this.state.password}
-              onChange={this.handleChange('password')}
-            />
-          </label>
-          <br/>
 
-          <button>Log In</button>
-        </form>
+            <button className="login-button">Log In</button>
+          </form>
+        </div>
       </div>
     );
   }  

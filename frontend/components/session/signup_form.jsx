@@ -22,7 +22,7 @@ class SignupForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.processForm(this.state)
-      .then(this.props.closeModal())
+      .then(() => this.props.closeModal())
   }
 
   renderErrors() {
@@ -44,7 +44,7 @@ class SignupForm extends React.Component {
 
         <form onSubmit={this.handleSubmit}>
 
-          <label>Name:
+          <label className="signup-label">Name
             <br/>
             <input 
               type="text"
@@ -54,7 +54,7 @@ class SignupForm extends React.Component {
           </label>
           <br/>
           
-          <label>Email:
+          <label className="signup-label">Email
             <br/>
             <input 
               type="text"
@@ -64,7 +64,7 @@ class SignupForm extends React.Component {
           </label>
           <br/>
 
-          <label>Password:
+          <label className="signup-label last">Password
             <br/>
             <input 
               type="password"
@@ -74,7 +74,7 @@ class SignupForm extends React.Component {
           </label>
           <br/>
 
-          <button>Sign Up!</button>
+          <button className="signup-button">Sign Up!</button>
         </form>
       </div>
     );
