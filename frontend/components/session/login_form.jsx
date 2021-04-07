@@ -25,26 +25,45 @@ class LoginForm extends React.Component {
       .then(this.props.closeModal())
   }
 
+  renderErrors() {
+    return (
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>{error}</li>
+        ))}
+      </ul>
+    );
+  }
+
   render() {
+
     return (
       <div className="login-form-container">
         <h2>Sign In!</h2>
+        <br/>
+
+        {this.renderErrors()}
+        
         <form onSubmit={this.handleSubmit}>
-          <label>Email:
+          <label>Email: 
+            <br/>
             <input 
               type="text"
               value={this.state.email}
               onChange={this.handleChange('email')}
             />
-          </label><br/>
+          </label>
+          <br/>
 
-          <label>Password:
+          <label>Password: 
+            <br/>
             <input 
               type="password"
               value={this.state.password}
               onChange={this.handleChange('password')}
             />
-          </label> <br/>
+          </label>
+          <br/>
 
           <button>Log In</button>
         </form>
