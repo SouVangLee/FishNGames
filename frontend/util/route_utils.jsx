@@ -4,13 +4,12 @@ import { Redirect, Route, withRouter } from 'react-router-dom';
 
 
 const mSTP = state => ({
-  loggedIn: Boolean(state.session.currentUser)
+  loggedIn: Boolean(state.session.currentUserId)
 });
 
-const Auth = ({ loggedIn, exact, path, component: Component }) => {
+const Auth = ({ loggedIn, path, component: Component }) => {
   return (
     <Route 
-      exact={exact}
       path={path}
       render={props => (
           loggedIn ? <Redirect to="/" /> : <Component {...props} />
