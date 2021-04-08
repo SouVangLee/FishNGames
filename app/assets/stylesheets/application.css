@@ -14,37 +14,5 @@
  *= require_self
  */
 
- .modal-background {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 10;
-}
+ @import 'base/reset.css'; 
 
-.modal-child {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 300px;
-  border: 1px solid white;
-  background-color: white;
-}
-
-.signup-form-container, .login-form-container {
- padding: 0 30px 30px 30px;
-}
-
-.login-label input, .signup-label input {
-  margin-bottom: 10px;
-  width: 220px;
-  height: 30px;
-  
-}
-
-.signup-button, .login-button {
-  margin-top: 10px;
-}

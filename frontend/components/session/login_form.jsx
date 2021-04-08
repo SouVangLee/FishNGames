@@ -11,6 +11,7 @@ class LoginForm extends React.Component {
 
      this.handleSubmit = this.handleSubmit.bind(this);
      this.demoUser = this.demoUser.bind(this);
+     this.handleKeypress = this.handleKeypress.bind(this);
   }
 
   
@@ -26,14 +27,25 @@ class LoginForm extends React.Component {
       .then(() => this.props.closeModal())
   }
 
+  handleKeypress(e) {
+    if (e.keyCode === 13) {
+      this.handleSubmit();
+    }
+  }
+
   renderErrors() {
     return (
-      <ul>
+      <ul className="error-list">
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>{error}</li>
         ))}
       </ul>
     );
+  }
+
+  componentWillUnmount() {
+    const errors = [];
+    this.props.deleteErrors(errors);
   }
 
   demoUser() {
@@ -50,7 +62,7 @@ class LoginForm extends React.Component {
           {this.renderErrors()}
 
           <form onSubmit={this.handleSubmit}>
-            <label className="login-label">Email
+            <label className="login-label email">Email
               <br/>
               <input 
                 type="text"
@@ -60,7 +72,7 @@ class LoginForm extends React.Component {
             </label>
             <br/>
 
-            <label className="login-label last">Password
+            <label className="login-label password">Password
               <br/>
               <input 
                 type="password"

@@ -1,0 +1,101 @@
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.modal-child {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 300px;
+  border: 1px solid white;
+  background-color: white;
+}
+
+.signup-form-container, .login-form-container {
+ padding: 30px 30px 10px 30px;
+}
+
+.login-label input, .signup-label input {
+  margin-bottom: 10px;
+  width: 220px;
+  height: 30px;
+  
+}
+
+.demo-user, .signup-modal-page {
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+
+.demo-user, .signup-modal-page, .login-button, .signup-button {
+  width: 230px;
+  height: 30px;
+}
+
+.signup-form-container button, 
+.login-form-container button,
+.demo-user,
+.signup-modal-page {
+  border: none;
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+} 
+
+
+.signup-form-container h2, .login-form-container h2 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.signup-form-container label, .login-form-container label {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 14px;
+}
+
+.login-button, .demo-user, .signup-button {
+  color: white;
+  background-color: teal;
+}
+
+.login-button:hover, .demo-user:hover, .signup-button:hover {
+  color: white;
+  background-color: maroon;
+  border: 1px solid white;
+}
+
+.signup-modal-page {
+  color: teal;
+  background-color: white;
+  border: 1px solid teal;
+}
+
+.signup-modal-page:hover {
+  color: white;
+  background-color: maroon;
+}
+
+/* errors */
+.error-list {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.error-list li {
+  padding: 2px;
+  color: red;
+}
+
+.error-list li:last-child {
+  margin-bottom: 10px;
+}

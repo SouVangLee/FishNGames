@@ -11,6 +11,7 @@ class SignupForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleKeypress = this.handleKeypress.bind(this);
   }
 
   handleChange(type) {
@@ -25,14 +26,25 @@ class SignupForm extends React.Component {
       .then(() => this.props.closeModal())
   }
 
+  handleKeypress(e) {
+    if (e.keyCode === 13) {
+      this.handleSubmit();
+    }
+  }
+
   renderErrors() {
     return (
-      <ul>
+      <ul className="error-list">
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>{error}</li>
         ))}
       </ul>
     );
+  }
+
+  componentWillUnmount() {
+    const errors = [];
+    this.props.deleteErrors(errors);
   }
   
   render() {

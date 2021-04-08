@@ -1,0 +1,29 @@
+.login-greeting {
+  width: 7%;
+  border: 1px solid pink;
+}
+
+.login-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100px;
+  padding: 10px;
+}
+
+.login-logo {
+  width: 30px;
+  height: 30px;
+}
+
+.login-container:hover {
+  cursor: pointer;
+}
+
+.h2-signin { 
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  margin-top: 8px;
+  margin-left: -5px;
+}
