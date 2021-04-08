@@ -4,7 +4,7 @@ const Greeting = ({ currentUser, logout, openModal }) => {
   const sessionLinks = () => (
     <div className="login-container" onClick={() => openModal('login')}>
       <div className="h2-signin">Sign In</div>
-      <div className="login-button">
+      <div className="login-button-logo">
         <img className="login-logo" src={window.userLoginIcon}/>
       </div>
     </div>

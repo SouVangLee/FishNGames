@@ -35,7 +35,7 @@ class LoginForm extends React.Component {
 
   renderErrors() {
     return (
-      <ul>
+      <ul className="error-list">
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>{error}</li>
         ))}
@@ -63,7 +63,7 @@ class LoginForm extends React.Component {
           {this.renderErrors()}
 
           <form onSubmit={this.handleSubmit}>
-            <label className="login-label">Email
+            <label className="login-label email">Email
               <br/>
               <input 
                 type="text"
@@ -73,7 +73,7 @@ class LoginForm extends React.Component {
             </label>
             <br/>
 
-            <label className="login-label last">Password
+            <label className="login-label password">Password
               <br/>
               <input 
                 type="password"

@@ -50,3 +50,7 @@ table {
 a {
 	text-decoration: none;
 }
+
+button:hover, a {
+	cursor: pointer;
+}
