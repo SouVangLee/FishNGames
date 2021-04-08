@@ -9,6 +9,7 @@ import GreetingContainer from './navbar/greeting_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_utils';
 import Navbar from './navbar/navbar';
 
+
 const App = () => (
   <div>
     <ModalContainer />

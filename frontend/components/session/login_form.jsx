@@ -56,9 +56,8 @@ class LoginForm extends React.Component {
   render() {
 
     return (
-      <div>
         <div className="login-form-container">
-        <h2>Sign In!</h2>
+          <h2>Sign In!</h2>
 
           {this.renderErrors()}
 
@@ -85,14 +84,17 @@ class LoginForm extends React.Component {
 
             <button className="login-button">LOG IN</button>
           </form>
+
+          <button className="demo-user" onClick={this.demoUser}>DEMO USER</button>
+          <br/>
+          <button 
+            className="signup-modal-page"
+            onClick={() => this.props.openModal('signup')}
+            >CREATE AN ACCOUNT
+          </button>
         </div>
-        <button className="demo-user" onClick={this.demoUser}>DEMO USER</button>
-        <br/>
-        <button 
-          className="signup-modal-page"
-          onClick={() => this.props.openModal('signup')}
-          >CREATE AN ACCOUNT</button>
-      </div>
+        
+        
     );
   }  
 }
