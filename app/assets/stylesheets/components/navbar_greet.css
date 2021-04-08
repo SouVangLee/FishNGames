@@ -1,8 +1,3 @@
-.login-greeting {
-  width: 7%;
-  border: 1px solid pink;
-}
-
 .login-container {
   display: flex;
   justify-content: space-around;
@@ -18,6 +13,7 @@
 
 .login-container:hover {
   cursor: pointer;
+  border: 1px solid salmon;
 }
 
 .h2-signin { 
@@ -26,4 +22,31 @@
   font-size: 18px;
   margin-top: 8px;
   margin-left: -5px;
+}
+
+.greet-message {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: white;
+}
+
+.greet-logout-button {
+  border: none;
+  font-family: 'Montserrate', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  border: 1px solid black;
+  width: 80px;
+  height: 25px;
+  margin-top: 5px;
+  color: teal;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.greet-logout-button:hover {
+  color: white;
+  background-color: maroon;
 }
