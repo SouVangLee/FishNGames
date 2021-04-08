@@ -69,7 +69,7 @@
 
 .login-button:hover, .demo-user:hover, .signup-button:hover {
   color: white;
-  background-color: maroon;
+  background-color: rgb(30,30,30);
 }
 
 .signup-modal-page {
@@ -80,7 +80,7 @@
 
 .signup-modal-page:hover {
   color: white;
-  background-color: maroon;
+  background-color: rgb(30,30,30);
 }
 
 /* errors */

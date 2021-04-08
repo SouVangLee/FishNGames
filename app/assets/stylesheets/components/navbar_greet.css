@@ -14,8 +14,7 @@
 
 .login-container:hover {
   cursor: pointer;
-  background: rgb(105, 224, 224);
-  border-radius: 10px;
+  color: teal;
 }
 
 .h2-signin { 

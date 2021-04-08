@@ -20,8 +20,9 @@ const Navbar = () => {
         <div className="signin-cart-container">
           <GreetingContainer />
           <div className="shopping-cart">
-            <Link to="/cart">
-              <img className="cart-icon" src={window.cartIcon}/>
+            <Link className="cart-link" to="/cart">
+              <img className="cart-black" src={window.cartBlackIcon}/>
+              {/* <img className="cart-teal" src={window.cartTealIcon}/> */}
             </Link>
           </div>
         </div>

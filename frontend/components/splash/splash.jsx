@@ -9,6 +9,9 @@ class Splash extends React.Component {
   render() {
     return(
       <div className="splash-page">
+        {/* <div className="banner-container">
+          <img className="camp-banner" src={window.campBanner}/>
+        </div> */}
         I AM THE SPLASH PAGE!
       </div>
     );

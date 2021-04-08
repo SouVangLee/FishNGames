@@ -2,3 +2,13 @@
 .splash-page {
   height: 2000px;
 }
+
+.banner-container {
+  width: 100%;
+  height: 500px;
+}
+
+.camp-banner {
+  width: 100%;
+  height: 100%;
+}

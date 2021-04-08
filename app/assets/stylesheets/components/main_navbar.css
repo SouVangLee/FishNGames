@@ -41,10 +41,9 @@
   padding: 10px;
 }
 
-.cart-icon {
-  display: block;
+.cart-black, .cart-teal  {
   margin-left: 5px;
-  width: 35px;
-  height: 35px;
+  margin-top: 3px;
+  width: 30px;
+  height: 30px;
 }
-
