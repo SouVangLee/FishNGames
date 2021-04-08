@@ -30,13 +30,12 @@
 }
 
 .demo-user, .signup-modal-page {
-  margin-left: 30px;
-  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .demo-user, .signup-modal-page, .login-button, .signup-button {
   width: 230px;
-  height: 30px;
+  height: 35px;
 }
 
 .signup-form-container button, 
@@ -47,6 +46,7 @@
   font-family: 'PT Sans Narrow', sans-serif;
   font-size: 16px;
   text-transform: uppercase;
+  border: 1px solid black;
 } 
 
 
@@ -70,7 +70,6 @@
 .login-button:hover, .demo-user:hover, .signup-button:hover {
   color: white;
   background-color: maroon;
-  border: 1px solid white;
 }
 
 .signup-modal-page {
