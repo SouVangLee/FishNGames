@@ -8,7 +8,7 @@ class Splash extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className="splash-page">
         I AM THE SPLASH PAGE!
       </div>
     );

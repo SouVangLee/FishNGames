@@ -1,19 +1,32 @@
+.navbar-container {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 90px;
+  border-top: 1px solid teal;
+  border-bottom: 1px solid teal;
+  background: white;
+}
+
 .navbar {
   display: flex;
   position: sticky;
   top: 0;
   width: 80%;
   height: 60px;
-  border: 1px solid black;
   padding: 20px 20px 10px 20px;
   justify-content: space-around;
   left: 10%;
-  background-color: teal;
 }
 
 .logo {
-  width: 100px;
-  border: 1px solid orange;
+  width: 200px;
+}
+
+.logo-icon {
+  width: 200px;
+  height: 60px;
+  background: none;
 }
 
 .signin-cart-container {

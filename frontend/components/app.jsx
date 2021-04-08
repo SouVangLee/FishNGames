@@ -10,7 +10,7 @@ import Splash from './splash/splash';
 
 
 const App = () => (
-  <div>
+  <div className="app-div">
     <ModalContainer />
     <Navbar />
     <Switch>

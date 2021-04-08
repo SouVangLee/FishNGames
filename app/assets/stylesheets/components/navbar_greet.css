@@ -4,6 +4,7 @@
   align-items: center;
   width: 100px;
   padding: 10px;
+
 }
 
 .login-logo {
@@ -13,6 +14,8 @@
 
 .login-container:hover {
   cursor: pointer;
+  background: rgb(105, 224, 224);
+  border-radius: 10px;
 }
 
 .h2-signin { 
@@ -20,14 +23,13 @@
   font-weight: 500;
   font-size: 18px;
   margin-top: 8px;
-  margin-left: -5px;
 }
 
 .greet-message {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 16px;
-  color: white;
+  color: teal;
 }
 
 .greet-logout-button {

@@ -1,7 +1,18 @@
 .category-list {
   width: 50%;
-  border: 1px solid yellow;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
+
+.category-list a {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  position: relative;
+}
+
+.category-list a:hover {
+  color: none;
+}
+
