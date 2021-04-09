@@ -10,15 +10,43 @@ ActiveRecord::Base.transaction do
   User.delete_all
 
   user1 = User.create!(
+    name: 'SuperAdmin',
+    email: 'superadmin@superadmin.com',
+    password: '123123'
+    )
+  
+  user2 = User.create!(
+    name: 'Admin',
+    email: 'admin@admin.com',
+    password: '123123'
+    )
+    
+  user3 = User.create!(
     name: 'Guest',
     email: 'guest@guest.com',
     password: 'password'
   )
 
-  user2 = User.create!(
-    name: 'Admin',
-    email: 'admin@admin.com',
+  user4 = User.create!(
+    name: 'Tommy,'
+    email: 'tommy@tommy.com'
     password: '123123'
   )
+
+  Category.delete_all
+
+  fishing_category = Category.create!(name: 'Fishing')
+
+  boating_category = Category.create!(name: 'Boating')
+
+  shooting_category = Category.create!(name: 'Shooting')
+
+  hunting_category = Category.create!(name: 'Hunting')
+
+  camping_category = Category.create!(name: 'Camping')
+
+  clothing_category = Category.create!(name: 'Clothing')
+
+  footwear_category = Category.create!(name: 'Footwear')
   
 end
