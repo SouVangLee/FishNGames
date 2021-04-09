@@ -15,6 +15,8 @@ const App = () => (
     <Navbar />
     <Switch>
       <ProtectedRoute exact path="/cart" component={Cart} />
+      {/* <Route exact path="/fishing" component={}></Route> */}
+      {/* <Route exact path="/boating" component={}></Route> */}
       <Route exact path="/" component={Splash} />
       <Route path ="/404" component={PageNotFound}/>
       <Redirect to="404" />
