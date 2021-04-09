@@ -8,7 +8,6 @@
 
 ActiveRecord::Base.transaction do 
   User.delete_all
-
   user1 = User.create!(
     name: 'SuperAdmin',
     email: 'superadmin@superadmin.com',
@@ -34,7 +33,6 @@ ActiveRecord::Base.transaction do
   )
 
   Category.delete_all
-
   fishing_category = Category.create!(name: 'Fishing')
 
   boating_category = Category.create!(name: 'Boating')
@@ -48,5 +46,12 @@ ActiveRecord::Base.transaction do
   clothing_category = Category.create!(name: 'Clothing')
 
   footwear_category = Category.create!(name: 'Footwear')
+
+  Product.delete_all
+  # product_1 = Product.create!(
+  #   name: 'Ultra-light Trout Rod'
+  #   price: 40.00
+  #   quantity
+  # )
   
 end
