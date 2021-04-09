@@ -1,4 +1,8 @@
 class Api::ProductsController < ApplicationController
+  def index
+    render "api/products/index"
+  end
+
   def show
     @product = Product.find_by(id: params[:id])
     render "api/products/show"
@@ -7,7 +11,7 @@ class Api::ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      render "api/products/index"
+      render "api/products/show"
     else
       render json: @product.errors.full_messages, status: 422
     end
@@ -17,6 +21,7 @@ class Api::ProductsController < ApplicationController
     @product = Product.find_by(id: params[:id])
     if !@product.nil?
       deleted_product = @product.delete
+      render json: deleted_product
     else
       render json: ["Invalid product!"], status: 422
     end
