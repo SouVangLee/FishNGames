@@ -1,17 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const CategoryList = () => {
+const CategoryNav = () => {
   return (
     <div className="category-list">
-    <a href="#">FISHING</a>
-    <a href="#">BOATING</a>
-    <a href="#">SHOOTING</a>
-    <a href="#">HUNTING</a>
-    <a href="#">CAMPING</a>
-    <a href="#">CLOTHING</a>
-    <a href="#">FOOTWEAR</a>
+    <Link to="/fishing">FISHING</Link>
+    <Link to="/boating">BOATING</Link>
+    <Link to="/shooting">SHOOTING</Link>
+    <Link to="/hunting">HUNTING</Link>
+    <Link to="/camping">CAMPING</Link>
+    <Link to="/clothing">CLOTHING</Link>
+    <Link to="/footwear">FOOTWEAR</Link>
     </div>
   )
 }
 
-export default CategoryList;
+export default CategoryNav;

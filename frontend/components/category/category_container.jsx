@@ -3,7 +3,7 @@ import { fetchAllCategories } from '../../actions/category_actions';
 import CategoryNav from './category_nav';
 
 const mSTP = state => ({
-  categories: Object.values(state.entities.categories);
+  categories: Object.values(state.entities.categories)
 });
 
 const mDTP = dispatch => ({
