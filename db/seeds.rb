@@ -68,7 +68,7 @@ ActiveRecord::Base.transaction do
     name: 'Little Boat',
     price: 5000,
     quantity: 1,
-    description: 'Tired of not catching fish? Need a little help covering distance? Get a little boat!',
+    description: 'Tired of not catching any fish? Need a little help covering water distance? Get this little boat!',
     category_id: 2
   )
 
