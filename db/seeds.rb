@@ -27,8 +27,8 @@ ActiveRecord::Base.transaction do
   )
 
   user4 = User.create!(
-    name: 'Tommy,'
-    email: 'tommy@tommy.com'
+    name: 'Tommy',
+    email: 'tommy@tommy.com',
     password: '123123'
   )
 
