@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import CategoryList from './category_list';
+// import CategoryNav from '../category/category_nav';
 import GreetingContainer from './greeting_container';
 import SearchBar from './search_bar';
 
@@ -14,7 +14,7 @@ const Navbar = () => {
           <img className="logo-icon" src={window.logoIcon}/>
           </Link>
         </h1>
-        <CategoryList />
+        {/* <CategoryNav /> */}
         <SearchBar />
 
         <div className="signin-cart-container">
