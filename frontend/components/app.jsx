@@ -20,7 +20,7 @@ const App = () => (
       <Route exact path="/categories/:id" component={CategoryProductsContainer} />
       <Route exact path="/products/:id" component={ ProductContainer } />
       <Route exact path="/" component={ Splash } />
-      <Route component={ PageNotFound }/>
+      <Route path="*" component={ PageNotFound }/>
     </Switch>
   </div>
 );
