@@ -21,8 +21,6 @@ const Navbar = () => {
           <GreetingContainer />
           <div className="shopping-cart">
             <Link className="cart-link" to="/cart"/>
-              {/* <img className="cart-black" src={window.cartBlackIcon}/> */}
-              {/* <img className="cart-teal" src={window.cartTealIcon}/> */}
           </div>
         </div>
       </div>
