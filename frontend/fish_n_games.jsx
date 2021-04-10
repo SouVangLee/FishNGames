@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import configureStore from "./store/store";
 import Root from "./components/root"
-import { fetchAllCategories, fetchAllProducts } from './actions/category_actions';
+import { fetchAllCategories, fetchCategoryProducts } from './actions/category_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //testing
   window.fetchAllCategories = fetchAllCategories;
-  window.fetchAllProducts = fetchAllProducts;
+  window.fetchCategoryProducts = fetchCategoryProducts;
   window.store = store;
 
   

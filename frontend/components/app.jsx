@@ -7,6 +7,7 @@ import Navbar from './navbar/navbar';
 import Cart from './cart/cart';
 import PageNotFound from './page_not_found';
 import Splash from './splash/splash';
+import CategoryProductsContainer from './category/category_products_container';
 
 
 const App = () => (
@@ -15,11 +16,9 @@ const App = () => (
     <Navbar />
     <Switch>
       <ProtectedRoute exact path="/cart" component={Cart} />
-      {/* <Route exact path="/fishing" component={}></Route> */}
-      {/* <Route exact path="/boating" component={}></Route> */}
+      <Route exact path="/categories/:id" component={CategoryProductsContainer}></Route>
       <Route exact path="/" component={Splash} />
-      <Route path ="/404" component={PageNotFound}/>
-      <Redirect to="404" />
+      <Route component={PageNotFound}/>
     </Switch>
   </div>
 );

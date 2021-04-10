@@ -22,7 +22,7 @@ export const fetchAllCategories = () => dispatch => {
     .then(categories => dispatch(receiveAllCategories(categories)));
 };
 
-export const fetchAllProducts = categoryId => dispatch => {
-  return CategoryApiUtil.fetchAllProducts(categoryId)
+export const fetchCategoryProducts = categoryId => dispatch => {
+  return CategoryApiUtil.fetchCategoryProducts(categoryId)
     .then(products => dispatch(receiveCategory(products)));
 };
