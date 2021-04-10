@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import configureStore from "./store/store";
 import Root from "./components/root"
-import { fetchAllCategories, fetchCategoryProducts } from './actions/category_actions';
+import { fetchAllProducts, fetchProduct } from './actions/product_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
   window.preloadedState = preloadedState;
 
   //testing
-  window.fetchAllCategories = fetchAllCategories;
-  window.fetchCategoryProducts = fetchCategoryProducts;
+  window.fetchAllProducts = fetchAllProducts;
+  window.fetchProduct = fetchProduct;
   window.store = store;
 
   

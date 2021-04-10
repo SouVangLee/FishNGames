@@ -19,7 +19,7 @@ const receiveProductErrors = errors => ({
   errors
 });
 
-export const fetchAllProducts = () => {
+export const fetchAllProducts = () => dispatch => {
   return ProductApiUtil.fetchAllProducts()
     .then(
       products => dispatch(receiveAllProducts(products)),
@@ -27,7 +27,7 @@ export const fetchAllProducts = () => {
     );
 };
 
-export const fetchProduct = productId => {
+export const fetchProduct = productId => dispatch => {
   return ProductApiUtil.fetchProduct(productId)
     .then(
       product => dispatch(receiveProduct(product)),
