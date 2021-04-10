@@ -8,6 +8,7 @@ import Cart from './cart/cart';
 import PageNotFound from './page_not_found';
 import Splash from './splash/splash';
 import CategoryProductsContainer from './category/category_products_container';
+import ProductContainer from './product/product_container';
 
 
 const App = () => (
@@ -15,10 +16,11 @@ const App = () => (
     <ModalContainer />
     <Navbar />
     <Switch>
-      <ProtectedRoute exact path="/cart" component={Cart} />
-      <Route exact path="/categories/:id" component={CategoryProductsContainer}></Route>
-      <Route exact path="/" component={Splash} />
-      <Route component={PageNotFound}/>
+      <ProtectedRoute exact path="/cart" component={ Cart } />
+      <Route exact path="/categories/:id" component={CategoryProductsContainer} />
+      <Route exact path="/products/:id" component={ ProductContainer } />
+      <Route exact path="/" component={ Splash } />
+      <Route component={ PageNotFound }/>
     </Switch>
   </div>
 );

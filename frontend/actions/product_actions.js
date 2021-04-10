@@ -23,7 +23,7 @@ export const fetchAllProducts = () => dispatch => {
   return ProductApiUtil.fetchAllProducts()
     .then(
       products => dispatch(receiveAllProducts(products)),
-      errors => receiveProductErrors(errors)
+      errors => receiveProductErrors(errors.responseJSON)
     );
 };
 
@@ -31,6 +31,6 @@ export const fetchProduct = productId => dispatch => {
   return ProductApiUtil.fetchProduct(productId)
     .then(
       product => dispatch(receiveProduct(product)),
-      errors => receiveProductErrors(errors)
+      errors => receiveProductErrors(errors.responseJSON)
     );
 };
