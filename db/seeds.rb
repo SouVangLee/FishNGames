@@ -57,8 +57,11 @@ ActiveRecord::Base.transaction do
     category_id: 1
   )
 
-  # fishing1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing_1.jpg')
-  # product_1.photo.attach(io: fishing1, filename: 'fishing_1.jpg')
+  fishing1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing_1.jpg')
+  fishing2 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing_2.jpg')
+
+  product_1.photos.attach(io: fishing1, filename: 'fishing_1.jpg')
+  product_1_2.photos.attach(io: fishing2, filename: 'fishing_2.jpg')
 
   product_2 = Product.create!(
     name: 'Fly-fishing Trout Rod',
