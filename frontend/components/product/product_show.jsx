@@ -30,7 +30,6 @@ class Product extends React.Component{
         <div className="product-show-container">
           <section className="product-show-left">
             <ProductImage product={product}/>
-              {/* <img className="product-img" src={product.photoUrls[0]}/> */}
           </section>
 
           <section className="product-show-right">
