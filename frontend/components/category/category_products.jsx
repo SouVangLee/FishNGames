@@ -7,14 +7,22 @@ class CategoryProducts extends React.Component{
     super(props);
 
     this.state = {
-      1: "Fishing",
-      2: "Boating",
-      3: "Shooting",
-      4: "Hunting",
-      5: "Camping",
-      6: "Clothing",
-      7: "Footwear"
+      categories: {
+        1: "Fishing",
+        2: "Boating",
+        3: "Shooting",
+        4: "Hunting",
+        5: "Camping",
+        6: "Clothing",
+        7: "Footwear"
+      },
+      banners: {
+        1: window.fishingLeaderboard,
+        2: window.boatingBanner
+      }
     }
+
+    this.currencyPrice = this.currencyPrice.bind(this);
   }
 
 
@@ -28,20 +36,57 @@ class CategoryProducts extends React.Component{
     }
   }
 
+  handleClick(id) {
+
+  }
+
+  currencyPrice(product) {
+    return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 2
+  }).format(product.price);
+  }
+
 
   render() {
     const productList = this.props.products.map(product => (
-      <li key={`${product.id}`}>
-        <Link to={`/products/${product.id}`}>{product.name}</Link>
-      </li>
+      <div className="product-info-link" key={`${product.id}`}>
+        <Link className="product-link" to={`/products/${product.id}`}>
+          <img src={product.photoUrls[0]} alt=""/>
+          <h2>{product.name}</h2>
+          <h3>
+            {new Intl.NumberFormat('en-US', {
+              style: 'currency',
+              currency: 'USD',
+              minimumFractionDigits: 2
+            }).format(product.price)}
+          </h3>
+        </Link>
+
+      </div>
     ));
+    console.log("PROPS", this.props);
 
     return (
-      <div>
-        <h1>{this.state[this.props.match.params.id]} Page!</h1>
-        <ul>
-          {productList}
-        </ul>
+      <div className="category-container">
+        {/* <h1>{this.state.categories[this.props.match.params.id]} Page!</h1> */}
+        <div className="category-banner">
+          <img 
+            className="category-image" 
+            src={this.state.banners[this.props.match.params.id]}
+          />
+        </div>
+        
+        <div className="category-body-container">
+          <section className="search-section">
+
+          </section>
+
+          <section className="product-section">
+            {productList}
+          </section>
+        </div>
       </div>
     )
   }
