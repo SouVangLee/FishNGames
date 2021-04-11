@@ -4,41 +4,40 @@ class ProductImage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      url: this.props.product.photoUrls[0],
+      url: this.props.product.photoUrls,
       currentPhotoIdx: 0
     };
 
-    this.handleClick = this.handleClick.bind(this);
+    this.changeImage = this.changeImage.bind(this);
   }
 
-  handleClick(e) {
-    e.preventDefault();
+  changeImage(idx) {
+    return(e) => {
+      e.preventDefault();
+      this.setState({currentPhotoIdx: idx})
+    }
   }
 
 
   render() {
-    console.log('IMAGEPROPS', this.props.product);
     let { product } = this.props;
     const imageList = product.photoUrls.map((url, idx) => (
       <img 
         className="small-photos" 
         key={idx} 
         src={url} 
-        onClick={this.handleClick}/>
+        onClick={this.changeImage(idx)}/>
     ));
 
     return (
       <div className="image-container">
         <div className="big-image">
-          <img className="big-image-icon" src={this.state.url}/>
+          <img className="big-image-icon" src={this.state.url[this.state.currentPhotoIdx]}/>
         </div>
 
         <div className="image-icons-container">
           {imageList}
         </div>
-
-
-
       </div>
     );
   }

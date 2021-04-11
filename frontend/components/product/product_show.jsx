@@ -24,7 +24,6 @@ class Product extends React.Component{
       minimumFractionDigits: 2
     }).format(product.price);
 
-    console.log("PROPS", this.props);
     return (
       <div className="product-show-page">
 
