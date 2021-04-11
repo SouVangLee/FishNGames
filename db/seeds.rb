@@ -50,10 +50,13 @@ ActiveRecord::Base.transaction do
 
   Product.delete_all
   product_1 = Product.create!(
-    name: 'Ultra-light Trout Rod',
+    name: 'Ultra-Light Trout Rod',
     price: 40.00,
     quantity: 5,
-    description: 'This is a great fishing rod for beginners',
+    description: ("This Ultra-Light fishing rod is great for catching trout!
+    It is 7 feet long and can handle any line weight from 1-4lb Test. It can handle
+    lure weights of 1/64 - 1/16oz. This fishing rod is great for beginners."
+    ),
     category_id: 1
   )
 
@@ -61,7 +64,7 @@ ActiveRecord::Base.transaction do
   fishing2 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing_2.jpg')
 
   product_1.photos.attach(io: fishing1, filename: 'fishing_1.jpg')
-  product_1_2.photos.attach(io: fishing2, filename: 'fishing_2.jpg')
+  product_1.photos.attach(io: fishing2, filename: 'fishing_2.jpg')
 
   product_2 = Product.create!(
     name: 'Fly-fishing Trout Rod',

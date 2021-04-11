@@ -11,8 +11,8 @@ class Product extends React.Component{
   }
 
   render() {
-    // console.log("PROPS", this.props);
     const { product } = this.props
+
     if (!this.props.product) {
       return null;
     } else {
@@ -22,7 +22,7 @@ class Product extends React.Component{
 
         <div className="product-show-container">
           <section className="product-show-left">
-              <img className="product-img" src={product.photoUrl}/>
+              <img className="product-img" src={product.photoUrls[0]}/>
           </section>
 
           <section className="product-show-right">
