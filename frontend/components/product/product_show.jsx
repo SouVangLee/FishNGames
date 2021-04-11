@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import ProductImage from './product_image';
 
 class Product extends React.Component{
   constructor(props) {
@@ -29,7 +30,8 @@ class Product extends React.Component{
 
         <div className="product-show-container">
           <section className="product-show-left">
-              <img className="product-img" src={product.photoUrls[0]}/>
+            <ProductImage product={product}/>
+              {/* <img className="product-img" src={product.photoUrls[0]}/> */}
           </section>
 
           <section className="product-show-right">
