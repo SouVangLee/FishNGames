@@ -11,12 +11,19 @@ class Product extends React.Component{
   }
 
   render() {
-    const { product } = this.props
 
     if (!this.props.product) {
       return null;
     } else {
 
+    const { product } = this.props
+    const price = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2
+    }).format(product.price);
+
+    console.log("PROPS", this.props);
     return (
       <div className="product-show-page">
 
@@ -30,18 +37,21 @@ class Product extends React.Component{
               <h2 className="product-name">{product.name}</h2>
               <h3>Description</h3>
               <p className="product-description">{product.description}</p>
-              <label className="product-price">Price: {product.price}</label>
+
+              <label className="product-price">{price}</label>
               <br/>
-              <label className="product-quantity">Quantity: 
-                <input type="text"/>
-              </label>
             </div>
 
             <div className="add-to-cart-container">
               <div>Cart Stuff Later on</div>
+              {/* <label className="product-quantity">Quantity: 
+                <input type="text"/>
+              </label> */}
             </div>
           </section>
         </div>
+
+        <div>REVIEWS LATER ON</div>
 
 
       </div>
