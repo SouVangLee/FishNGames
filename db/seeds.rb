@@ -5,8 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
 
-ActiveRecord::Base.transaction do 
+ActiveRecord::Base.transaction do
   User.delete_all
   user1 = User.create!(
     name: 'SuperAdmin',
@@ -55,6 +56,9 @@ ActiveRecord::Base.transaction do
     description: 'This is a great fishing rod for beginners',
     category_id: 1
   )
+
+  # fishing1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing_1.jpg')
+  # product_1.photo.attach(io: fishing1, filename: 'fishing_1.jpg')
 
   product_2 = Product.create!(
     name: 'Fly-fishing Trout Rod',
