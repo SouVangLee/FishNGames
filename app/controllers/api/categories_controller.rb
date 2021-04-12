@@ -5,7 +5,7 @@ class Api::CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find_by(id: params[:id])
+    @category = Category.with_attached_photos.find_by(id: params[:id])
     render 'api/categories/show'
   end
 
@@ -30,6 +30,6 @@ class Api::CategoriesController < ApplicationController
 
   private
   def category_params
-    params.require(:category).permit(:name)
+    params.require(:category).permit(:name, photos: [])
   end
 end
