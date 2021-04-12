@@ -118,6 +118,9 @@ ActiveRecord::Base.transaction do
     category_id: 1
   )
 
+  fishing_6_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_6_1.jpg')
+  fishing_product_6.photos.attach(io: fishing_6_1, filename: 'fishing_6_1.jpg')
+
  
   fishing_product_7 = Product.create!(
     name: 'Yellow-Orange Mini Spinner',
@@ -127,6 +130,9 @@ ActiveRecord::Base.transaction do
     category_id: 1
   )
 
+  fishing_7_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_7_1.jpg')
+  fishing_product_7.photos.attach(io: fishing_7_1, filename: 'fishing_7_1.jpg')
+
   fishing_product_8 = Product.create!(
     name: 'Black and Copper Vertical Jig',
     price: 15.75,
@@ -134,6 +140,9 @@ ActiveRecord::Base.transaction do
     description: 'A heavy vertical jig that is great for deep waters in the ocean.',
     category_id: 1
   )
+
+  fishing_8_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_8_1.jpg')
+  fishing_product_8.photos.attach(io: fishing_8_1, filename: 'fishing_8_1.jpg')
 
 
   #
