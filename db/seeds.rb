@@ -228,7 +228,7 @@ ActiveRecord::Base.transaction do
   )
 
   shooting_2_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/shooting/shooting_2_1.jpg')
-  product.6.photos.attach(io: shooting_2_1, filename: 'shooting_2_1.jpg')
+  product_6.photos.attach(io: shooting_2_1, filename: 'shooting_2_1.jpg')
 
   
   shooting_product_3 = Product.create!(
