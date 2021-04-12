@@ -14,7 +14,8 @@ class CategoryNav extends React.Component {
     const categoryList = this.props.categories.map(category => (
       <Link 
         key={`${category.name}-${category.id}`}
-      to={`/categories/${category.id}`}>{category.name.toUpperCase()}</Link>
+        to={`/categories/${category.id}`}
+      >{category.name.toUpperCase()}</Link>
     ))
     return (
       <div className="category-list">

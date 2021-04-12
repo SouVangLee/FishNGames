@@ -16,6 +16,8 @@ class Splash extends React.Component {
     if (!this.props.products.length) {
       return null;
     } else {
+
+      console.log("PROPSS", this.props.categories);
       
       const arrItems = arrID.map(id => (
         <Link 
@@ -35,6 +37,19 @@ class Splash extends React.Component {
         </Link>
       ));
 
+      const CATEGORY_ID_LIST = [1, 2, 4, 5, 6]
+
+      const categoryList = CATEGORY_ID_LIST.map(id => (
+        <Link
+          className="splash-category-name"
+          to={`/categories/${id}`}
+          key={id}
+        >
+          <img src="" alt=""/>
+          <h2>{this.props.categories[id].name}</h2>
+        </Link>
+      ));
+
       return(
         <div className="splash-page">
           <div className="banner-container">
@@ -44,6 +59,11 @@ class Splash extends React.Component {
 
           <div className="hot-items-container">
             {arrItems}
+          </div>
+
+          <h2 className="category-h2"> SHOP BY CATEGORY </h2>
+          <div className="bottom-category-container">
+            {categoryList}
           </div>
           I AM THE SPLASH PAGE!
           THIS IS A CLONE OF BASS PRO SHOP! CREDITS TO UNSPLASH, AMAZON, 
