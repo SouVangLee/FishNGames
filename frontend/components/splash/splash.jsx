@@ -8,11 +8,12 @@ class Splash extends React.Component {
 
   componentDidMount() {
     this.props.fetchAllProducts();
-    // this.props.fetchAllCategories();
+    this.props.fetchAllCategories();
   }
 
   render() {
     const arrID = [1, 28, 3, 19]; //23, 29
+    console.log("PROPS SPLASH", this.props);
 
     if (!this.props.products.length || Object.keys(this.props.categories) === 0) {
       return null;
@@ -45,7 +46,7 @@ class Splash extends React.Component {
           key={id}
         >
           <img src={ this.props.categories[id].photoUrls[0] }/>
-          <h2>{this.props.categories[id].name}</h2>
+          <h2 >{this.props.categories[id].name}</h2>
         </Link>
       ));
 

@@ -79,7 +79,7 @@
 }
 
 .splash-category-name {
-  border: 2px solid red;
+  // border: 2px solid red;
   width: 250px;
   height: 100%;
   margin-right: 25px;
@@ -98,4 +98,11 @@
   font-size: 20px;
   text-align: center;
   text-transform: uppercase;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #ba6228;
+}
+
+.splash-category-name h2:hover {
+  color:teal;
 }
