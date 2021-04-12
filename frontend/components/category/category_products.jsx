@@ -18,7 +18,12 @@ class CategoryProducts extends React.Component{
       },
       banners: {
         1: window.fishingLeaderboard,
-        2: window.boatingBanner
+        2: window.boatingLeaderboard,
+        3: window.shootingLeaderboard,
+        4: window.huntingLeaderboard,
+        5: window.campingLeaderboard,
+        6: window.clothingLeaderboard,
+        7: window.footwearLeaderboard
       }
     }
 
@@ -61,6 +66,7 @@ class CategoryProducts extends React.Component{
             className="category-image" 
             src={this.state.banners[this.props.match.params.id]}
           />
+          {/* <h2>{this.state.categories[this.props.match.params.id]}</h2> */}
         </div>
         
         <div className="category-body-container">
