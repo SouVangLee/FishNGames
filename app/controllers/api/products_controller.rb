@@ -1,11 +1,11 @@
 class Api::ProductsController < ApplicationController
   def index
-    @products = Product.with_attached_photos.all;
+    @products = Product.all;
     render "api/products/index"
   end
 
   def show
-    @product = Product.find_by(id: params[:id])
+    @product = Product.with_attached_photos.find_by(id: params[:id])
     render "api/products/show"
   end
 

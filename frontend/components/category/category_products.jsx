@@ -60,13 +60,13 @@ class CategoryProducts extends React.Component{
 
     return (
       <div className="category-container">
-        {/* <h1>{this.state.categories[this.props.match.params.id]} Page!</h1> */}
+        <h1>{this.state.categories[this.props.match.params.id]} Page!</h1>
         <div className="category-banner">
           <img 
             className="category-image" 
             src={this.state.banners[this.props.match.params.id]}
           />
-          {/* <h2>{this.state.categories[this.props.match.params.id]}</h2> */}
+          <h2>{this.state.categories[this.props.match.params.id]}</h2>
         </div>
         
         <div className="category-body-container">

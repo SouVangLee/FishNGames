@@ -1,6 +1,6 @@
 class Api::CategoriesController < ApplicationController
   def index
-    @categories = Category.with_attached_photos.all
+    @categories = Category.with_attached_photos.all 
     render 'api/categories/index'
   end
 
