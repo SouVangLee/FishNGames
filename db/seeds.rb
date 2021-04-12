@@ -43,7 +43,21 @@ ActiveRecord::Base.transaction do
   footwear_category = Category.create!(name: 'Footwear')
 
   category_fishing = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/categories/category_fishing.jpg')
-  fishing_category.photos.
+  fishing_category.photos.attach(io: category_fishing, filename: 'category_fishing.jpg')
+
+  category_boating = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/categories/category_boating.jpg')
+  boating_category.photos.attach(io: category_boating, filename: 'category_boating.jpg')
+
+  category_camping = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/categories/category_camping.jpg')
+  camping_category.photos.attach(io: category_camping, filename: 'category_camping.jpg')
+
+  category_clothing = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/categories/category_clothing.jpg')
+  clothing_category.photos.attach(io: category_clothing, filename: 'category_clothing.jpg')
+
+  category_hunting = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/categories/category_hunting.jpg')
+  hunting_category.photos.attach(io: category_hunting, filename: 'category_hunting.jpg')
+
+
 
 
   Product.delete_all
