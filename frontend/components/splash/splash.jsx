@@ -13,6 +13,7 @@ class Splash extends React.Component {
           <img className="camp-banner" src={window.fishingBanner1}/>
         </div>
         I AM THE SPLASH PAGE!
+        THIS IS A CLONE OF BASS PRO SHOP! CREDITS TO UNSPLASH.COM FOR PICTURES.
       </div>
     );
   }

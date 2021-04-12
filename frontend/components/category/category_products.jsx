@@ -65,7 +65,7 @@ class CategoryProducts extends React.Component{
         
         <div className="category-body-container">
           <section className="search-section">
-            <h2>future filter...</h2>
+            <h2>future filter...fdff</h2>
           </section>
 
           <section className="product-section">

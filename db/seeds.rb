@@ -101,7 +101,7 @@ ActiveRecord::Base.transaction do
     name: 'Red Bobber',
     price: 1.99,
     quantity: 13,
-    description: 'A red bobber that helps indicate when a fish has striked your bait.',
+    description: 'A 1-inch diameter red bobber that helps indicate when a fish has striked your bait.',
     category_id: 1
   )
 
@@ -111,7 +111,7 @@ ActiveRecord::Base.transaction do
   fishing_product_5.photos.attach(io: fishing_5_2, filename: 'fishing_5_2.jpg')
 
   fishing_product_6 = Product.create!(
-    name: 'Mini Mackeral',
+    name: 'Mini Mackeral Lure',
     price: 11.99,
     quantity: 20,
     description: 'Small swimming lure that has the pattern of a mackeral.',
@@ -158,13 +158,55 @@ ActiveRecord::Base.transaction do
     category_id: 2
   )
 
+  boating_1_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/boating/boating_1_1.jpg')
+  product_3.photos.attach(io: boating_1_1, filename: 'boating_1_1.jpg')
+
   product_4 = Product.create!(
+    name: 'Blue Kayak',
+    price: 2000,
+    quantity: 1,
+    description: 'Well balanced kayak that is great for kayak fishing.',
+    category_id: 2
+  )
+
+  boating_2_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/boating/boating_2_1.jpg')
+  product_4.photos.attach(io: boating_2_1, filename: 'boating_2_1.jpg')
+
+  boating_product_3 = Product.create!(
     name: 'Big Boat',
     price: 10000,
     quantity: 1,
-    description: 'Are the waves too big? Need a bigger boat? Buy one today!',
+    description: 'A great boat that is fast',
     category_id: 2
   )
+
+  boating_3_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/boating/boating_3_1.jpg')
+  boating_product_3.photos.attach(io: boating_3_1, filename: 'boating_3_1.jpg')
+
+  boating_product_4 = Product.create!(
+    name: 'Orange Life Jacket',
+    price: 30.00,
+    quantity: 77,
+    description: 'An adult size, orange life jacket.',
+    category_id: 2
+  )
+
+  boating_4_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/boating/boating_4_1.jpg')
+  boating_product_4.photos.attach(io: boating_4_1, filename: 'boating_4_1.jpg')
+
+  boating_product_5 = Product.create!(
+    name: 'Blue Synthetic Paddle',
+    price: 25.78,
+    quantity: 96,
+    description: 'A blue, synthetic paddle used for kayaking.',
+    category_id: 2
+  )
+
+  boating_5_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/boating/boating_5_1.jpg')
+  boating_product_5.photos.attach(io: boating_5_1, filename: 'boating_5_1.jpg')
+
+
+  
 
   product_5 = Product.create!(
     name: 'Glock',
@@ -174,29 +216,65 @@ ActiveRecord::Base.transaction do
     category_id: 3
   )
 
+  shooting_1_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/boating/shooting_1_1.jpg')
+  product_5.photos.attach(io: shooting_1_1, filename: 'shooting_1_1.jpg')
+
   product_6 = Product.create!(
-    name: 'Bullets for Glock',
-    price: 100,
-    quantity: 50,
-    description: "You're gonna need some ammo for that Glock.",
+    name: 'AR 15',
+    price: 2500,
+    quantity: 2,
+    description: "STNGR AR-15 Free Float Handguard HWK",
     category_id: 3
   )
 
+  shooting_2_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/shooting/shooting_2_1.jpg')
+  product.6.photos.attach(io: shooting_2_1, filename: 'shooting_2_1.jpg')
+
+  
+  shooting_product_3 = Product.create!(
+    name: '9mm Ammo',
+    price: 500,
+    quantity: 200,
+    description: '9mm Ammo that can be used for practice shooting targets.',
+    category_id: 3
+  )
+
+  shooting_3_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/shooting/shooting_3_1.jpg')
+  shooting_product_3.photos.attach(io: shooting_3_1, filename: 'shooting_3_1.jpg')
+
+  shooting_product_4 = Product.create!(
+    name: 'Paper target',
+    price: 10,
+    quantity: 200,
+    description: 'Paper targets for the shooting range.',
+    category_id: 3
+  )
+
+  shooting_4_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/shooting/shooting_4_1.jpg')
+  shooting_product_4.photos.attach(io: shooting_4_1, filename: 'shooting_4_1.jpg')
+
+
   product_7 = Product.create!(
-    name: 'Turkey Decoy',
-    price: 99.99,
+    name: 'Hunting Rifle',
+    price: 489.23,
     quantity: 7,
-    description: 'Lifelike look turkey. Great for calling other turkeys neaby.',
+    description: 'A great hunting rifle.',
     category_id: 4
   )
 
+  hunting_1_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/hunting/hunting_1_1.jpg')
+  product_7.photos.attach(io: hunting_1_1, filename: 'hunting_1_1.jpg')
+
   product_8 = Product.create!(
-    name: 'Compound Bow',
-    price: 400,
+    name: 'Binoculars',
+    price: 93.43,
     quantity: 3,
-    description: 'Easy to handle bow that has a lot of power. Great for hunting and easy to use',
+    description: 'Great Binoculars that let you see 3-5x range.',
     category_id: 4
   )
+
+  hunting_2_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/hunting/hunting_2_1.jpg')
+  product_8.photos.attach(io: hunting_2_1, filename: 'hunting_2_1.jpg')
 
   product_9 = Product.create!(
     name: '2-Person Tent',
@@ -205,6 +283,11 @@ ActiveRecord::Base.transaction do
     description: 'Light-weight backpack tent. Easy to carry during camping trips.',
     category_id: 5
   )
+
+  camping_1_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/camping/camping_1_1.jpg')
+  product_9.photos.attach(io: camping_1_1, filename: 'camping_1_1.jpg')
+
+
 
   product_10 = Product.create!(
     name: 'LED headlamps',
