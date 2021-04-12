@@ -388,8 +388,8 @@ ActiveRecord::Base.transaction do
     category_id: 7
   )
 
-  footwear_1_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/footwear/footwear_1_1.jpg')
-  product_14.photos.attach(io: footwear_1_1, filename: 'footwear_1_1.jpg')
+  footwear_2_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/footwear/footwear_2_1.jpg')
+  product_14.photos.attach(io: footwear_2_1, filename: 'footwear_2_1.jpg')
 
   product_13 = Product.create!(
     name: 'Hunter boots',
@@ -400,7 +400,7 @@ ActiveRecord::Base.transaction do
     category_id: 7
   )
 
-  footwear_2_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/footwear/footwear_2_1.jpg')
-  product_13.photos.attach(io: footwear_2_1, filename: 'footwear_2_1.jpg')
+  footwear_1_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/footwear/footwear_1_1.jpg')
+  product_13.photos.attach(io: footwear_1_1, filename: 'footwear_1_1.jpg')
 
 end
