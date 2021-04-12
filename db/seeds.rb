@@ -55,11 +55,6 @@ ActiveRecord::Base.transaction do
     category_id: 1
   )
 
-  fishing_1_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_1.jpg')
-  fishing_1_2 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_2.jpg')
-  product_1.photos.attach(io: fishing_1_1, filename: 'fishing_1.jpg')
-  product_1.photos.attach(io: fishing_1_2, filename: 'fishing_2.jpg')
-
   product_2 = Product.create!(
     name: 'Fly-fishing Trout Rod',
     price: 50.00,
@@ -68,10 +63,6 @@ ActiveRecord::Base.transaction do
     category_id: 1
   )
 
-  fishing_2_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_2_1.jpg')
-  fishing_2_2 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_2_2.jpg')
-  product_2.photos.attach(io: fishing_2_1, filename: 'fishing_2_1.jpg')
-  product_2.photos.attach(io: fishing_2_1, filename: 'fishing_2_1.jpg')
 
   fishing_product_3 = Product.create!(
     name: 'Swimming Fish Lure',
@@ -81,8 +72,6 @@ ActiveRecord::Base.transaction do
     category_id: 1
   )
 
-  fishing_3 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_3.jpg')
-  fishing_product_3.photos.attach(io: fishing_3, filename: 'fishing_3.jpg')
 
   fishing_product_4 = Product.create!(
     name: 'Green Pumpkin Senko',
@@ -91,10 +80,6 @@ ActiveRecord::Base.transaction do
     description: 'A plastic worm-like bait that is great for all fish.',
     category_id: 1
   )
-
-  fishing_4_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_4_1.jpg')
-  fishing_product_4.photos.attach(io: fishing_4_1, filename: 'fishing_4_1.jpg')
-
   fishing_product_5 = Product.create!(
     name: 'Red Bobber',
     price: 1.99,
@@ -102,11 +87,6 @@ ActiveRecord::Base.transaction do
     description: 'A red bobber that helps indicate when a fish has striked your bait.',
     category_id: 1
   )
-
-  fishing_5_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_5_1.jpg')
-  fishing_5_2 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_5_2.jpg')
-  fishing_product_5.photos.attach(io: fishing_5_1, filename: 'fishing_5_1.jpg')
-  fishing_product_5.photos.attach(io: fishing_5_2, filename: 'fishing_5_2.jpg')
 
   fishing_product_6 = Product.create!(
     name: 'Mini Mackeral',
@@ -116,8 +96,6 @@ ActiveRecord::Base.transaction do
     category_id: 1
   )
 
-  fishing_6_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_6_1.jpg')
-  fishing_product_6.photos.attach(io: fishing_6_1, filename: 'fishing_6_1.jpg')
  
   fishing_product_7 = Product.create!(
     name: 'Yellow-Orange Mini Spinner',
@@ -126,9 +104,6 @@ ActiveRecord::Base.transaction do
     description: 'A mini spinner that is great for river trout fishing on fly fishing rods.',
     category_id: 1
   )
-  
-  fishing_7_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_7_1.jpg')
-  fishing_product_7.photos.attach(io: fishing_7_1, filename: 'fishing_7_1.jpg')
 
   fishing_product_8 = Product.create!(
     name: 'Black and Copper Vertical Jig',
@@ -137,9 +112,6 @@ ActiveRecord::Base.transaction do
     description: 'A heavy vertical jig that is great for deep waters in the ocean.',
     category_id: 1
   )
-
-  fishing_8_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_8_1.jpg')
-  fishing_product_8.photos.attach(io: fishing_8_1, filename: 'fishing_8_1.jpg')
 
 
   #
