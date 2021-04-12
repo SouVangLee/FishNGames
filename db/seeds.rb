@@ -35,20 +35,15 @@ ActiveRecord::Base.transaction do
 
   Category.delete_all
   fishing_category = Category.create!(name: 'Fishing')
-
   boating_category = Category.create!(name: 'Boating')
-
   shooting_category = Category.create!(name: 'Shooting')
-
   hunting_category = Category.create!(name: 'Hunting')
-
   camping_category = Category.create!(name: 'Camping')
-
   clothing_category = Category.create!(name: 'Clothing')
-
   footwear_category = Category.create!(name: 'Footwear')
 
   Product.delete_all
+
   product_1 = Product.create!(
     name: 'Ultra-Light Trout Rod',
     price: 40.00,
@@ -60,11 +55,10 @@ ActiveRecord::Base.transaction do
     category_id: 1
   )
 
-  fishing1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing_1.jpg')
-  fishing2 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing_2.jpg')
-
-  product_1.photos.attach(io: fishing1, filename: 'fishing_1.jpg')
-  product_1.photos.attach(io: fishing2, filename: 'fishing_2.jpg')
+  fishing_1_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_1.jpg')
+  fishing_1_2 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_2.jpg')
+  product_1.photos.attach(io: fishing_1_1, filename: 'fishing_1.jpg')
+  product_1.photos.attach(io: fishing_1_2, filename: 'fishing_2.jpg')
 
   product_2 = Product.create!(
     name: 'Fly-fishing Trout Rod',
@@ -73,6 +67,85 @@ ActiveRecord::Base.transaction do
     description: 'Are regular fishing rods too easy? Need a challenge? Learn how to fly fish!',
     category_id: 1
   )
+
+  fishing_2_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_2_1.jpg')
+  fishing_2_2 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_2_2.jpg')
+  product_2.photos.attach(io: fishing_2_1, filename: 'fishing_2_1.jpg')
+  product_2.photos.attach(io: fishing_2_1, filename: 'fishing_2_2.jpg')
+
+  fishing_product_3 = Product.create!(
+    name: 'Swimming Fish Lure',
+    price: 9.99,
+    quantity: 50,
+    description: 'A 6 inch swimming lure that mimicks how bait fish swim!',
+    category_id: 1
+  )
+
+  fishing_3 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_3.jpg')
+  fishing_product_3.photos.attach(io: fishing_3, filename: 'fishing_3.jpg')
+
+  fishing_product_4 = Product.create!(
+    name: 'Green Pumpkin Senko',
+    price: 3.99,
+    quantity: 100,
+    description: 'A plastic worm-like bait that is great for all fish.',
+    category_id: 1
+  )
+
+  fishing_4_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_4_1.jpg')
+  fishing_product_4.photos.attach(io: fishing_4_1, filename: 'fishing_4_1.jpg')
+
+  fishing_product_5 = Product.create!(
+    name: 'Red Bobber',
+    price: 1.99,
+    quantity: 13,
+    description: 'A red bobber that helps indicate when a fish has striked your bait.',
+    category_id: 1
+  )
+
+  fishing_5_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_5_1.jpg')
+  fishing_5_2 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_5_2.jpg')
+  fishing_product_5.photos.attach(io: fishing_5_1, filename: 'fishing_5_1.jpg')
+  fishing_product_5.photos.attach(io: fishing_5_2, filename: 'fishing_5_2.jpg')
+
+  fishing_product_6 = Product.create!(
+    name: 'Mini Mackeral',
+    price: 11.99,
+    quantity: 20,
+    description: 'Small swimming lure that has the pattern of a mackeral.',
+    category_id: 1
+  )
+
+  fishing_6_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_6_1.jpg')
+  fishing_product_6.photos.attach(io: fishing_6_1, filename: 'fishing_6_1.jpg')
+ 
+  fishing_product_7 = Product.create!(
+    name: 'Yellow-Orange Mini Spinner',
+    price: 3.87,
+    quantity: 18,
+    description: 'A mini spinner that is great for river trout fishing on fly fishing rods.',
+    category_id: 1
+  )
+  
+  fishing_7_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_7_1.jpg')
+  fishing_product_7.photos.attach(io: fishing_7_1, filename: 'fishing_7_1.jpg')
+
+  fishing_product_8 = Product.create!(
+    name: 'Black and Copper Vertical Jig',
+    price: 15.75,
+    quantity: 64,
+    description: 'A heavy vertical jig that is great for deep waters in the ocean.',
+    category_id: 1
+  )
+
+  fishing_8_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_8_1.jpg')
+  fishing_product_8.photos.attach(io: fishing_8_1, filename: 'fishing_8_1.jpg')
+
+
+  #
+  #
+  #
+  #
 
   product_3 = Product.create!(
     name: 'Little Boat',
