@@ -22,7 +22,6 @@ class CategoryProducts extends React.Component{
       }
     }
 
-    this.currencyPrice = this.currencyPrice.bind(this);
   }
 
 
@@ -34,18 +33,6 @@ class CategoryProducts extends React.Component{
     if (prevProps.match.params.id !== this.props.match.params.id) {
       this.props.fetchCategoryProducts(this.props.match.params.id)
     }
-  }
-
-  handleClick(id) {
-
-  }
-
-  currencyPrice(product) {
-    return new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 2
-  }).format(product.price);
   }
 
 
@@ -63,10 +50,8 @@ class CategoryProducts extends React.Component{
             }).format(product.price)}
           </h3>
         </Link>
-
       </div>
     ));
-    console.log("PROPS", this.props);
 
     return (
       <div className="category-container">
@@ -80,7 +65,7 @@ class CategoryProducts extends React.Component{
         
         <div className="category-body-container">
           <section className="search-section">
-
+            <h2>future filter...</h2>
           </section>
 
           <section className="product-section">
