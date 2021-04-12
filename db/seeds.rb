@@ -42,6 +42,10 @@ ActiveRecord::Base.transaction do
   clothing_category = Category.create!(name: 'Clothing')
   footwear_category = Category.create!(name: 'Footwear')
 
+  category_fishing = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/categories/category_fishing.jpg')
+  fishing_category.photos.
+
+
   Product.delete_all
 
   product_1 = Product.create!(
