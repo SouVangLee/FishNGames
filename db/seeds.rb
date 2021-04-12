@@ -328,7 +328,7 @@ ActiveRecord::Base.transaction do
     price: 15.99,
     quantity: 8,
     description: 'Portable mini camping stove great for taking on camping trips.',
-    category_id: 6
+    category_id: 5
   )
 
   camping_3_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/camping/camping_3_1.jpg')
@@ -339,7 +339,7 @@ ActiveRecord::Base.transaction do
     price: 20.99,
     quantity: 8,
     description: 'A big blue, comfortable, sleeping bag.',
-    category_id: 6
+    category_id: 5
   )
 
   camping_4_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/camping/camping_4_1.jpg')
@@ -350,7 +350,7 @@ ActiveRecord::Base.transaction do
     price: 89.99,
     quantity: 5,
     description: 'A big tent that can fit up to 8 people.',
-    category_id: 6
+    category_id: 5
   )
 
   camping_5_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/camping/camping_5_1.jpg')
