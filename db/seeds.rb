@@ -276,6 +276,29 @@ ActiveRecord::Base.transaction do
   hunting_2_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/hunting/hunting_2_1.jpg')
   product_8.photos.attach(io: hunting_2_1, filename: 'hunting_2_1.jpg')
 
+  hunting_product_3 = Product.create!(
+    name: 'Compound Bow',
+    price: 125.43,
+    quantity: 3,
+    description: 'A powerful compound bow that is great for hunting small game.',
+    category_id: 4
+  )
+
+  hunting_3_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/hunting/hunting_3_1.jpg')
+  hunting_product_3.photos.attach(io: hunting_3_1, filename: 'hunting_3_1.jpg')
+
+  hunting_product_4 = Product.create!(
+    name: 'Turkey Decoy',
+    price: 42.67,
+    quantity: 3,
+    description: 'A turkey decoy used to attract other nearby turkeys.',
+    category_id: 4
+  )
+
+  hunting_4_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/hunting/hunting_4_1.jpg')
+  hunting_product_4.photos.attach(io: hunting_4_1, filename: 'hunting_4_1.jpg')
+
+
   product_9 = Product.create!(
     name: '2-Person Tent',
     price: 80.00,
@@ -297,23 +320,67 @@ ActiveRecord::Base.transaction do
     category_id: 5
   )
 
+  camping_2_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/camping/camping_2_1.jpg')
+  product_10.photos.attach(io: camping_2_1, filename: 'camping_2_1.jpg')
+
+  camping_product_3 = Product.create!(
+    name: 'Portable Mini Camping Stove',
+    price: 15.99,
+    quantity: 8,
+    description: 'Portable mini camping stove great for taking on camping trips.',
+    category_id: 6
+  )
+
+  camping_3_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/camping/camping_3_1.jpg')
+  camping_product_3.photos.attach(io: camping_3_1, filename: 'camping_3_1.jpg')
+
+  camping_product_4 = Product.create!(
+    name: 'Blue Comfort Sleeping Bag',
+    price: 20.99,
+    quantity: 8,
+    description: 'A big blue, comfortable, sleeping bag.',
+    category_id: 6
+  )
+
+  camping_4_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/camping/camping_4_1.jpg')
+  camping_product_4.photos.attach(io: camping_4_1, filename: 'camping_4_1.jpg')
+  
+  camping_product_5 = Product.create!(
+    name: '8 Person Tent',
+    price: 89.99,
+    quantity: 5,
+    description: 'A big tent that can fit up to 8 people.',
+    category_id: 6
+  )
+
+  camping_5_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/camping/camping_5_1.jpg')
+  camping_product_5.photos.attach(io: camping_5_1, filename: 'camping_5_1.jpg')
+
+
   product_11 = Product.create!(
-    name: 'Canvas hooded jacket',
+    name: 'Comfortable Jacket',
     price: 67.99,
     quantity: 8,
     description: 'Warm and comfortable jacket',
     category_id: 6
   )
 
+  clothing_1_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/clothing/clothing_1_1.jpg')
+  product_11.photos.attach(io: clothing_1_1, filename: 'clothing_1_1.jpg')
+  
+
   product_12 = Product.create!(
-    name: 'Padded Turkey Vest',
+    name: 'Camo Hunting Pants',
     price: 85.99,
     quantity: 11,
-    description: 'Camouflage yourself in the bushes while hunting. Has many pockets to carry many things.',
+    description: 'Camouflage yourself in the bushes while hunting.',
     category_id: 6
   )
 
-  product_13 = Product.create!(
+  clothing_2_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/clothing/clothing_2_1.jpg')
+  product_12.photos.attach(io: clothing_2_1, filename: 'clothing_1_1.jpg')
+
+  product_14 = Product.create!(
     name: 'Light-weight fishing shoe ',
     price: 95.00,
     quantity: 2,
@@ -321,7 +388,10 @@ ActiveRecord::Base.transaction do
     category_id: 7
   )
 
-  product_14 = Product.create!(
+  footwear_1_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/footwear/footwear_1_1.jpg')
+  product_14.photos.attach(io: footwear_1_1, filename: 'footwear_1_1.jpg')
+
+  product_13 = Product.create!(
     name: 'Hunter boots',
     price: 125.00,
     quantity: 3,
@@ -329,4 +399,8 @@ ActiveRecord::Base.transaction do
     They have thick soles and are comfortable.'),
     category_id: 7
   )
+
+  footwear_2_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/footwear/footwear_2_1.jpg')
+  product_13.photos.attach(io: footwear_2_1, filename: 'footwear_2_1.jpg')
+
 end
