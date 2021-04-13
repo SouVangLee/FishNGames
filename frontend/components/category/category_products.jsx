@@ -60,7 +60,6 @@ class CategoryProducts extends React.Component{
 
     return (
       <div className="category-container">
-        <h1>{this.state.categories[this.props.match.params.id]} Page!</h1>
         <div className="category-banner">
           <img 
             className="category-image" 
