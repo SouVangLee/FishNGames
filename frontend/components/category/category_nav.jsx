@@ -11,7 +11,7 @@ class CategoryNav extends React.Component {
   }
 
   render() {
-    console.log("IM IN THE CATEGORY NAV", this.props);
+    // console.log("IM IN THE CATEGORY NAV", this.props);
     const categoryList = this.props.categories.map(category => (
       <Link 
         key={`${category.name}-${category.id}`}
