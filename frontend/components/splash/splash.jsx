@@ -27,36 +27,36 @@ class Splash extends React.Component {
       return null;
     } else {
       
-      const arrItems = arrID.map(id => (
-        <Link 
-          className="hot-products-link" 
-          to={`/products/${id + 1}`}
-          key={id + 1}
-        >
-          <img src={this.props.products[id].photoUrls[0]}/>
-          <h2>{this.props.products[id].name}</h2>
-          <h3>
-              {new Intl.NumberFormat('en-US', {
-                style: 'currency',
-                currency: 'USD',
-                minimumFractionDigits: 2
-              }).format(this.props.products[id].price)}
-          </h3>
-        </Link>
-      ));
+      // const arrItems = arrID.map(id => (
+      //   <Link 
+      //     className="hot-products-link" 
+      //     to={`/products/${id + 1}`}
+      //     key={id + 1}
+      //   >
+      //     <img src={this.props.products[id].photoUrls[0]}/>
+      //     <h2>{this.props.products[id].name}</h2>
+      //     <h3>
+      //         {new Intl.NumberFormat('en-US', {
+      //           style: 'currency',
+      //           currency: 'USD',
+      //           minimumFractionDigits: 2
+      //         }).format(this.props.products[id].price)}
+      //     </h3>
+      //   </Link>
+      // ));
 
       const CATEGORY_ID_LIST = [1, 2, 4, 5, 6]
 
-      const categoryList = CATEGORY_ID_LIST.map(id => (
-        <Link
-          className="splash-category-name"
-          to={`/categories/${id}`}
-          key={id}
-        >
-          <img src={ this.props.categories[id].photoUrls[0] }/>
-          <h2 >{this.props.categories[id].name}</h2>
-        </Link>
-      ));
+      // const categoryList = CATEGORY_ID_LIST.map(id => (
+      //   <Link
+      //     className="splash-category-name"
+      //     to={`/categories/${id}`}
+      //     key={id}
+      //   >
+      //     <img src={ this.props.categories[id].photoUrls[0] }/>
+      //     <h2 >{this.props.categories[id].name}</h2>
+      //   </Link>
+      // ));
 
       return(
         <div className="splash-page">
@@ -66,12 +66,12 @@ class Splash extends React.Component {
           <h2 className="hot-items-h2"> HOT THIS WEEK </h2>
 
           <div className="hot-items-container">
-            {arrItems}
+            {/* {arrItems} */}
           </div>
 
           <h2 className="category-h2"> SHOP BY CATEGORY </h2>
           <div className="bottom-category-container">
-            {categoryList}
+            {/* {categoryList} */}
           </div>
           I AM THE SPLASH PAGE!
           THIS IS A CLONE OF BASS PRO SHOP! CREDITS TO UNSPLASH, AMAZON, 
