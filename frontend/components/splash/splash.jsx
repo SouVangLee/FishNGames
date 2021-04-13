@@ -8,20 +8,24 @@ class Splash extends React.Component {
 
   componentDidMount() {
     this.props.fetchAllProducts();
+    this.props.fetchAllCategories();
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevProps.match.params.id !== this.props.match.params.id) {
+    if (prevProps.match.path !== this.props.match.path) {
       this.props.fetchAllProducts();
+      this.props.fetchAllCategories();
     }
   }
 
 
   render() {
+    console.log("SPLASH PROPS", this.props);
+
     const arrID = [1, 28, 3, 19]; //23, 29
 
     if (!this.props.products.length || 
-        !Object.keys(this.props.categories)) {
+        !Object.values(this.props.categories).length) {
       return null;
     } else {
       
