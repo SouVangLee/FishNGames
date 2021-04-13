@@ -47,7 +47,7 @@ class Splash extends React.Component {
           key={id}
         >
           <img src={ this.props.categories[id].photoUrls[0] }/>
-          <h2 >{this.props.categories[id].name}</h2>
+          <h2>{this.props.categories[id].name}</h2>
         </Link>
       ));
 
