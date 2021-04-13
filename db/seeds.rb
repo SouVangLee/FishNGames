@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri'
 
-ActiveRecord::Base.transaction do
+# ActiveRecord::Base.transaction do
   User.delete_all
   user1 = User.create!(
     name: 'SuperAdmin',
@@ -34,13 +34,13 @@ ActiveRecord::Base.transaction do
   )
 
   Category.delete_all
-  fishing_category = Category.create!(name: 'Fishing')
-  boating_category = Category.create!(name: 'Boating')
-  shooting_category = Category.create!(name: 'Shooting')
-  hunting_category = Category.create!(name: 'Hunting')
-  camping_category = Category.create!(name: 'Camping')
-  clothing_category = Category.create!(name: 'Clothing')
-  footwear_category = Category.create!(name: 'Footwear')
+  fishing_category = Category.create!(name: 'fishing')
+  boating_category = Category.create!(name: 'foating')
+  shooting_category = Category.create!(name: 'shooting')
+  hunting_category = Category.create!(name: 'hunting')
+  camping_category = Category.create!(name: 'camping')
+  clothing_category = Category.create!(name: 'clothing')
+  footwear_category = Category.create!(name: 'footwear')
 
   category_fishing = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/categories/category_fishing.jpg')
   fishing_category.photos.attach(io: category_fishing, filename: 'category_fishing.jpg')
@@ -421,4 +421,4 @@ ActiveRecord::Base.transaction do
   footwear_1_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/footwear/footwear_1_1.jpg')
   product_13.photos.attach(io: footwear_1_1, filename: 'footwear_1_1.jpg')
 
-end
+# end

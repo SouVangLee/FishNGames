@@ -8,13 +8,13 @@ class CategoryProducts extends React.Component{
 
     this.state = {
       categories: {
-        1: "Fishing",
-        2: "Boating",
-        3: "Shooting",
-        4: "Hunting",
-        5: "Camping",
-        6: "Clothing",
-        7: "Footwear"
+        1: "fishing",
+        2: "boating",
+        3: "shooting",
+        4: "hunting",
+        5: "camping",
+        6: "clothing",
+        7: "footwear"
       },
       banners: {
         1: window.fishingLeaderboard,
