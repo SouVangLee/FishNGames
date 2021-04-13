@@ -9,7 +9,8 @@ const mSTP = state => ({
 });
 
 const mDTP = dispatch => ({
-  fetchAllProducts: () => dispatch(fetchAllProducts())
+  fetchAllProducts: () => dispatch(fetchAllProducts()),
+  fetchAllCategories: () => dispatch(fetchAllCategories())
 });
 
 export default connect(mSTP, mDTP)(Splash);
