@@ -35,7 +35,7 @@ ActiveRecord::Base.transaction do
 
   Category.delete_all
   fishing_category = Category.create!(name: 'fishing')
-  boating_category = Category.create!(name: 'foating')
+  boating_category = Category.create!(name: 'boating')
   shooting_category = Category.create!(name: 'shooting')
   hunting_category = Category.create!(name: 'hunting')
   camping_category = Category.create!(name: 'camping')

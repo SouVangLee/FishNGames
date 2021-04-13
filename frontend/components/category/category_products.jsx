@@ -22,6 +22,7 @@ class CategoryProducts extends React.Component{
 
   componentDidMount() {
     this.props.fetchCategoryProducts(this.props.match.params.id);
+    window.scrollTo(0, 0);
   }
 
   componentDidUpdate(prevProps, prevState) {

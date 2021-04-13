@@ -9,6 +9,7 @@ class Splash extends React.Component {
   componentDidMount() {
     this.props.fetchAllProducts();
     this.props.fetchAllCategories();
+    window.scrollTo(0, 0);
   }
 
   render() {

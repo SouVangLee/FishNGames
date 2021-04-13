@@ -10,6 +10,7 @@ class Product extends React.Component{
   componentDidMount() {
     this.props.fetchAllProducts();
     this.props.fetchProduct(this.props.match.params.id);
+    window.scrollTo(0, 0);
   }
 
   render() {
