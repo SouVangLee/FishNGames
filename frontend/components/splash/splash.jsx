@@ -11,12 +11,12 @@ class Splash extends React.Component {
     this.props.fetchAllCategories();
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (prevProps.match.path !== this.props.match.path) {
-      this.props.fetchAllProducts();
-      this.props.fetchAllCategories();
-    }
-  }
+  // componentDidUpdate(prevProps, prevState) {
+  //   if (prevProps.match.path !== this.props.match.path) {
+  //     this.props.fetchAllProducts();
+  //     this.props.fetchAllCategories();
+  //   }
+  // }
 
 
   render() {
