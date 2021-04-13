@@ -8,7 +8,8 @@ class Product extends React.Component{
   }
 
   componentDidMount() {
-    this.props.fetchProduct(this.props.match.params.id)
+    this.props.fetchAllProducts();
+    this.props.fetchProduct(this.props.match.params.id);
   }
 
   render() {

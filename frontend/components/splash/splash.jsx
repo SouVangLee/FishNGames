@@ -15,15 +15,15 @@ class Splash extends React.Component {
     const arrID = [1, 28, 3, 19]; //23, 29
 
     if (!this.props.products.length || 
-        Object.keys(this.props.categories) === 0) {
+        !Object.keys(this.props.categories)) {
       return null;
     } else {
       
       const arrItems = arrID.map(id => (
         <Link 
           className="hot-products-link" 
-          to={`/products/${id}`}
-          key={id}
+          to={`/products/${id + 1}`}
+          key={id + 1}
         >
           <img src={this.props.products[id].photoUrls[0]}/>
           <h2>{this.props.products[id].name}</h2>
