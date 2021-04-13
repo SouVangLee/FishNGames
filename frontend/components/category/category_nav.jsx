@@ -8,7 +8,7 @@ class CategoryNav extends React.Component {
 
   componentDidMount() {
     this.props.fetchAllCategories();
-    this.props.fetchAllProducts();
+    // this.props.fetchAllProducts();
   }
 
   render() {

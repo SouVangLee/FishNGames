@@ -6,6 +6,11 @@ class Splash extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.fetchAllProducts();
+    this.props.fetchAllCategories();
+  }
+
   render() {
     console.log("SPLASH PROPS", this.props);
     const arrID = [1, 28, 3, 19]; //23, 29
