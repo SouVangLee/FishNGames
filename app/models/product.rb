@@ -14,7 +14,7 @@
 class Product < ApplicationRecord
   validates :name, :price, :quantity, :description, :category_id, presence: true
 
-  belongs_to :category,
+  belongs_to :category, optional: true
     foreign_key: :category_id,
     class_name: "Category"
 

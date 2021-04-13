@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri'
 
-# ActiveRecord::Base.transaction do
+ActiveRecord::Base.transaction do
   User.delete_all
   user1 = User.create!(
     name: 'SuperAdmin',
@@ -421,4 +421,4 @@ require 'open-uri'
   footwear_1_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/footwear/footwear_1_1.jpg')
   product_13.photos.attach(io: footwear_1_1, filename: 'footwear_1_1.jpg')
 
-# end
+end
