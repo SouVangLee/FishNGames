@@ -6,10 +6,10 @@ class Splash extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-    this.props.fetchAllProducts();
-    this.props.fetchAllCategories();
-  }
+  // componentDidMount() {
+  //   this.props.fetchAllProducts();
+  //   this.props.fetchAllCategories();
+  // }
 
   // componentDidUpdate(prevProps, prevState) {
   //   if (prevProps.match.path !== this.props.match.path) {
@@ -20,12 +20,13 @@ class Splash extends React.Component {
 
 
   render() {
+    // console.log("SPLASH PROPS", this.props);
     const arrID = [1, 28, 3, 19]; //23, 29
 
-    if (!this.props.products.length || 
-        !Object.values(this.props.categories).length) {
-      return null;
-    } else {
+    // if (!this.props.products.length || 
+    //     !Object.values(this.props.categories).length) {
+    //   return null;
+    // } else {
       
       // const arrItems = arrID.map(id => (
       //   <Link 
@@ -45,7 +46,7 @@ class Splash extends React.Component {
       //   </Link>
       // ));
 
-      const CATEGORY_ID_LIST = [1, 2, 4, 5, 6]
+      // const CATEGORY_ID_LIST = [1, 2, 4, 5, 6]
 
       // const categoryList = CATEGORY_ID_LIST.map(id => (
       //   <Link
@@ -79,7 +80,7 @@ class Splash extends React.Component {
         </div>
       );
     }
-  }
+  // }
 }
 
 export default Splash;
