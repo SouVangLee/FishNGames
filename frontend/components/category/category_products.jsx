@@ -1,5 +1,4 @@
 import React from 'react';
-import { fetchAllCategories } from '../../actions/category_actions';
 import { Link } from 'react-router-dom';
 
 class CategoryProducts extends React.Component{
@@ -7,15 +6,6 @@ class CategoryProducts extends React.Component{
     super(props);
 
     this.state = {
-      categories: {
-        1: "fishing",
-        2: "boating",
-        3: "shooting",
-        4: "hunting",
-        5: "camping",
-        6: "clothing",
-        7: "footwear"
-      },
       banners: {
         1: window.fishingLeaderboard,
         2: window.boatingLeaderboard,
@@ -42,6 +32,8 @@ class CategoryProducts extends React.Component{
 
 
   render() {
+    console.log("IM IN THE CATEGORY PRODUCTS", this.props);
+
     const productList = this.props.products.map(product => (
       <div className="product-info-link" key={`${product.id}`}>
         <Link className="product-link" to={`/products/${product.id}`}>
@@ -65,7 +57,6 @@ class CategoryProducts extends React.Component{
             className="category-image" 
             src={this.state.banners[this.props.match.params.id]}
           />
-          <h2>{this.state.categories[this.props.match.params.id]}</h2>
         </div>
         
         <div className="category-body-container">
@@ -80,8 +71,6 @@ class CategoryProducts extends React.Component{
       </div>
     )
   }
-
-
 }
 
 export default CategoryProducts;
