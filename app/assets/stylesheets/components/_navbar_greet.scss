@@ -10,6 +10,13 @@
 .login-logo {
   width: 30px;
   height: 30px;
+  background: image_url('user_login_icon.png');
+  background-size: 30px, 30px;
+}
+
+.login-logo:hover {
+  background: image_url('user_login_teal.png');
+  background-size: 30px 30px;
 }
 
 .login-container:hover {

@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import configureStore from "./store/store";
 import Root from "./components/root"
+import { fetchAllProducts, fetchProduct } from './actions/product_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
@@ -18,6 +19,11 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore();
   }
   window.preloadedState = preloadedState;
+
+  //testing
+  window.fetchAllProducts = fetchAllProducts;
+  window.fetchProduct = fetchProduct;
+  window.store = store;
 
   
   ReactDOM.render(<Root store={store}/>, root);

@@ -5,7 +5,7 @@ class Api::ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find_by(id: params[:id])
+    @product = Product.with_attached_photos.find_by(id: params[:id])
     render "api/products/show"
   end
 
@@ -43,6 +43,6 @@ class Api::ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :price, :quantity, :description, :category_id);
+    params.require(:product).permit(:name, :price, :quantity, :description, :category_id, photos: []);
   end
 end

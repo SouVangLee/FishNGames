@@ -1,6 +1,6 @@
 class Api::CategoriesController < ApplicationController
   def index
-    @categories = Category.all
+    @categories = Category.with_attached_photos.all 
     render 'api/categories/index'
   end
 
@@ -30,6 +30,6 @@ class Api::CategoriesController < ApplicationController
 
   private
   def category_params
-    params.require(:category).permit(:name)
+    params.require(:category).permit(:name, photos: [])
   end
 end

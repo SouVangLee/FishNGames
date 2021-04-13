@@ -17,4 +17,6 @@ class Product < ApplicationRecord
   belongs_to :category,
     foreign_key: :category_id,
     class_name: "Category"
+
+  has_many_attached :photos
 end

@@ -1,0 +1,108 @@
+
+.splash-page {
+  height: 2000px;
+}
+
+.banner-container {
+  width: 100%;
+  height: 500px;
+}
+
+.banner-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hot-items-h2, .category-h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  color: #ba6228;
+  width: 100%;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.hot-items-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 250px;
+  margin-bottom: 50px;
+}
+
+.hot-products-link {
+  width: 300px;
+  height: 100%;
+  border: 2px solid teal;
+  margin-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px
+}
+
+.hot-products-link img {
+  width: 100%;
+  height: 70%;
+  object-fit: scale-down;
+}
+
+.hot-products-link *, .bottom-category-container * {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.hot-products-link h2 {
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.hot-products-link h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: black;
+  margin-top: 10px;
+  text-align: center;
+}
+
+
+.bottom-category-container {
+  width: 100%;
+  height: 300px;
+  // border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.splash-category-name {
+  // border: 2px solid red;
+  width: 250px;
+  height: 100%;
+  margin-right: 25px;
+}
+
+.splash-category-name img {
+  width: 100%;
+  height: 90%;
+  object-fit: cover;
+}
+
+.splash-category-name h2 {
+  width: 100%;
+  height: 10%;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #ba6228;
+}
+
+.splash-category-name h2:hover {
+  color:teal;
+}

@@ -8,6 +8,8 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
 
+    <%= favicon_link_tag asset_path('logo_favicon.png') %>
+
     <script type="text/javascript">
       window.userLoginIcon = "<%= image_url('user_login_icon.png') %>"
       window.cartBlackIcon = "<%= image_url('cart_black.png') %>"
@@ -15,6 +17,17 @@
       window.error_404 = "<%= image_url('error_404.jpg') %>"
       window.logoIcon = "<%= image_url('logo.jpg') %>"
       window.fishingBanner1 = "<%= image_url('fishing_banner_1.jpg') %>"
+      
+      window.bottom_fishing = "<%= image_url('category_fishing.jpg') %>"
+
+      window.fishingLeaderboard = "<%= image_url('Fishing_Leaderboard.jpg') %>"
+      window.boatingLeaderboard = "<%= image_url('Boating_Leaderboard.jpg') %>"
+      window.shootingLeaderboard = "<%= image_url('Shooting_Leaderboard.jpg') %>"
+      window.huntingLeaderboard = "<%= image_url('Hunting_Leaderboard.jpg') %>"
+      window.clothingLeaderboard = "<%= image_url('Clothing_Leaderboard.jpg') %>"
+      window.footwearLeaderboard = "<%= image_url('Footwear_Leaderboard.jpg') %>"
+      window.campingLeaderboard = "<%= image_url('Camping_Leaderboard.jpg') %>"
+
     </script>
   </head>
 

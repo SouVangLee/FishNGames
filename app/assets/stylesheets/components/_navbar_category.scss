@@ -1,18 +1,20 @@
 .category-list {
-  width: 50%;
+  width: 45%;
   display: flex;
-  justify-content: space-around;
   align-items: center;
+  padding: 10px;
+  margin-bottom: -7px;
 }
 
 .category-list a {
-  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   font-weight: 600;
-  position: relative;
+  margin-right: 15px;
+  color: #ba6228;
 }
 
 .category-list a:hover {
-  color: none;
+  color: teal;
 }
 
