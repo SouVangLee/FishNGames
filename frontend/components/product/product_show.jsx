@@ -13,7 +13,6 @@ class Product extends React.Component{
   }
 
   render() {
-    console.log("PROPS IN PRODUCT SHOW", this.props);
     if (!this.props.product) {
       return null;
     } else {
