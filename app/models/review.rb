@@ -11,15 +11,15 @@
 #  updated_at  :datetime         not null
 #
 class Review < ApplicationRecord
-  # validates :reviewer_id, :product_id, :rating, :comment, presence: true
-  # validates :rating, inclusion: { in: [1, 2, 3, 4, 5], message: 'Please choose a rating between 1 and 5.'}
+  validates :reviewer_id, :product_id, :rating, :comment, presence: true
+  validates :rating, inclusion: { in: [1, 2, 3, 4, 5], message: 'Please choose a rating between 1 and 5.'}
 
-  # belongs_to :product,
-  #   foreign_key: :product_id,
-  #   class_name: "Product"
+  belongs_to :product,
+    foreign_key: :product_id,
+    class_name: "Product"
 
-  # belongs_to :user,
-  #   foreign_key: :reviewer_id,
-  #   class_name: "User"
+  belongs_to :user,
+    foreign_key: :reviewer_id,
+    class_name: "User"
 
 end
