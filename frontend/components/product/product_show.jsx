@@ -15,7 +15,7 @@ class Product extends React.Component{
   }
 
   render() {
-    // console.log("PRODUCT SHOW", this.props);
+    console.log("PRODUCT SHOW", this.props);
     if (!this.props.product) {
       return null;
     } else {
@@ -55,7 +55,7 @@ class Product extends React.Component{
         </div>
 
         <div>REVIEWS LATER ON</div>
-        <ReviewFormContainer product_id={product.id}/>
+        <ReviewFormContainer product_id={product.id} />
         {/* <ReviewContainer product_id={product.id}/> */}
       </div>
     );
