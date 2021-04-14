@@ -21,7 +21,8 @@ const receiveErrors = errors => ({
 });
 
 const removeReview = reviewId => ({
-  type: REMOVE_REVIEW
+  type: REMOVE_REVIEW,
+  reviewId
 });
 
 export const fetchAllReviews = () => dispatch => (
@@ -48,7 +49,7 @@ export const updateReview = review => dispatch => (
     )
 );
 
-export const removeReview = reviewId => dispatch => (
+export const deleteReview = reviewId => dispatch => (
   ReviewApiUtil.deleteReview(reviewId)
     .then(() => dispatch(removeReview(reviewId)))
 );
