@@ -2,34 +2,22 @@ import React from 'react';
 
 class ReviewForm extends React.Component{
   constructor(props){
-    super(props)
-    console.log("PROPS CONSTRUCTOR", this.props)
-
+    super(props);
+    
     this.state = {
       reviewer_id: this.props.currentUser,
       comment: '',
       rating: 5,
       product_id: this.props.product_id
-    }
+    };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
-  
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log("INSIDE HANDLE SUBMITE", this.props)
     this.props.createReview(this.state)
   }
-
-  // renderErrors() {
-  //   return (
-  //     <u className="review-errors-list">
-  //       {this.props.errors.map(error, i) => (
-  //         <li key={i}>{error}</li>
-  //       )}
-  //     </u>
-  //   )
-  // }
-  
 
   handleInput(field) {
     return (e) => {
@@ -37,12 +25,28 @@ class ReviewForm extends React.Component{
     }
   }
 
+  renderErrors() {
+    return (
+      <ul className="error-list">
+        {this.props.errors.map((error, i) =>(
+          <li key={`error-${i}`}>{error}</li>
+        ))}
+      </ul>
+    )
+  }
+
+  componentWillUnmount() {
+    const errors = [];
+    this.props.deleteErrors(errors);
+  }
+
+
+
   render() {
     console.log("PROPS", this.props)
-    console.log("STATE", this.state)
     return (
       <div className="review-form-container">
-        {/* {this.renderErrors()} */}
+        {this.renderErrors()}
 
         <h2>Write a Review</h2>
         <form onSubmit={this.handleSubmit}>
