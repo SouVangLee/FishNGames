@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchProduct } from '../../actions/product_actions';
+import { fetchProduct, fetchAllProducts } from '../../actions/product_actions';
 import Product from './product_show';
 
 const mSTP = (state, ownProps) => {

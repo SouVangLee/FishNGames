@@ -2,9 +2,9 @@ import { connect } from 'react-redux';
 import { createReview, receiveErrors } from '../../actions/review_actions';
 import ReviewForm from './review_form';
 
-const mSTP = (state, ownProps) => ({
+const mSTP = state => ({
   currentUser: state.session.currentUserId,
-  errors: state.errors.review,
+  errors: state.errors.review
 });
 
 const mDTP = dispatch => ({
