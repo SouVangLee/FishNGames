@@ -4,12 +4,13 @@ import ReviewForm from './review_form';
 
 const mSTP = state => ({
   currentUser: state.session.currentUserId,
-  errors: state.errors.review
+  errors: state.errors.review,
+  formType: 'create'
 });
 
 const mDTP = dispatch => ({
-  createReview: review => dispatch(createReview(review)),
-  fetchAllReviews: () => dispatch(fetchAllReviews())
+  createReview: review => dispatch(createReview(review))
+  
 });
 
 export default connect(mSTP, mDTP)(ReviewForm);
