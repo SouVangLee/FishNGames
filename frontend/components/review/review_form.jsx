@@ -3,16 +3,29 @@ import React from 'react';
 class ReviewForm extends React.Component{
   constructor(props){
     super(props)
-  }
+    console.log("PROPS CONSTRUCTOR", this.props)
 
-  componentDidMount() {
-    this.props.fetchAllReviews();
+    this.state = {
+      reviewer_id: this.props.currentUser,
+      comment: '',
+      rating: 5,
+      product_id: this.props.product_id
+    }
+  }
+  
+
+  handleSubmit(e) {
+    e.preventDefault();
   }
 
   render() {
     console.log("PROPS", this.props)
     return (
-      <div>Im in the ReviewForm</div>
+      <div className="review-form-container">
+        <form onSubmit={this.handleSubmit}>
+
+        </form>
+      </div>
     )
   }  
 }
