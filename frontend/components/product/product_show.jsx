@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import ProductImage from './product_image';
+import ReviewFormContainer from '../review/review_form_container';
 
 class Product extends React.Component{
   constructor(props) {
@@ -53,8 +54,7 @@ class Product extends React.Component{
         </div>
 
         <div>REVIEWS LATER ON</div>
-
-
+        <ReviewFormContainer />
       </div>
     );
     }
