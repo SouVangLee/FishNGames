@@ -2,7 +2,7 @@ class Api::ReviewsController < ApplicationController
   before_action :require_logged_in, only: [:create, :update, :destroy]
 
   def index
-    @reviews = Review.where(product_id: params[:product_id])
+    @reviews = Review.all
     render 'api/reviews/index'
   end
 
