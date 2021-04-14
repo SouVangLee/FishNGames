@@ -8,7 +8,7 @@
 require 'open-uri'
 
 ActiveRecord::Base.transaction do
-  User.delete_all
+  User.destroy_all
   user1 = User.create!(
     name: 'SuperAdmin',
     email: 'superadmin@superadmin.com',
@@ -33,7 +33,7 @@ ActiveRecord::Base.transaction do
     password: '123123'
   )
 
-  Category.delete_all
+  Category.destroy_all
   fishing_category = Category.create!(name: 'fishing')
   boating_category = Category.create!(name: 'boating')
   shooting_category = Category.create!(name: 'shooting')
@@ -60,7 +60,7 @@ ActiveRecord::Base.transaction do
 
 
 
-  Product.delete_all
+  Product.destroy_all
 
   product_1 = Product.create!(
     name: 'Ultra-Light Trout Rod',
@@ -420,5 +420,11 @@ ActiveRecord::Base.transaction do
 
   footwear_1_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/footwear/footwear_1_1.jpg')
   product_13.photos.attach(io: footwear_1_1, filename: 'footwear_1_1.jpg')
+
+  Review.destroy_all
+  review_1 = Review.create!(reviewer_id: 4, product_id: 1, rating: 5, comment: "So easy to use!")
+  review_2 = Review.create!(reviewer_id: 3, product_id: 2, rating: 5, comment: "This is a great product!")
+  review_3 = Review.create!(reviewer_id: 4, product_id: 24, rating: 5, comment: "This is nice.")
+
 
 end
