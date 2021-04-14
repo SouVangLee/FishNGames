@@ -4,7 +4,7 @@
 #
 #  id          :bigint           not null, primary key
 #  name        :string           not null
-#  price       :integer          not null
+#  price       :decimal(10, 2)   not null
 #  quantity    :integer          not null
 #  description :text             not null
 #  category_id :integer          not null
@@ -19,4 +19,8 @@ class Product < ApplicationRecord
     class_name: "Category"
 
   has_many_attached :photos
+
+  has_many :reviews,
+    foreign_key: :product_id,
+    class_name: "Review"
 end
