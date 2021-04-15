@@ -53,7 +53,7 @@ class ReviewForm extends React.Component{
   }
 
   render() {
-    console.log("REVIEW FORM", this.props);
+    // console.log("REVIEW FORM", this.props);
     return (
       <div className="review-form">
         <div className="review-form-container">
