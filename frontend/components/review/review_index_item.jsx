@@ -10,10 +10,14 @@ class ReviewItem extends React.Component {
     const date = createdAt.slice(0, 10);
     return (
       <div className="review-item">
+        <nav className="review-item-nav">
           <h2>{name}</h2>
           <h3>{date}</h3>
-          <h3>Rating: {rating} Stars</h3>
+        </nav>
+          <h3 className="rating">Rating: {rating} Stars</h3>
           <p>{comment}</p>
+
+          {/* <button>Edit...</button> */}
       </div>
     );
   }

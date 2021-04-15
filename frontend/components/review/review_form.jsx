@@ -42,7 +42,7 @@ class ReviewForm extends React.Component{
 
   render() {
     return (
-      <div class="review-form">
+      <div className="review-form">
         <div className="review-form-container">
 
           <h2>Write a Review</h2>
