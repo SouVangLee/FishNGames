@@ -6,19 +6,22 @@ class ReviewItem extends React.Component {
 
     this.state = {
       reviewer_id: this.props.currentUser,
-      comment: this.props.review.comment,
-      rating: this.props.review.rating,
-      product_id: this.props.product_id,
-      showEditForm: false
+      comment: "",
+      rating: "",
+      product_id: "",
+      showEditForm: false,
+      editComment: false
     }
   }
 
-  clickEdit(e) {
+  clickEdit() {
     $(".review-edit-button").addClass("hide");
     $(".bottom-review-buttons").removeClass("flex-edit-button");
     $(".review-cancel-button").removeClass("hide");
     $(".review-update-button").removeClass("hide");
     $(".review-delete-button").removeClass("hide");
+
+    console.log("TARGET", this.props);
   }
 
   hideButtons() {
@@ -36,6 +39,12 @@ class ReviewItem extends React.Component {
 
   clickUpdate() {
     this.props.updateReview()
+  }
+
+  handleInput(field) {
+    return (e) => {
+      this.setState({[field]: e.target.value})
+    }
   }
 
   render() {
@@ -80,7 +89,6 @@ class ReviewItem extends React.Component {
               >Update</button>
             </div> ) : ""
             }
-
           </div>
       </div>
     );
