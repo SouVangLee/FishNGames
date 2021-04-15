@@ -1,11 +1,27 @@
+.review-item-container {
+  width: 650px;
+  height: 500px;
+  border: 3px solid black;
+}
+
 .review-index {
   width: 100%;
   height: 100%;
   border: 3px solid brown;
 }
 
-.review-index *{
+.review-item *{
   font-family: 'Montserrat', sans-serif;
+}
+
+.sign-in-alert {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border: 2px solid red;
 }
 
 .reviews {
@@ -15,73 +31,73 @@
   font-weight: 600;
   font-size: 30px;
   color: #ba6228;
-  padding-top: 50px;
-  // border: 2px solid orange;
+  padding-top: 25px;
+  border: 2px solid orange;
 }
 
 .review-index-container {
   display: flex;
   width: 650px;
-  height: 1000px;
+  height: 100%;
   margin: auto;
   flex-direction: column;
+  border: 2px solid green;
 }
 
-// .review-index-container:first-child {
-//   margin-top: 75px;
+
+
+// .review-item {
+//   width: 645px;
+//   height: 260px;
+//   border-bottom: 2px solid teal;
+//   font-size: 16px;
+//   font-weight: 500;
+//   margin-bottom: 40px;
 // }
-
-.review-item {
-  width: 645px;
-  height: 260px;
-  border-bottom: 2px solid teal;
-  font-size: 16px;
-  font-weight: 500;
-  margin-bottom: 40px;
-}
 
 .review-item-nav {
   display: flex;
   width: 100%;
-  height: 20px;
-  // border: 2px solid blue;
+  height: 45px;
+  border: 3px solid blue;
   font-size: 16px;
   font-weight: 600;
+  justify-content: space-between;
 }
 
-.review-item-nav h2 {
-  margin-right: 25px;
-}
+// .review-item-nav h2 {
+//   margin-right: 25px;
+// }
 
-.rating {
-  font-weight: 600;
-  margin-bottom: 7px;
-}
+// .rating {
+//   font-weight: 600;
+//   margin-bottom: 7px;
+// }
 
-.review-item p {
-  width: 100%;
-  height: 150px;
-  overflow: auto;
-  border-right: 1px solid teal;
-}
+// .review-item p {
+//   width: 100%;
+//   height: 150px;
+//   overflow: auto;
+//   border-right: 1px solid teal;
+// }
 
 
 //edit button
-.review-item button {
-  width: 230px;
-  height: 35px;
-  font-family: 'PT Sans Narrow', sans-serif;
-  text-transform: uppercase;
-  font-size: 16px;
-  background-color: teal;
-  color: white;
-  text-transform: uppercase;
-  font-weight: 600;
-  border: 1px solid black;
-}
+// .review-item button {
+//   width: 230px;
+//   height: 35px;
+//   font-family: 'PT Sans Narrow', sans-serif;
+//   text-transform: uppercase;
+//   font-size: 16px;
+//   background-color: teal;
+//   color: white;
+//   text-transform: uppercase;
+//   font-weight: 600;
+//   border: 1px solid black;
+// }
 
-.review-item button:hover {
-  background-color: rgb(30, 30, 30);
-  color: white;
-  cursor: pointer;
-}
+// .review-item button:hover {
+//   background-color: rgb(30, 30, 30);
+//   color: white;
+//   cursor: pointer;
+// }

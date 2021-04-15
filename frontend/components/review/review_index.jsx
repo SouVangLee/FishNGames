@@ -17,6 +17,7 @@ class Review extends React.Component {
   }
 
   render() {
+    console.log("IN REVIEW INDEX", this.props);
     let productReviews = this.props.reviews.filter((review) => (
       review.productId === this.props.product_id
     ));
@@ -27,6 +28,10 @@ class Review extends React.Component {
 
     return (
       <div className="review-index">
+        { !this.props.currentUserId ? 
+        <div className="sign-in-alert">Please sign in to leave a review</div> : ""
+        }
+
         <div className="reviews">Reviews</div>
         <ul className="review-index-container">
         {reviewList}
