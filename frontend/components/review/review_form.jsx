@@ -37,15 +37,15 @@ class ReviewForm extends React.Component{
     }
   }
 
-  renderErrors() {
-    return (
-      <ul className="review-error-list">
-        {this.props.errors.map((error, i) =>(
-          <li key={`error-${i}`}>{error}</li>
-        ))}
-      </ul>
-    )
-  }
+  // renderErrors() {
+  //   return (
+  //     <ul className="review-error-list">
+  //       {this.props.errors.map((error, i) =>(
+  //         <li key={`error-${i}`}>{error}</li>
+  //       ))}
+  //     </ul>
+  //   )
+  // }
 
   componentWillUnmount() {
     const errors = [];
@@ -79,7 +79,7 @@ class ReviewForm extends React.Component{
               </div>
               <button className="review-button">Submit Review!</button>
             </div>
-            {this.renderErrors()}
+            {/* {this.renderErrors()} */}
           </form>
         </div>
       </div>
