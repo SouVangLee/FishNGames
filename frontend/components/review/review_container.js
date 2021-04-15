@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Review from './review_index';
+import ReviewIndex from './review_index';
 import { 
   fetchAllReviews,
   updateReview, 
@@ -20,4 +20,4 @@ const mDTP = dispatch => ({
   fetchReview: reviewId => dispatch(fetchReview(reviewId))
 });
 
-export default connect(mSTP, mDTP)(Review);
+export default connect(mSTP, mDTP)(ReviewIndex);

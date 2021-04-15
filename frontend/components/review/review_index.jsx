@@ -31,6 +31,7 @@ class Review extends React.Component {
         currentUserId={this.props.currentUserId}
         updateReview={this.props.updateReview}
         deleteReview={this.props.deleteReview}
+        fetchReview={this.props.fetchReview}
       />
     ));
 
