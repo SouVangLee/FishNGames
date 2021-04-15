@@ -47,7 +47,7 @@ class ReviewItem extends React.Component {
   }
 
   render() {
-    console.log("REVIEW INDEX ITEM", this.props);
+    // console.log("REVIEW INDEX ITEM", this.props);
     const { comment, name, rating, createdAt, reviewerId } = this.props.review;
     const date = createdAt.slice(0, 10);
     return (
