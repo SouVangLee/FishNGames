@@ -33,6 +33,14 @@ export const fetchAllReviews = () => dispatch => (
     )
 );
 
+export const fetchReview => reviewId => dispatch => (
+  ReviewApiUtil.fetchReview(reviewId)
+    .then(
+      review => dispatch(receiveReview(review)),
+      errors => dispatch(receiveErrors(errors.responseJSON))
+    )
+)
+
 export const createReview = review => dispatch => (
   ReviewApiUtil.createReview(review)
     .then(
