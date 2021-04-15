@@ -46,7 +46,7 @@ class Product extends React.Component{
             </div>
 
             <div className="add-to-cart-container">
-              <div>Cart Stuff Later on</div>
+              <div>Add to Carts Coming soon...</div>
               {/* <label className="product-quantity">Quantity: 
                 <input type="text"/>
               </label> */}

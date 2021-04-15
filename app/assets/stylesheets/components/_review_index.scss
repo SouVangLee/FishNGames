@@ -1,7 +1,6 @@
 .review-index {
   width: 100%;
   height: 100%;
-  // border: 3px solid brown;
   position: relative;
 }
 
@@ -11,7 +10,6 @@
   font-weight: 600;
   text-align: center;
   padding-top: 50px;
-  // border: 2px solid red;
 }
 
 .sign-in-alert a:hover {
@@ -29,7 +27,6 @@
   padding-top: 25px;
   margin-top: 25px;
   margin-bottom: 25px;
-  // border: 2px solid orange;
 }
 
 .review-index-container {
@@ -38,7 +35,6 @@
   height: 100%;
   margin: auto;
   flex-direction: column;
-  // border: 2px solid green;
 }
 
 .review-item-container *{
@@ -61,7 +57,6 @@
   display: flex;
   width: 100%;
   height: 45px;
-  // border: 3px solid blue;
   font-size: 16px;
   font-weight: 600;
   justify-content: space-between;
@@ -79,13 +74,12 @@
 .rating {
   font-weight: 600;
   margin-bottom: 10px;
+  padding-top: 2px;
 }
 
 .p-buttons-container {
   width: 650px;
   height: 165px;
-  // border-bottom: 2px solid teal;
-  // border-right: 1px solid teal;
 }
 
 
@@ -95,9 +89,6 @@
   overflow: auto;
   margin-top: 15px;
   margin-left: 20px;
-  // border-bottom: 2px solid teal;
-  // border-right: 1px solid teal;
-  // border: 2px solid orange;
 }
 
 .bottom-review-buttons {
@@ -106,7 +97,6 @@
   display: flex;
   justify-content: space-around;
   margin-top: 15px;
-  // border: 2px solid pink;
 }
 
 .review-edit-button, 
@@ -125,8 +115,6 @@
   margin-right: 15px;
 }
 
-
-// buttons
 .review-delete-button,
 .review-edit-button,
 .review-cancel-button,
@@ -150,4 +138,18 @@
   background-color: rgb(30, 30, 30);
   color: white;
   cursor: pointer;
+}
+
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.flex-edit-button {
+  display: flex;
+  justify-content: flex-start;
 }

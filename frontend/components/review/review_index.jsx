@@ -23,7 +23,14 @@ class Review extends React.Component {
     ));
 
     const reviewList = productReviews.map((review, index) => (
-     <ReviewItem key={index} review={review}/>
+     <ReviewItem 
+        key={index} 
+        review={review} 
+        currentUserId={this.props.currentUserId}
+        updateReview={this.props.updateReview}
+        deleteReview={this.props.deleteReview}
+        fetchReview={this.props.fetchReview}
+      />
     ));
 
     return (
@@ -39,7 +46,7 @@ class Review extends React.Component {
 
         <div className="reviews">Reviews</div>
         <ul className="review-index-container">
-        {reviewList}
+        { reviewList }
         </ul>
       </div>
     );
