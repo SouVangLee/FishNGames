@@ -54,7 +54,6 @@ class Product extends React.Component{
           </section>
         </div>
 
-        <div>REVIEWS LATER ON</div>
         <ReviewFormContainer product_id={product.id} />
         <ReviewContainer product_id={product.id}/>
       </div>
