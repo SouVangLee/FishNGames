@@ -83,10 +83,10 @@ class ReviewItem extends React.Component {
                 onClick={() => this.clickDelete()}
               >Delete</button>
 
-              <button 
+              {/* <button 
                 className="review-update-button hide"
                 onClick={() => this.clickUpdate()}
-              >Update</button>
+              >Update</button> */}
             </div> ) : ""
             }
           </div>
