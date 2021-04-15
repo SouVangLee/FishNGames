@@ -8,7 +8,6 @@ class ReviewItem extends React.Component {
   render() {
     const { comment, name, rating, createdAt } = this.props.review;
     const date = createdAt.slice(0, 10);
-    console.log("Hi", this.props);
     return (
       <div>
         <div className="review-info">
