@@ -13,13 +13,22 @@ class ReviewItem extends React.Component {
     $(".review-delete-button").removeClass("hide");
   }
 
-  clickCancel() {
+  hideButtons() {
     $(".review-edit-button").removeClass("hide");
     $(".bottom-review-buttons").addClass("flex-edit-button");
     $(".review-cancel-button").addClass("hide");
     $(".review-update-button").addClass("hide");
     $(".review-delete-button").addClass("hide");
   }
+
+  clickDelete() {
+    console.log("DELETE PROPS", this.props);
+    this.props.deleteReview(this.props.review.id);
+  }
+
+  // componentDidUpdate(prevProps) {
+  //   if (prevProps.)
+  // }
 
   render() {
     console.log("REVIEW INDEX ITEM", this.props);
@@ -31,7 +40,7 @@ class ReviewItem extends React.Component {
         <nav className="review-item-nav">
           <div className="name-rating-container">
             <h2>{name} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {date}</h2>
-            <h3 className="rating">Rating: {rating} Stars</h3>
+            <h3 className="rating">Rating: &nbsp;&nbsp;&nbsp;&nbsp;{rating} Stars</h3>
           </div>
 
           
@@ -50,11 +59,12 @@ class ReviewItem extends React.Component {
 
               <button 
                 className='review-cancel-button hide'
-                onClick={() => this.clickCancel()}
+                onClick={() => this.hideButtons()}
               >Cancel</button>
 
               <button 
                 className="review-delete-button hide"
+                onClick={() => this.clickDelete()}
               >Delete</button>
 
               <button 
