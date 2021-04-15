@@ -99,19 +99,33 @@
   width: 650px;
   height: 35px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-top: 15px;
   // border: 2px solid pink;
 }
 
+.review-edit-button, 
+.review-cancel-button {
+  width: 150px;
+  margin-left: 10px;
+}
+
+.review-delete-button {
+  width: 100px;
+  margin-left: 250px;
+}
+
+.review-update-button {
+  width: 100px;
+  margin-right: 15px;
+}
+
 
 // buttons
-.review-item button, 
-.delete-review-button,
+.review-delete-button,
 .review-edit-button,
 .review-cancel-button,
 .review-update-button {
-  width: 150px;
   height: 35px;
   font-family: 'PT Sans Narrow', sans-serif;
   text-transform: uppercase;
@@ -124,7 +138,7 @@
 }
 
 .review-item button:hover, 
-.delete-review-button:hover,
+.review-delete-button:hover,
 .review-edit-button:hover,
 .review-cancel-button:hover,
 .review-update-button:hover {

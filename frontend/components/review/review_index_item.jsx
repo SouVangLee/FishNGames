@@ -22,9 +22,10 @@ class ReviewItem extends React.Component {
 
           <div className="p-buttons-container">
             <p>{comment}</p>
-            <button className="delete-review-button">Delete</button>
+            
             <div className="bottom-review-buttons">
               <button className='review-edit-button review-cancel-button'>Edit/Cancel</button>
+              <button className="review-delete-button">Delete</button>
               <button className="review-update-button">Update</button>
             </div>
           </div>
