@@ -19,6 +19,7 @@ class Api::ReviewsController < ApplicationController
   def update
     @review = Review.find_by(id: params[:id])
     if !@review.nil? && @review.update(review_params)
+      @reviews = Review.all
       render '/api/reviews/index'
     else
       render json @review.errors.full_messages, status: 422
@@ -29,6 +30,7 @@ class Api::ReviewsController < ApplicationController
     @review = Review.find_by(id: params[:id])
     if !@review.nil?
       @review.destroy
+      @reviews = Review.all
       render '/api/reviews/index'
     else
       render json: ['Review does not exist'], status: 422

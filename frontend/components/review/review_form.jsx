@@ -12,11 +12,23 @@ class ReviewForm extends React.Component{
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.resetState = this.resetState.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createReview(this.state)
+    this.props.createReview(this.state);
+    this.resetState(e);
+  }
+
+  resetState(e) {
+    e.preventDefault();
+    this.setState({
+      reviewer_id: this.props.currentUser,
+      comment: '',
+      rating: 5,
+      product_id: this.props.product_id
+    })
   }
 
   handleInput(field) {

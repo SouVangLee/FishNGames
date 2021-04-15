@@ -5,7 +5,7 @@ class ReviewItem extends React.Component {
     super(props);
   }
 
-  clickEdit() {
+  clickEdit(e) {
     $(".review-edit-button").addClass("hide");
     $(".bottom-review-buttons").removeClass("flex-edit-button");
     $(".review-cancel-button").removeClass("hide");
@@ -22,13 +22,9 @@ class ReviewItem extends React.Component {
   }
 
   clickDelete() {
-    console.log("DELETE PROPS", this.props);
     this.props.deleteReview(this.props.review.id);
+    this.hideButtons();
   }
-
-  // componentDidUpdate(prevProps) {
-  //   if (prevProps.)
-  // }
 
   render() {
     console.log("REVIEW INDEX ITEM", this.props);
