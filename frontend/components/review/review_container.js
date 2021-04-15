@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import Review from './review_index';
 import { fetchAllReviews } from '../../actions/review_actions';
 import { openModal } from '../../actions/modal_actions';
+import { updateReview, deleteReview } from '../../actions/review_actions';
 
 const mSTP = (state, ownProps) => ({
   reviews: Object.values(state.entities.reviews)
@@ -9,7 +10,9 @@ const mSTP = (state, ownProps) => ({
 
 const mDTP = dispatch => ({
   fetchAllReviews: () => dispatch(fetchAllReviews()),
-  openModal: modal => dispatch(openModal(modal))
+  openModal: modal => dispatch(openModal(modal)),
+  updateReview: review => dispatch(updateReview(review)),
+  deleteReview: review => dispatch(deleteReview(review))
 });
 
 export default connect(mSTP, mDTP)(Review);

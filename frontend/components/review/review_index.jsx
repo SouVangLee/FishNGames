@@ -18,14 +18,20 @@ class Review extends React.Component {
 
 
   render() {
-    console.log("REVIEW INDEX", this.props);
+    // console.log("REVIEW INDEX", this.props);
 
     let productReviews = this.props.reviews.filter((review) => (
       review.productId === this.props.product_id
     ));
 
     const reviewList = productReviews.map((review, index) => (
-     <ReviewItem key={index} review={review} currentUserId={this.props.currentUserId}/>
+     <ReviewItem 
+        key={index} 
+        review={review} 
+        currentUserId={this.props.currentUserId}
+        updateReview={this.props.updateReview}
+        deleteReview={this.props.deleteReview}
+      />
     ));
 
     return (

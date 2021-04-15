@@ -3,6 +3,12 @@ import React from 'react';
 class ReviewItem extends React.Component {
   constructor(props) {
     super(props);
+
+    this.clickEdit = this.clickEdit.bind(this);
+  }
+
+  clickEdit() {
+
   }
 
   render() {
@@ -28,7 +34,7 @@ class ReviewItem extends React.Component {
             { (this.props.currentUserId === reviewerId) ? (
             <div className="bottom-review-buttons">
               <button className='review-edit-button'>Edit</button>
-              <button className='review-cancel-button'>Cancel</button>
+              {/* <button className='review-cancel-button'>Cancel</button> */}
 
               <button className="review-delete-button">Delete</button>
               <button className="review-update-button">Update</button>
