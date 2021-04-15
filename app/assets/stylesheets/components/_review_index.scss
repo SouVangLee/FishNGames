@@ -1,17 +1,7 @@
-.review-item-container {
-  width: 650px;
-  height: 500px;
-  border: 3px solid black;
-}
-
 .review-index {
   width: 100%;
   height: 100%;
   border: 3px solid brown;
-}
-
-.review-item *{
-  font-family: 'Montserrat', sans-serif;
 }
 
 .sign-in-alert {
@@ -24,6 +14,7 @@
   border: 2px solid red;
 }
 
+
 .reviews {
   margin: auto;
   width: 650px;
@@ -32,7 +23,7 @@
   font-size: 30px;
   color: #ba6228;
   padding-top: 25px;
-  border: 2px solid orange;
+  // border: 2px solid orange;
 }
 
 .review-index-container {
@@ -41,63 +32,86 @@
   height: 100%;
   margin: auto;
   flex-direction: column;
-  border: 2px solid green;
+  // border: 2px solid green;
 }
 
+.review-item-container *{
+  font-family: 'Montserrat', sans-serif;
+}
 
-
-// .review-item {
-//   width: 645px;
-//   height: 260px;
-//   border-bottom: 2px solid teal;
-//   font-size: 16px;
-//   font-weight: 500;
-//   margin-bottom: 40px;
-// }
+.review-item-container {
+  width: 650px;
+  height: 500px;
+  // border: 3px solid black;
+}
 
 .review-item-nav {
   display: flex;
   width: 100%;
   height: 45px;
-  border: 3px solid blue;
+  // border: 3px solid blue;
   font-size: 16px;
   font-weight: 600;
   justify-content: space-between;
 }
 
-// .review-item-nav h2 {
-//   margin-right: 25px;
-// }
+.review-item-nav h2 {
+  margin-bottom: 7px;
+}
 
-// .rating {
-//   font-weight: 600;
-//   margin-bottom: 7px;
-// }
+.rating {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
 
-// .review-item p {
-//   width: 100%;
-//   height: 150px;
-//   overflow: auto;
-//   border-right: 1px solid teal;
-// }
+.p-buttons-container {
+  width: 650px;
+  height: 225px;
+  border-bottom: 2px solid teal;
+  border-right: 1px solid teal;
+}
+
+.p-buttons-container p {
+  width: 100%;
+  height: 150px;
+  overflow: auto;
+  border: 2px solid orange;
+}
+
+.bottom-review-buttons {
+  width: 650px;
+  height: 35px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  border: 2px solid pink;
+}
 
 
-//edit button
-// .review-item button {
-//   width: 230px;
-//   height: 35px;
-//   font-family: 'PT Sans Narrow', sans-serif;
-//   text-transform: uppercase;
-//   font-size: 16px;
-//   background-color: teal;
-//   color: white;
-//   text-transform: uppercase;
-//   font-weight: 600;
-//   border: 1px solid black;
-// }
+// buttons
+.review-item button, 
+.delete-review-button,
+.review-edit-button,
+.review-cancel-button,
+.review-update-button {
+  width: 230px;
+  height: 35px;
+  font-family: 'PT Sans Narrow', sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+  background-color: teal;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: 1px solid black;
+}
 
-// .review-item button:hover {
-//   background-color: rgb(30, 30, 30);
-//   color: white;
-//   cursor: pointer;
-// }
+.review-item button:hover, 
+.delete-review-button:hover,
+.review-edit-button:hover,
+.review-cancel-button:hover,
+.review-update-button:hover {
+  background-color: rgb(30, 30, 30);
+  color: white;
+  cursor: pointer;
+}
