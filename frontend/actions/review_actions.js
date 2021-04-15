@@ -33,7 +33,7 @@ export const fetchAllReviews = () => dispatch => (
     )
 );
 
-export const fetchReview => reviewId => dispatch => (
+export const fetchReview = reviewId => dispatch => (
   ReviewApiUtil.fetchReview(reviewId)
     .then(
       review => dispatch(receiveReview(review)),
