@@ -84,14 +84,15 @@
   border-right: 1px solid teal;
 }
 
+
 .p-buttons-container p {
-  width: 100%;
+  width: 410px;
   height: 100px;
   overflow: auto;
   margin-top: 15px;
   // border-bottom: 2px solid teal;
   // border-right: 1px solid teal;
-  // border: 2px solid orange;
+  border: 2px solid orange;
 }
 
 .bottom-review-buttons {
@@ -110,7 +111,7 @@
 .review-edit-button,
 .review-cancel-button,
 .review-update-button {
-  width: 230px;
+  width: 150px;
   height: 35px;
   font-family: 'PT Sans Narrow', sans-serif;
   text-transform: uppercase;
