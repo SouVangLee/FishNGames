@@ -32,6 +32,8 @@ class Review extends React.Component {
         <div className="sign-in-alert">Please sign in to leave a review</div> : ""
         }
 
+        <div classname="wall-border">filler</div>
+
         <div className="reviews">Reviews</div>
         <ul className="review-index-container">
         {reviewList}

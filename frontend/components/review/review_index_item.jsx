@@ -17,14 +17,14 @@ class ReviewItem extends React.Component {
             <h3 className="rating">Rating: {rating} Stars</h3>
           </div>
 
-          <button className='review-edit-button review-cancel-button'>Edit/Cancel</button> 
+          {/* <button className="delete-review-button">Delete</button>  */}
         </nav>
 
           <div className="p-buttons-container">
             <p>{comment}</p>
             <div className="bottom-review-buttons">
-              <button className="delete-review-button">Delete</button>
-              <button className='review-update-button'>Update</button>
+              <button className='review-edit-button review-cancel-button'>Edit/Cancel</button>
+              {/* <button className="review-update-button">Update</button> */}
             </div>
           </div>
       </div>
