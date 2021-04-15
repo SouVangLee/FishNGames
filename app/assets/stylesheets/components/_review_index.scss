@@ -5,15 +5,6 @@
   position: relative;
 }
 
-// .wall-border {
-//   position: absolute;
-//   width: 500px;
-//   height: 500px;
-//   border: 2px solid blue;
-//   right: 0;
-//   top: 0;
-// }
-
 .sign-in-alert {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
@@ -55,7 +46,13 @@
   width: 650px;
   height: 225px;
   // border: 3px solid black;
-  margin-bottom: 50px;
+  background-color: rgba(243, 221, 221, 0.719);
+  padding-bottom: 25px;
+  border-bottom: 2px solid gray;
+}
+
+.review-item-container:not(:first-child) {
+  padding-top: 25px
 }
 
 .review-item-nav {
@@ -66,6 +63,11 @@
   font-size: 16px;
   font-weight: 600;
   justify-content: space-between;
+  margin-top: 20px;
+}
+
+.review-item-nav * {
+  margin-left: 10px;
 }
 
 .review-item-nav h2 {
@@ -80,16 +82,17 @@
 .p-buttons-container {
   width: 650px;
   height: 165px;
-  border-bottom: 2px solid teal;
-  border-right: 1px solid teal;
+  // border-bottom: 2px solid teal;
+  // border-right: 1px solid teal;
 }
 
 
 .p-buttons-container p {
-  width: 410px;
+  width: 425px;
   height: 100px;
   overflow: auto;
   margin-top: 15px;
+  margin-left: 20px;
   // border-bottom: 2px solid teal;
   // border-right: 1px solid teal;
   border: 2px solid orange;
@@ -107,7 +110,7 @@
 .review-edit-button, 
 .review-cancel-button {
   width: 150px;
-  margin-left: 10px;
+  margin-left: 18px;
 }
 
 .review-delete-button {
