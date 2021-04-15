@@ -20,8 +20,7 @@ class ReviewItem extends React.Component {
     $(".review-cancel-button").removeClass("hide");
     $(".review-update-button").removeClass("hide");
     $(".review-delete-button").removeClass("hide");
-
-    console.log("TARGET", this.props);
+    this.setState({editComment: true});
   }
 
   hideButtons() {
@@ -48,7 +47,6 @@ class ReviewItem extends React.Component {
   }
 
   render() {
-    console.log("REVIEW INDEX ITEM", this.props);
     const { comment, name, rating, createdAt, reviewerId } = this.props.review;
     const date = createdAt.slice(0, 10);
     return (

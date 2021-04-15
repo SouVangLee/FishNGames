@@ -16,7 +16,6 @@ class Product extends React.Component{
   }
 
   render() {
-    // console.log("PRODUCT SHOW PROPS", this.props);
     if (!this.props.product) {
       return null;
     } else {
