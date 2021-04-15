@@ -1,21 +1,20 @@
 class Api::ReviewsController < ApplicationController
   # before_action :require_logged_in, only: [:create, :update, :destroy]
-
+  skip_before_action :verify_authenticity_token
+  
   def index
     @reviews = Review.all
-    render 'api/reviews/index'
   end
 
   def show
     @review = Review.find_by(id: params[:id])
-    render 'api/reviews/show'
   end
 
   def create
     @review = Review.new(review_params)
     if @review.save
       # @reviews = Review.all
-      render '/api/reviews/show'
+      render :show
     else
       render json: @review.errors.full_messages, status: 422
     end
@@ -34,7 +33,6 @@ class Api::ReviewsController < ApplicationController
     @review = Review.find_by(id: params[:id])
     if !@review.nil?
       @review.destroy
-      render '/api/reviews/show'
     else
       render json: ['Review does not exist'], status: 422
     end
