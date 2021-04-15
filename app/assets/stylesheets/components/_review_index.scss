@@ -1,0 +1,148 @@
+.review-index {
+  width: 100%;
+  height: 100%;
+  // border: 3px solid brown;
+  position: relative;
+}
+
+// .wall-border {
+//   position: absolute;
+//   width: 500px;
+//   height: 500px;
+//   border: 2px solid blue;
+//   right: 0;
+//   top: 0;
+// }
+
+.sign-in-alert {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border: 2px solid red;
+}
+
+
+.reviews {
+  margin: auto;
+  width: 650px;
+  height: 50px;
+  font-weight: 600;
+  font-size: 30px;
+  color: #ba6228;
+  padding-top: 25px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  // border: 2px solid orange;
+}
+
+.review-index-container {
+  display: flex;
+  width: 650px;
+  height: 100%;
+  margin: auto;
+  flex-direction: column;
+  // border: 2px solid green;
+}
+
+.review-item-container *{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.review-item-container {
+  width: 650px;
+  height: 225px;
+  // border: 3px solid black;
+  margin-bottom: 50px;
+}
+
+.review-item-nav {
+  display: flex;
+  width: 100%;
+  height: 45px;
+  // border: 3px solid blue;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: space-between;
+}
+
+.review-item-nav h2 {
+  margin-bottom: 7px;
+}
+
+.rating {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.p-buttons-container {
+  width: 650px;
+  height: 165px;
+  border-bottom: 2px solid teal;
+  border-right: 1px solid teal;
+}
+
+
+.p-buttons-container p {
+  width: 410px;
+  height: 100px;
+  overflow: auto;
+  margin-top: 15px;
+  // border-bottom: 2px solid teal;
+  // border-right: 1px solid teal;
+  border: 2px solid orange;
+}
+
+.bottom-review-buttons {
+  width: 650px;
+  height: 35px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+  // border: 2px solid pink;
+}
+
+.review-edit-button, 
+.review-cancel-button {
+  width: 150px;
+  margin-left: 10px;
+}
+
+.review-delete-button {
+  width: 100px;
+  margin-left: 250px;
+}
+
+.review-update-button {
+  width: 100px;
+  margin-right: 15px;
+}
+
+
+// buttons
+.review-delete-button,
+.review-edit-button,
+.review-cancel-button,
+.review-update-button {
+  height: 35px;
+  font-family: 'PT Sans Narrow', sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+  background-color: teal;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: 1px solid black;
+}
+
+.review-item button:hover, 
+.review-delete-button:hover,
+.review-edit-button:hover,
+.review-cancel-button:hover,
+.review-update-button:hover {
+  background-color: rgb(30, 30, 30);
+  color: white;
+  cursor: pointer;
+}

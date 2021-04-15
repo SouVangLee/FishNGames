@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import ProductImage from './product_image';
+import ReviewFormContainer from '../review/review_form_container';
+import ReviewContainer from '../review/review_container';
 
 class Product extends React.Component{
   constructor(props) {
@@ -14,6 +16,8 @@ class Product extends React.Component{
   }
 
   render() {
+    console.log("PRODUCT SHOW", this.props);
+
     if (!this.props.product) {
       return null;
     } else {
@@ -24,7 +28,7 @@ class Product extends React.Component{
       currency: 'USD',
       minimumFractionDigits: 2
     }).format(product.price);
-
+    
     return (
       <div className="product-show-page">
 
@@ -51,10 +55,10 @@ class Product extends React.Component{
             </div>
           </section>
         </div>
-
-        <div>REVIEWS LATER ON</div>
-
-
+        { this.props.currentUserId ?
+        <ReviewFormContainer product_id={product.id} /> : ""
+        }
+        <ReviewContainer product_id={product.id} currentUserId={this.props.currentUserId}/>
       </div>
     );
     }
