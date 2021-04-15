@@ -138,3 +138,17 @@
   color: white;
   cursor: pointer;
 }
+
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.flex-edit-button {
+  display: flex;
+  justify-content: flex-start;
+}

@@ -3,12 +3,22 @@ import React from 'react';
 class ReviewItem extends React.Component {
   constructor(props) {
     super(props);
-
-    this.clickEdit = this.clickEdit.bind(this);
   }
 
   clickEdit() {
+    $(".review-edit-button").addClass("hide");
+    $(".bottom-review-buttons").removeClass("flex-edit-button");
+    $(".review-cancel-button").removeClass("hide");
+    $(".review-update-button").removeClass("hide");
+    $(".review-delete-button").removeClass("hide");
+  }
 
+  clickCancel() {
+    $(".review-edit-button").removeClass("hide");
+    $(".bottom-review-buttons").addClass("flex-edit-button");
+    $(".review-cancel-button").addClass("hide");
+    $(".review-update-button").addClass("hide");
+    $(".review-delete-button").addClass("hide");
   }
 
   render() {
@@ -32,12 +42,24 @@ class ReviewItem extends React.Component {
 
 
             { (this.props.currentUserId === reviewerId) ? (
-            <div className="bottom-review-buttons">
-              <button className='review-edit-button'>Edit</button>
-              {/* <button className='review-cancel-button'>Cancel</button> */}
+            <div className="bottom-review-buttons flex-edit-button">
+              <button 
+                className='review-edit-button'
+                onClick={() => this.clickEdit()}
+              >Edit</button>
 
-              <button className="review-delete-button">Delete</button>
-              <button className="review-update-button">Update</button>
+              <button 
+                className='review-cancel-button hide'
+                onClick={() => this.clickCancel()}
+              >Cancel</button>
+
+              <button 
+                className="review-delete-button hide"
+              >Delete</button>
+
+              <button 
+                className="review-update-button hide"
+              >Update</button>
             </div> ) : ""
             }
 
