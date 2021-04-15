@@ -31,12 +31,12 @@ class Review extends React.Component {
       <div className="review-index">
 
         { !this.props.currentUserId ? 
-        (<div className="sign-in-alert">
-          <a 
-            onClick={() => this.props.openModal('login')}
-            >Please sign in to leave a review</a>
-        </div>)  : ""
-          }
+          (<div className="sign-in-alert">
+            <a 
+              onClick={() => this.props.openModal('login')}
+              >Please sign in to leave a review</a>
+          </div>)  : ""
+        }
 
         <div className="reviews">Reviews</div>
         <ul className="review-index-container">

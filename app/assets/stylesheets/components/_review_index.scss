@@ -10,9 +10,12 @@
   font-size: 16px;
   font-weight: 600;
   text-align: center;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  border: 2px solid red;
+  padding-top: 50px;
+  // border: 2px solid red;
+}
+
+.sign-in-alert p:hover {
+  text-decoration: underline;
 }
 
 
