@@ -5,7 +5,6 @@ const Greeting = ({ currentUser, logout, openModal }) => {
     <div className="login-container" onClick={() => openModal('login')}>
       <div className="h2-signin">Sign In</div>
       <div className="login-logo">
-        {/* <img className="login-logo" src={window.userLoginIcon}/> */}
       </div>
     </div>
   )

@@ -27,7 +27,7 @@ class ReviewForm extends React.Component{
 
   renderErrors() {
     return (
-      <ul className="error-list">
+      <ul className="review-error-list">
         {this.props.errors.map((error, i) =>(
           <li key={`error-${i}`}>{error}</li>
         ))}
