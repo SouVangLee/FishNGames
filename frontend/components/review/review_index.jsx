@@ -26,8 +26,8 @@ class Review extends React.Component {
     ));
 
     return (
-      <div>
-        <ul>
+      <div className="review-index">
+        <ul className="review-index-container">
         {reviewList}
         </ul>
       </div>
