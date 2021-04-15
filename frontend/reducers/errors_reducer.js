@@ -5,7 +5,7 @@ import ReviewErrorsReducer from './reviews_errors_reducer';
 
 const errorsReducer = combineReducers({
   session: sessionErrorsReducer,
-  review: ReviewErrorsReducer
+  // review: ReviewErrorsReducer
 });
 
 export default errorsReducer;
