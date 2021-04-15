@@ -6,7 +6,8 @@ class ReviewItem extends React.Component {
   }
 
   render() {
-    const { comment, name, rating, createdAt } = this.props.review;
+    console.log("REVIEW INDEX ITEM", this.props);
+    const { comment, name, rating, createdAt, reviewerId } = this.props.review;
     const date = createdAt.slice(0, 10);
     return (
       <div className="review-item-container">
@@ -22,12 +23,18 @@ class ReviewItem extends React.Component {
 
           <div className="p-buttons-container">
             <p>{comment}</p>
-            
+
+
+            { (this.props.currentUserId === reviewerId) ? (
             <div className="bottom-review-buttons">
-              <button className='review-edit-button review-cancel-button'>Edit/Cancel</button>
+              <button className='review-edit-button'>Edit</button>
+              <button className='review-cancel-button'>Cancel</button>
+
               <button className="review-delete-button">Delete</button>
               <button className="review-update-button">Update</button>
-            </div>
+            </div> ) : ""
+            }
+
           </div>
       </div>
     );
