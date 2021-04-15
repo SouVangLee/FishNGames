@@ -6,7 +6,6 @@ class ReviewItem extends React.Component {
   }
 
   render() {
-    // console.log("REVIEW ITEM PROPS", this.props);
     const { comment, name, rating, createdAt } = this.props;
     return (
       <div>

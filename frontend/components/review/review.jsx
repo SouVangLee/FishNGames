@@ -16,14 +16,14 @@ class Review extends React.Component {
     ));
 
     const reviewList = productReviews.map((review, index) => (
-      <ReviewItem key={index} review={review}/>
+     <ReviewItem key={index} review={review}/>
     ));
 
-    // console.log("REVIEWS", productReviews);
-    // console.log("REVIEW PROPS", this.props);
     return (
       <div>
+        <ul>
         {reviewList}
+        </ul>
       </div>
     );
   }
