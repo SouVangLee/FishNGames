@@ -42,32 +42,34 @@ class ReviewForm extends React.Component{
 
   render() {
     return (
-      <div className="review-form-container">
-        {this.renderErrors()}
+      <div class="review-form">
+        <div className="review-form-container">
 
-        <h2>Write a Review</h2>
-        <form onSubmit={this.handleSubmit}>
-          <div className="star-rating">
-            <select name="rating" onChange={this.handleInput('rating')}>
-              <option value="5">5 Star</option>
-              <option value="4">4 Star</option>
-              <option value="3">3 Star</option>
-              <option value="2">2 Star</option>
-              <option value="1">1 Star</option>
-            </select>
-          </div>
+          <h2>Write a Review</h2>
+          
+          <form onSubmit={this.handleSubmit}>
+            <div className="review-comment">
+              <textarea 
+                value={this.state.comment}
+                onChange={this.handleInput('comment')}
+              />
+            </div>
 
-          <div className="review-comment">
-            <textarea 
-              cols="50" 
-              rows="10"
-              value={this.state.comment}
-              onChange={this.handleInput('comment')}
-            />
-          </div>
-
-          <button className="review-button">Submit Review!</button>
-        </form>
+            <div className="rate-and-submit-container">
+              <div className="star-rating">
+                <select name="rating" onChange={this.handleInput('rating')}>
+                  <option value="5">5 Star</option>
+                  <option value="4">4 Star</option>
+                  <option value="3">3 Star</option>
+                  <option value="2">2 Star</option>
+                  <option value="1">1 Star</option>
+                </select>
+              </div>
+              <button className="review-button">Submit Review!</button>
+            </div>
+            {this.renderErrors()}
+          </form>
+        </div>
       </div>
     )
   }  
