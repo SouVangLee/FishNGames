@@ -3,6 +3,14 @@ import React from 'react';
 class ReviewItem extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      reviewer_id: this.props.currentUser,
+      comment: this.props.review.comment,
+      rating: this.props.review.rating,
+      product_id: this.props.product_id,
+      showEditForm: false
+    }
   }
 
   clickEdit(e) {
@@ -26,6 +34,10 @@ class ReviewItem extends React.Component {
     this.hideButtons();
   }
 
+  clickUpdate() {
+    this.props.updateReview()
+  }
+
   render() {
     console.log("REVIEW INDEX ITEM", this.props);
     const { comment, name, rating, createdAt, reviewerId } = this.props.review;
@@ -45,13 +57,12 @@ class ReviewItem extends React.Component {
           <div className="p-buttons-container">
             <p>{comment}</p>
 
-
             { (this.props.currentUserId === reviewerId) ? (
             <div className="bottom-review-buttons flex-edit-button">
               <button 
                 className='review-edit-button'
                 onClick={() => this.clickEdit()}
-              >Edit</button>
+              >Edit Review</button>
 
               <button 
                 className='review-cancel-button hide'
@@ -65,6 +76,7 @@ class ReviewItem extends React.Component {
 
               <button 
                 className="review-update-button hide"
+                onClick={() => this.clickUpdate()}
               >Update</button>
             </div> ) : ""
             }
