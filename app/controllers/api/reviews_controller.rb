@@ -25,14 +25,14 @@ class Api::ReviewsController < ApplicationController
     if !@review.nil? && @review.update(review_params)
       render '/api/reviews/show'
     else
-      render json @review.errors.full_messages, status: 422
+      render json: @review.errors.full_messages, status: 422
     end
   end
 
   def destroy
     @review = Review.find_by(id: params[:id])
-    if !@review.nil?
-      @review.destroy
+    if @review
+      @review.delete
     else
       render json: ['Review does not exist'], status: 422
     end
