@@ -4,7 +4,7 @@ import ReviewForm from './review_form';
 
 const mSTP = state => ({
   currentUser: state.session.currentUserId,
-  errors: state.errors.review,
+  // errors: state.errors.review,
   reviews: state.entities.reviews.undefined
 });
 

@@ -3,7 +3,7 @@ import * as ReviewApiUtil from '../util/review_utils';
 export const RECEIVE_ALL_REVIEWS = "RECEIVE_ALL_REVIEWS";
 export const RECEIVE_REVIEW = "RECEIVE_REVIEW";
 export const REMOVE_REVIEW = "REMOVE_REVIEW";
-export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+// export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 
 export const receiveAllReviews = reviews => ({
   type: RECEIVE_ALL_REVIEWS,
@@ -15,10 +15,10 @@ export const receiveReview = review => ({
   review
 });
 
-export const receiveErrors = errors => ({
-  type: RECEIVE_ERRORS,
-  errors
-});
+// export const receiveErrors = errors => ({
+//   type: RECEIVE_ERRORS,
+//   errors
+// });
 
 export const removeReview = reviewId => ({
   type: REMOVE_REVIEW,
@@ -28,32 +28,32 @@ export const removeReview = reviewId => ({
 export const fetchAllReviews = () => dispatch => (
   ReviewApiUtil.fetchAllReviews()
     .then(
-      reviews => dispatch(receiveAllReviews(reviews)),
-      errors => dispatch(receiveErrors(errors.responseJSON))
+      reviews => dispatch(receiveAllReviews(reviews))
+      // errors => dispatch(receiveErrors(errors.responseJSON))
     )
 );
 
 export const fetchReview = reviewId => dispatch => (
   ReviewApiUtil.fetchReview(reviewId)
     .then(
-      review => dispatch(receiveReview(review)),
-      errors => dispatch(receiveErrors(errors.responseJSON))
+      review => dispatch(receiveReview(review))
+      // errors => dispatch(receiveErrors(errors.responseJSON))
     )
 )
 
 export const createReview = review => dispatch => (
   ReviewApiUtil.createReview(review)
     .then(
-      review => dispatch(receiveReview(review)),
-      errors => dispatch(receiveErrors(errors.responseJSON))
+      review => dispatch(receiveReview(review))
+      // errors => dispatch(receiveErrors(errors.responseJSON))
     )
 );
 
 export const updateReview = review => dispatch => (
   ReviewApiUtil.updateReview(review)
     .then(
-      review => dispatch(receiveReview(review)),
-      errors => dispatch(receiveErrors(errors.responseJSON))
+      review => dispatch(receiveReview(review))
+      // errors => dispatch(receiveErrors(errors.responseJSON))
     )
 );
 
