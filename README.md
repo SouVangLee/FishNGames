@@ -107,5 +107,13 @@ Below is a code snippet of how all the products will be rendered when a category
 ## Upcoming Features
 * Implement an update button to allow users to update their reviews.
 * Implement  shopping cart system to allow users to add products to their shopping cart.
-* Implement search bar to allow users to search a product by name.
+* Implement search bar that returns a list of products by similar name.
 * Implement filter for products based on price.
+
+## Technologies used for FishNGames
+* Rails on Ruby (Back End)
+* React + Redux (Front End)
+* PostgresSQL (Database)
+* HTML + CSS
+* Active Storage + Amazon Web Services S3
+* Heroku (Host)
