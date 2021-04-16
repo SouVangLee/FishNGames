@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { createReview, receiveErrors } from '../../actions/review_actions';
+import { createReview } from '../../actions/review_actions';
 import ReviewForm from './review_form';
 
 const mSTP = state => ({
