@@ -41,7 +41,7 @@ Clicking on a product will open the product's show page.
 
 ### Reviews
 
-Users will only be able to write a review if they are signed in. If they are not, the review submission form will be hidden. Users can click "Edit" on their post to delete or update (update feature coming soon!) it.
+Users will only be able to write a review if they are signed in. If they are not, the create review form will be hidden. Users can click "Edit" on their post to delete or update (update feature coming soon!) it.
 
 ![review_gif](https://user-images.githubusercontent.com/70188998/114985640-e2362d00-9e47-11eb-8ee6-d92f6314279a.gif)
 
