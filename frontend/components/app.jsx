@@ -9,6 +9,7 @@ import PageNotFound from './page_not_found';
 import SplashContainer from './splash/splash_container';
 import CategoryProductsContainer from './category/category_products_container';
 import ProductContainer from './product/product_container';
+import Footer from './footer';
 
 
 const App = () => (
@@ -22,6 +23,9 @@ const App = () => (
       <Route exact path="/" component={ SplashContainer } />
       <Route path="*" component={ PageNotFound }/>
     </Switch>
+    <footer>
+      <Footer />
+    </footer>
   </div>
 );
 

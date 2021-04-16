@@ -1,0 +1,65 @@
+.footer-container {
+  height: 250px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: #f7f7f7;
+}
+
+.footer {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.footer-section {
+  height: 100%;
+  width: 200px;
+}
+
+.footer-section * {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.footer-section h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.footer-section li {
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+a {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.about-me:first-child {
+  width: 40px;
+  height: 40px;
+}
+
+.about-me:last-child {
+  width: 38px;
+  height: 38px;
+}
+
+.linkedin-logo {
+  width: 38px;
+  height: 38px;
+  object-fit: scale-down;
+}
+
+
+.github-logo {
+  border-radius: 60%;
+  margin-bottom: 5px;
+  width: 40px;
+  height: 40px;
+  object-fit: scale-down;
+}

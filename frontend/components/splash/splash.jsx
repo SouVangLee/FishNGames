@@ -66,9 +66,6 @@ class Splash extends React.Component {
           <div className="bottom-category-container">
             {categoryList}
           </div>
-          I AM THE SPLASH PAGE!
-          THIS IS A CLONE OF BASS PRO SHOP! CREDITS TO UNSPLASH, AMAZON, 
-          AND BASSPROSHOP FOR PICTURES.
         </div>
       );
     }
