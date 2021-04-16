@@ -17,7 +17,7 @@ FishNGames is a clone website of BassProShop, where customers can purchase produ
 
 &nbsp;
 
-### User Authorization 
+### User Authentication 
 
 Clicking the sign-in button will open a modal on the right side of the screen. A user may sign in with his/her own account or use the demo to log in. A user must be logged in to write/edit/delete a review for a product, and add products to their shopping cart (shopping cart feature coming soon!). 
 
