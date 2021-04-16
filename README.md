@@ -45,6 +45,67 @@ Users will only be able to write a review if they are signed in. If they are not
 
 ![review_gif](https://user-images.githubusercontent.com/70188998/114985640-e2362d00-9e47-11eb-8ee6-d92f6314279a.gif)
 
+&nbsp;
 
+## Code Snippets
 
+Below is a code snippet of how all the products will be rendered when a category is clicked.
 
+```jsx
+  componentDidMount() {
+    this.props.fetchCategoryProducts(this.props.match.params.id);
+    window.scrollTo(0, 0);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.match.params.id !== this.props.match.params.id) {
+      this.props.fetchCategoryProducts(this.props.match.params.id)
+    }
+  }
+
+  render() {
+    const productList = this.props.products.map(product => (
+      <div className="product-info-link" key={`${product.id}`}>
+        <Link className="product-link" to={`/products/${product.id}`}>
+          <img src={product.photoUrls[0]} alt=""/>
+          <h2>{product.name}</h2>
+          <h3>
+            {new Intl.NumberFormat('en-US', {
+              style: 'currency',
+              currency: 'USD',
+              minimumFractionDigits: 2
+            }).format(product.price)}
+          </h3>
+        </Link>
+      </div>
+    ));
+
+    return (
+      <div className="category-container">
+        <div className="category-banner">
+          <img 
+            className="category-image" 
+            src={this.state.banners[this.props.match.params.id]}
+          />
+        </div>
+        
+        <div className="category-body-container">
+          <section className="search-section">
+            <h2>Search Filter Coming Soon...</h2>
+          </section>
+
+          <section className="product-section">
+            {productList}
+          </section>
+        </div>
+      </div>
+    )
+  }
+}
+```
+
+## Upcoming Features
+* Implement an update button to allow users to update their reviews.
+* Implement  shopping cart system to allow users to add products to their shopping cart.
+* Implement search bar to allow users to search a product by name.
+* Implement filter for products based on price.
