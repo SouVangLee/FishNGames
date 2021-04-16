@@ -110,7 +110,7 @@ Below is a code snippet of how all the products will be rendered when a category
 * Implement search bar that returns a list of products by similar name.
 * Implement filter for products based on price.
 
-## Technologies used for FishNGames
+## Built with
 * Rails on Ruby (Back End)
 * React + Redux (Front End)
 * PostgresSQL (Database)
