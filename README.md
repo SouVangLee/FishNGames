@@ -17,7 +17,7 @@ FishNGames is a clone website of BassProShop, where customers can purchase produ
 
 &nbsp;
 
-### User Authorization 
+### User Authentication 
 
 Clicking the sign-in button will open a modal on the right side of the screen. A user may sign in with his/her own account or use the demo to log in. A user must be logged in to write/edit/delete a review for a product, and add products to their shopping cart (shopping cart feature coming soon!). 
 
@@ -41,7 +41,7 @@ Clicking on a product will open the product's show page.
 
 ### Reviews
 
-Users will only be able to write a review if they are signed in. If they are not, the review submission form will be hidden. Users can click "Edit" on their post to delete or update (update feature coming soon!) it.
+Users will only be able to write a review if they are signed in. If they are not, the create review form will be hidden. Users can click "Edit" on their post to delete or update (update feature coming soon!) it.
 
 ![review_gif](https://user-images.githubusercontent.com/70188998/114985640-e2362d00-9e47-11eb-8ee6-d92f6314279a.gif)
 
@@ -106,7 +106,7 @@ Below is a code snippet of how all the products will be rendered when a category
 
 ## Upcoming Features
 * Implement an update button to allow users to update their reviews.
-* Implement  shopping cart system to allow users to add products to their shopping cart.
+* Implement  shopping cart system to allow users to add/edit/remove products in their shopping cart.
 * Implement search bar that returns a list of products by similar name.
 * Implement filter for products based on price.
 
