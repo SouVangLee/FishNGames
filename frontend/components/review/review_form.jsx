@@ -68,7 +68,7 @@ class ReviewForm extends React.Component{
                 type="text" 
                 onChange={this.handleInput('header')} 
                 value={this.state.header}
-                placeholder="Enter in a header"
+                placeholder="Enter in a header..."
               />
             </div>
 
@@ -76,19 +76,17 @@ class ReviewForm extends React.Component{
               <textarea 
                 value={this.state.comment}
                 onChange={this.handleInput('comment')}
-                placeholder="Enter in your comments"
+                placeholder="Enter in your comments..."
               />
             </div>
 
             <div className="rate-and-submit-container">
               <div className="star-rating">
-                <select name="rating" onChange={this.handleInput('rating')}>
-                  <option value="5">5 Star</option>
-                  <option value="4">4 Star</option>
-                  <option value="3">3 Star</option>
-                  <option value="2">2 Star</option>
-                  <option value="1">1 Star</option>
-                </select>
+                <input type="radio" name="rating" value="1"/>
+                <input type="radio" name="rating" value="2"/>
+                <input type="radio" name="rating" value="3"/>
+                <input type="radio" name="rating" value="4"/>
+                <input type="radio" name="rating" value="5" checked/>
               </div>
               <button className="review-button">Submit Review!</button>
             </div>
