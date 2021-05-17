@@ -6,6 +6,7 @@ class ReviewForm extends React.Component{
     
     this.state = {
       reviewer_id: this.props.currentUser,
+      header: '',
       comment: '',
       rating: 5,
       product_id: this.props.product_id
@@ -25,6 +26,7 @@ class ReviewForm extends React.Component{
     e.preventDefault();
     this.setState({
       reviewer_id: this.props.currentUser,
+      header: '',
       comment: '',
       rating: 5,
       product_id: this.props.product_id
@@ -61,10 +63,20 @@ class ReviewForm extends React.Component{
           <h2>Write a Review</h2>
           
           <form onSubmit={this.handleSubmit}>
+            <div className="review-header" >
+              <input 
+                type="text" 
+                onChange={this.handleInput('header')} 
+                value={this.state.header}
+                placeholder="Enter in a header"
+              />
+            </div>
+
             <div className="review-comment">
               <textarea 
                 value={this.state.comment}
                 onChange={this.handleInput('comment')}
+                placeholder="Enter in your comments"
               />
             </div>
 
