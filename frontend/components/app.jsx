@@ -23,7 +23,7 @@ const App = () => (
       <Route exact path="/" component={ SplashContainer } />
       <Route path="*" component={ PageNotFound }/>
     </Switch>
-    <footer>
+    <footer className="footer-main">
       <Footer />
     </footer>
   </div>

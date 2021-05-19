@@ -30,7 +30,11 @@
 }
 
 .star-rating input {
-  content: '☆';
+  display: none;
+}
+
+.fa-star {
+  font-size: 20px;
 }
 
 .review-header input{
@@ -52,7 +56,7 @@
   border: 1px solid teal;
 }
 
-.star-rating select, .review-button {
+.review-button {
   width: 230px;
   height: 35px;
   font-family: 'PT Sans Narrow', sans-serif;
