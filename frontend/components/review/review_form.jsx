@@ -84,27 +84,27 @@ class ReviewForm extends React.Component{
               <div className="star-rating">
                 <input type="radio" name="rating" id="star1" value="1"/>
                 <label for="star1">
-                  <i class="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
                 </label>
 
                 <input type="radio" name="rating" id="star2" value="2"/>
                 <label for="star2">
-                  <i class="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
                 </label>
 
                 <input type="radio" name="rating" id="star3" value="3"/>
                 <label for="star3">
-                  <i class="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
                 </label>
 
                 <input type="radio" name="rating" id="star4" value="4"/>
                 <label for="star4">
-                  <i class="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
                 </label>
-                
+
                 <input type="radio" name="rating" id="star5" value="5"/>
                 <label for="star5">
-                  <i class="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
                 </label>
               </div>
               <button className="review-button">Submit Review!</button>

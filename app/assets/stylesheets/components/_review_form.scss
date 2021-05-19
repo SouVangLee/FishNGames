@@ -33,9 +33,27 @@
   display: none;
 }
 
-.fa-star {
-  font-size: 20px;
+// .star-rating {
+//   margin-top: 10px;
+// }
+
+.star-rating {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: teal;
+  border: 1px solid black;
+  width: 230px;
+  height: 35px;
 }
+
+.fa-star {
+  font-size: 25px;
+  color: gold;
+  text-align: center;
+}
+
+
 
 .review-header input{
   width: 645px;
