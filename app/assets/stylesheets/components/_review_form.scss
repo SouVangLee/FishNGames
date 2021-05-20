@@ -29,31 +29,48 @@
   margin-top: 20px;
 }
 
-.star-rating input {
-  display: none;
-}
-
-// .star-rating {
-//   margin-top: 10px;
-// }
-
 .star-rating {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: teal;
-  border: 1px solid black;
-  width: 230px;
-  height: 35px;
+  flex-direction: row;
 }
 
-.fa-star {
+.star-rating div:first-child {
+  border: 1px solid black;
+  width: 46px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.star-rating div:not(first-child) {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  width: 46px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.active-star {
   font-size: 25px;
   color: gold;
-  text-align: center;
 }
 
+.active-background {
+  background-color: teal;
+}
 
+.not-active-star {
+  font-size: 25px;
+  color: white;
+}
+
+.not-active-background {
+  background-color: rgb(112, 112, 112);
+}
 
 .review-header input{
   width: 645px;
@@ -82,7 +99,7 @@
   font-size: 16px;
 }
 
-.review-button, .star-rating select {
+.review-button {
   background-color: teal;
   color: white;
   text-transform: uppercase;
@@ -90,7 +107,7 @@
   border: 1px solid black;
 }
 
-.review-button:hover, .star-rating select:hover {
+.review-button:hover {
   background-color: rgb(30, 30, 30);
   color: white;
   cursor: pointer;

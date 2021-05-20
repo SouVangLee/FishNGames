@@ -55,7 +55,7 @@ class ReviewForm extends React.Component{
   }
 
   render() {
-    //console.log("REVIEW FORM", this.props);
+    console.log("REVIEW FORM", this.props);
     return (
       <div className="review-form">
         <div className="review-form-container">
@@ -82,30 +82,21 @@ class ReviewForm extends React.Component{
 
             <div className="rate-and-submit-container">
               <div className="star-rating">
-                <input type="radio" name="rating" id="star1" value="1"/>
-                <label for="star1">
-                  <i className="fas fa-star"></i>
-                </label>
-
-                <input type="radio" name="rating" id="star2" value="2"/>
-                <label for="star2">
-                  <i className="fas fa-star"></i>
-                </label>
-
-                <input type="radio" name="rating" id="star3" value="3"/>
-                <label for="star3">
-                  <i className="fas fa-star"></i>
-                </label>
-
-                <input type="radio" name="rating" id="star4" value="4"/>
-                <label for="star4">
-                  <i className="fas fa-star"></i>
-                </label>
-
-                <input type="radio" name="rating" id="star5" value="5"/>
-                <label for="star5">
-                  <i className="fas fa-star"></i>
-                </label>
+                <div className="star1 active-background">
+                <i className="fas fa-star star1 active-star" ></i>
+                </div>
+                <div className="star2 active-background">
+                <i className="fas fa-star star2 active-star"></i>
+                </div>
+                <div className="star3 active-background">
+                <i className="fas fa-star star3 active-star"></i>
+                </div>
+                <div className="star4 active-background">
+                <i className="fas fa-star star4 active-star"></i>
+                </div>
+                <div className="star5 not-active-background">
+                <i className="fas fa-star star5 not-active-star"></i>
+                </div>
               </div>
               <button className="review-button">Submit Review!</button>
             </div>

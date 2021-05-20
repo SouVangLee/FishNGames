@@ -11,7 +11,7 @@
 #  updated_at  :datetime         not null
 #
 class Review < ApplicationRecord
-  validates :reviewer_id, :product_id, :rating, :comment, presence: true
+  validates :reviewer_id, :product_id, :rating, :header, :comment, presence: true
   validates :rating, inclusion: { in: [1, 2, 3, 4, 5], message: 'Please choose a rating between 1 and 5.'}
 
   belongs_to :product,
