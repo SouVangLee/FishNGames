@@ -103,7 +103,7 @@ class ReviewForm extends React.Component{
           <h2>Write a Review</h2>
           
           <form onSubmit={this.handleSubmit}>
-            <div className="review-header" >
+            <div className="review-header-form" >
               <input 
                 type="text" 
                 onChange={this.handleInput('header')} 
