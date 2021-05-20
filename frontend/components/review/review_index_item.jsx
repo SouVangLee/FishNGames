@@ -46,17 +46,35 @@ class ReviewItem extends React.Component {
     }
   }
 
+  showStars(rating) {
+    let gold_star = ( <i className="fas fa-star show-gold-star" ></i> )
+    let grey_star = ( <i className="fas fa-star show-grey-star" ></i> )
+    let starArr = [];
+    for (let i = 0; i < rating; i++) {
+      starArr.push(gold_star);
+    }
+
+    for(let i = 0; i < 5 - rating; i++) {
+      starArr.push(grey_star);
+    }
+
+    return starArr;
+  }
+
   render() {
     // console.log("REVIEW INDEX ITEM", this.props);
     const { header, comment, name, rating, createdAt, reviewerId } = this.props.review;
     const date = createdAt.slice(0, 10);
+    let showStar = this.showStars(rating);
+
     return (
       <div className="review-item-container">
 
         <nav className="review-item-nav">
           <div className="name-rating-container">
-            <h2>{name} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {date}</h2>
-            <h3 className="rating">Rating: &nbsp;&nbsp;&nbsp;&nbsp;{rating} Stars</h3>
+            <span className="show-star-review">{showStar}</span>
+            <span className="user-info">{name} </span>
+            <span className="user-date">{date}</span>
           </div>
 
           
