@@ -19,8 +19,7 @@ class ReviewForm extends React.Component{
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createReview(this.state);
-    this.resetState(e);
+    this.props.createReview(this.state).then(() => this.resetState(e));
   }
 
   handleStarClick(star_num) {
