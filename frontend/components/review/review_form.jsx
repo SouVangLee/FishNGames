@@ -96,6 +96,7 @@ class ReviewForm extends React.Component{
   }
 
   render() {
+    console.log("Check STATE", this.state);
     return (
       <div className="review-form">
         <div className="review-form-container">
