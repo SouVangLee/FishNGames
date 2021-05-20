@@ -14,12 +14,53 @@ class ReviewForm extends React.Component{
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.resetState = this.resetState.bind(this);
+    this.handleStarClick = this.handleStarClick.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
     this.props.createReview(this.state);
     this.resetState(e);
+  }
+
+  handleStarClick(star_num) {
+    return e => {
+      e.preventDefault();
+      this.setState({ rating: star_num });
+
+      let star_div = document.getElementsByClassName("stars");
+      let star_img = document.getElementsByClassName("fa-star");
+
+      for (let i = 0; i < 5; i++) {
+        if (i <= star_num - 1) {
+          if (star_div[i].classList.contains("not-active-background")) {
+            star_div[i].classList.remove("not-active-background");
+          }
+          if (!star_div[i].classList.contains("active-background")) {
+            star_div[i].classList.add("active-background");
+          }
+          if (star_img[i].classList.contains("not-active-star")) {
+              star_img[i].classList.remove("not-active-star")
+          }
+          if (!star_img[i].classList.contains("active-star")) {
+            star_img[i].classList.add("active-star");
+        }
+        } else {
+          if (star_div[i].classList.contains("active-background")) {
+            star_div[i].classList.remove("active-background");
+          }
+          if (!star_div[i].classList.contains("not-active-background")) {
+            star_div[i].classList.add("not-active-background");
+          }
+          if (star_img[i].classList.contains("active-star")) {
+            star_img[i].classList.remove("active-star")
+        }
+          if (!star_img[i].classList.contains("not-active-star")) {
+              star_img[i].classList.add("not-active-star")
+          }
+        }
+      }
+    }
   }
 
   resetState(e) {
@@ -55,7 +96,6 @@ class ReviewForm extends React.Component{
   }
 
   render() {
-    console.log("REVIEW FORM", this.props);
     return (
       <div className="review-form">
         <div className="review-form-container">
@@ -82,20 +122,20 @@ class ReviewForm extends React.Component{
 
             <div className="rate-and-submit-container">
               <div className="star-rating">
-                <div className="star1 active-background">
-                <i className="fas fa-star star1 active-star" ></i>
+                <div className="stars active-background" onClick={ this.handleStarClick(1)}>
+                  <i className="fas fa-star active-star" ></i>
                 </div>
-                <div className="star2 active-background">
-                <i className="fas fa-star star2 active-star"></i>
+                <div className="stars active-background" onClick={ this.handleStarClick(2)}>
+                  <i className="fas fa-star active-star"></i>
                 </div>
-                <div className="star3 active-background">
-                <i className="fas fa-star star3 active-star"></i>
+                <div className="stars active-background" onClick={ this.handleStarClick(3)}>
+                  <i className="fas fa-star active-star"></i>
                 </div>
-                <div className="star4 active-background">
-                <i className="fas fa-star star4 active-star"></i>
+                <div className="stars active-background" onClick={ this.handleStarClick(4)}>
+                  <i className="fas fa-star active-star"></i>
                 </div>
-                <div className="star5 not-active-background">
-                <i className="fas fa-star star5 not-active-star"></i>
+                <div className="stars active-background" onClick={ this.handleStarClick(5)}>
+                  <i className="fas fa-star active-star"></i>
                 </div>
               </div>
               <button className="review-button">Submit Review!</button>
