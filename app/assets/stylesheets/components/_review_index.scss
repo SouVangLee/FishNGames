@@ -16,7 +16,6 @@
   text-decoration: underline;
 }
 
-
 .reviews {
   margin: auto;
   width: 60%;
@@ -85,20 +84,21 @@
   color: grey
 }
 
-// .rating {
-//   font-weight: 600;
-//   margin-bottom: 10px;
-//   padding-top: 2px;
-// }
+.review-header {
+  margin: -20px 0 20px 18px;
+  font-size: 20px;
+  font-weight: 600;
+}
 
 .p-buttons-container {
-  width: 650px;
+  width: 96%;
   height: 165px;
+  // margin-right: -20px;
 }
 
 
 .p-buttons-container p {
-  width: 420px;
+  width: 100%;
   height: 100px;
   overflow: auto;
   margin-top: 15px;
