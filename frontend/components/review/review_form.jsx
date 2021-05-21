@@ -27,8 +27,8 @@ class ReviewForm extends React.Component {
       e.preventDefault();
       this.setState({ rating: star_num });
 
-      let star_div = document.getElementsByClassName("stars");
-      let star_img = document.getElementsByClassName("fa-star");
+      let star_div = document.getElementsByClassName("form-star-div");
+      let star_img = document.getElementsByClassName("form-star");
 
       for (let i = 0; i < 5; i++) {
         if (i <= star_num - 1) {
@@ -122,20 +122,20 @@ class ReviewForm extends React.Component {
 
             <div className="rate-and-submit-container">
               <div className="star-rating">
-                <div className="active-background" onClick={ this.handleStarClick(1)}>
-                  <i className="fas fa-star active-star" ></i>
+                <div className="form-star-div active-background" onClick={ this.handleStarClick(1)}>
+                  <i className="fas fa-star active-star form-star" ></i>
                 </div>
-                <div className="active-background" onClick={ this.handleStarClick(2)}>
-                  <i className="fas fa-star active-star"></i>
+                <div className="form-star-div active-background" onClick={ this.handleStarClick(2)}>
+                  <i className="fas fa-star active-star form-star"></i>
                 </div>
-                <div className="active-background" onClick={ this.handleStarClick(3)}>
-                  <i className="fas fa-star active-star"></i>
+                <div className="form-star-div active-background" onClick={ this.handleStarClick(3)}>
+                  <i className="fas fa-star active-star form-star"></i>
                 </div>
-                <div className="active-background" onClick={ this.handleStarClick(4)}>
-                  <i className="fas fa-star active-star"></i>
+                <div className="form-star-div active-background" onClick={ this.handleStarClick(4)}>
+                  <i className="fas fa-star active-star form-star"></i>
                 </div>
-                <div className="active-background" onClick={ this.handleStarClick(5)}>
-                  <i className="fas fa-star active-star"></i>
+                <div className="form-star-div active-background" onClick={ this.handleStarClick(5)}>
+                  <i className="fas fa-star active-star form-star"></i>
                 </div>
               </div>
               <button className="review-button">Submit Review!</button>
