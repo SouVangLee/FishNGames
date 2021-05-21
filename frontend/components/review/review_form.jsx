@@ -140,8 +140,8 @@ class ReviewForm extends React.Component {
               </div>
               <button className="review-button">Submit Review!</button>
             </div>
-            {this.renderErrors()}
           </form>
+          {this.renderErrors()}
         </div>
       </div>
     )

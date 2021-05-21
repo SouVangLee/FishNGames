@@ -19,7 +19,8 @@ class ReviewItem extends React.Component {
     this.clickEdit = this.clickEdit.bind(this);
     this.handleUpdate = this.handleUpdate.bind(this);
     this.showEditReviewStars = this.showEditReviewStars.bind(this);
-    this.showReviewStars = this.showReviewStars.bind(this)
+    this.showReviewStars = this.showReviewStars.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   clickEdit(e) {
@@ -30,7 +31,14 @@ class ReviewItem extends React.Component {
 
   clickDelete() {
     this.props.deleteReview(this.props.review.id);
-    this.setState({ showEditForm: false});
+    const { header, comment, rating, name } = this.props.review;
+    this.setState({ 
+      header: header,
+      comment: comment,
+      rating: rating,
+      name: name,
+      showEditForm: false
+    });
     $(".review-edit-button").removeClass("hide");
   }
 
@@ -152,6 +160,21 @@ class ReviewItem extends React.Component {
     return starArr;
   }
 
+  renderErrors() {
+    return (
+      <ul className="edit-review-error-list">
+        {this.props.errors.map((error, i) =>(
+          <li key={`error-${i}`}>{error}</li>
+        ))}
+      </ul>
+    )
+  }
+
+  componentWillUnmount() {
+    const errors = [];
+    this.props.deleteErrors(errors);
+  }
+
   render() {
     console.log("REVIEW INDEX ITEM PROPS", this.props);
     console.log("REVIEW INDEX ITEM STATE", this.state);
@@ -159,6 +182,7 @@ class ReviewItem extends React.Component {
     const date = createdAt.slice(0, 10);
     let showReviewStar = this.showReviewStars(rating);
     let showEditReviewStars = this.showEditReviewStars(this.state.rating);
+    let renderErrors = this.renderErrors();
 
     return (
     <div> 
@@ -181,6 +205,7 @@ class ReviewItem extends React.Component {
                 onChange={this.handleInput('comment')}
               />
           </div>
+          {/* { renderErrors } */}
           <button className="edit-update-button">Update</button>
         </form>
 
@@ -200,7 +225,7 @@ class ReviewItem extends React.Component {
         <nav className="review-item-nav">
           <div className="name-rating-container">
             <span className="show-star-review">{showReviewStar}</span>
-            <span className="user-info">{this.state.name} </span>
+            <span className="user-info">{ !this.state.showEditForm ? this.state.name : name} </span>
             <span className="user-date">{date}</span>
           </div>
         </nav>
@@ -216,6 +241,7 @@ class ReviewItem extends React.Component {
             </div> ) : ""
             }
           </div>
+          { renderErrors }
       </div>
       )}
       </div>
