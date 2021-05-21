@@ -160,15 +160,15 @@ class ReviewItem extends React.Component {
     return starArr;
   }
 
-  renderErrors() {
-    return (
-      <ul className="edit-review-error-list">
-        {this.props.errors.map((error, i) =>(
-          <li key={`error-${i}`}>{error}</li>
-        ))}
-      </ul>
-    )
-  }
+  // renderErrors() {
+  //   return (
+  //     <ul className="edit-review-error-list">
+  //       {this.props.errors.map((error, i) =>(
+  //         <li key={`error-${i}`}>{error}</li>
+  //       ))}
+  //     </ul>
+  //   )
+  // }
 
   componentWillUnmount() {
     const errors = [];
@@ -176,8 +176,6 @@ class ReviewItem extends React.Component {
   }
 
   render() {
-    console.log("REVIEW INDEX ITEM PROPS", this.props);
-    console.log("REVIEW INDEX ITEM STATE", this.state);
     const { header, comment, name, rating, createdAt, reviewerId } = this.props.review;
     const date = createdAt.slice(0, 10);
     let showReviewStar = this.showReviewStars(rating);
