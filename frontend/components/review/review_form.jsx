@@ -122,19 +122,19 @@ class ReviewForm extends React.Component {
 
             <div className="rate-and-submit-container">
               <div className="star-rating">
-                <div className="stars active-background" onClick={ this.handleStarClick(1)}>
+                <div className="active-background" onClick={ this.handleStarClick(1)}>
                   <i className="fas fa-star active-star" ></i>
                 </div>
-                <div className="stars active-background" onClick={ this.handleStarClick(2)}>
+                <div className="active-background" onClick={ this.handleStarClick(2)}>
                   <i className="fas fa-star active-star"></i>
                 </div>
-                <div className="stars active-background" onClick={ this.handleStarClick(3)}>
+                <div className="active-background" onClick={ this.handleStarClick(3)}>
                   <i className="fas fa-star active-star"></i>
                 </div>
-                <div className="stars active-background" onClick={ this.handleStarClick(4)}>
+                <div className="active-background" onClick={ this.handleStarClick(4)}>
                   <i className="fas fa-star active-star"></i>
                 </div>
-                <div className="stars active-background" onClick={ this.handleStarClick(5)}>
+                <div className="active-background" onClick={ this.handleStarClick(5)}>
                   <i className="fas fa-star active-star"></i>
                 </div>
               </div>
