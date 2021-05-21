@@ -4,11 +4,12 @@ class ReviewItem extends React.Component {
   constructor(props) {
     super(props);
 
-    const { header, comment, rating } = this.props.review;
+    const { header, comment, rating, name } = this.props.review;
     this.state = {
       header: header,
       comment: comment,
       rating: rating,
+      name: name,
       showEditForm: false
     }
 
@@ -47,7 +48,7 @@ class ReviewItem extends React.Component {
   handleUpdate(e) {
     e.preventDefault();
     const { header, comment, rating } = this.state;
-    const { reviewerId, productId, id} = this.props.review;
+    const { reviewerId, productId, id } = this.props.review;
     let editReview = {
       reviewerId: reviewerId,
       productId: productId,
@@ -57,6 +58,7 @@ class ReviewItem extends React.Component {
       id: id
     }
     this.props.updateReview(editReview);
+    $(".review-edit-button").removeClass("hide");
     this.setState({ showEditForm: false});
   }
 
@@ -150,43 +152,6 @@ class ReviewItem extends React.Component {
     return starArr;
   }
 
-  editForm() {
-    let showEditReviewStars = this.showEditReviewStars(this.state.rating);
-    return (
-      <div className="edit-review-item-container">
-        <form onSubmit={this.handleUpdate}>
-          <div className="edit-star-rating-container">
-            {showEditReviewStars}
-          </div>
-          <div className="edit-review-header" >
-            <input 
-              type="text" 
-              onChange={this.handleInput('header')} 
-              value={this.state.header}
-            />
-          </div>
-          <div className="edit-review-comment">
-              <textarea 
-                value={this.state.comment}
-                onChange={this.handleInput('comment')}
-              />
-          </div>
-          <button className="edit-update-button">Update</button>
-        </form>
-
-        <div className="cancel-delete-container">
-            <button 
-              className="edit-cancel-button"
-            >Cancel</button>
-            <button 
-              className="edit-delete-button"
-              onClick={this.clickDelete}
-            >Delete</button>
-        </div>
-      </div>
-    )
-  }
-
   render() {
     console.log("REVIEW INDEX ITEM PROPS", this.props);
     console.log("REVIEW INDEX ITEM STATE", this.state);
@@ -235,7 +200,7 @@ class ReviewItem extends React.Component {
         <nav className="review-item-nav">
           <div className="name-rating-container">
             <span className="show-star-review">{showReviewStar}</span>
-            <span className="user-info">{name} </span>
+            <span className="user-info">{this.state.name} </span>
             <span className="user-date">{date}</span>
           </div>
         </nav>
