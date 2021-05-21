@@ -1,6 +1,6 @@
 import React from 'react';
 
-class ReviewForm extends React.Component{
+class ReviewForm extends React.Component {
   constructor(props){
     super(props);
     
@@ -148,4 +148,4 @@ class ReviewForm extends React.Component{
   }  
 }
 
-export default ReviewForm
+export default ReviewForm;

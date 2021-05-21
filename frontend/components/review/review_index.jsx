@@ -18,8 +18,6 @@ class Review extends React.Component {
 
 
   render() {
-    // console.log("REVIEW INDEX", this.props);
-
     let productReviews = this.props.reviews.filter((review) => (
       review.productId === this.props.product_id
     ));
