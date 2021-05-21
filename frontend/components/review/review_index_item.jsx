@@ -196,6 +196,7 @@ class ReviewItem extends React.Component {
               type="text" 
               onChange={this.handleInput('header')} 
               value={this.state.header}
+              maxLength={ 80 }
             />
           </div>
           <div className="edit-review-comment">
