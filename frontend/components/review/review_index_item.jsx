@@ -182,7 +182,6 @@ class ReviewItem extends React.Component {
     const date = createdAt.slice(0, 10);
     let showReviewStar = this.showReviewStars(rating);
     let showEditReviewStars = this.showEditReviewStars(this.state.rating);
-    let renderErrors = this.renderErrors();
 
     return (
     <div> 
@@ -205,7 +204,6 @@ class ReviewItem extends React.Component {
                 onChange={this.handleInput('comment')}
               />
           </div>
-          {/* { renderErrors } */}
           <button className="edit-update-button">Update</button>
         </form>
 
@@ -240,6 +238,9 @@ class ReviewItem extends React.Component {
                   onClick={e => this.clickEdit(e)}
                 >Edit Review</button>
               </span>
+              {/* <span>
+                { this.renderErrors() }
+              </span> */}
             </div> ) : ""
             }
           </div>
