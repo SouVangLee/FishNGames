@@ -64,14 +64,19 @@ class ReviewItem extends React.Component {
   }
 
   render() {
+    console.log("REVIEW INDEX ITEM PROPS", this.props);
     const { header, comment, name, rating, createdAt, reviewerId } = this.props.review;
     const date = createdAt.slice(0, 10);
     let showStar = this.showStars(rating);
 
     return (
     <div> 
-      { (this.state.showEditForm) ? 
-      (<EditReviewForm review={this.props.review}/>
+      { (this.state.showEditForm) ? (
+          <EditReviewForm 
+            review={this.props.review}
+            updateReview={this.props.updateReview}
+            deleteReview={this.props.deleteReview}
+          />
         ) : (
       <div className="review-item-container">
         <nav className="review-item-nav">

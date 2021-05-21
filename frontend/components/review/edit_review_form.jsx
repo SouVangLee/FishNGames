@@ -10,11 +10,30 @@ class EditReviewForm extends React.Component {
       productId,
       header,
       comment,
-      rating
+      rating,
     }
     this.handleStarClick = this.handleStarClick.bind(this);
-
+    this.clickDelete = this.clickDelete.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this);
   }
+
+  clickDelete() {
+    this.props.deleteReview(this.props.review.id);
+    this.setState({ showEditForm: false});
+  }
+
+  handleInput(field) {
+    return (e) => {
+      this.setState({[field]: e.target.value})
+    }
+  }
+
+  handleUpdate(e) {
+    e.preventDefault();
+    this.props.updateReview(this.state);
+    this.setState({ showEditForm: false});
+  }
+
 
   handleStarClick(star_num) {
     return e => {
@@ -56,12 +75,6 @@ class EditReviewForm extends React.Component {
     }
   }
 
-  handleInput(field) {
-    return (e) => {
-      this.setState({[field]: e.target.value})
-    }
-  }
-
   showEditStars(rating) {
     let starArr = [];
     let i = 0;
@@ -97,17 +110,12 @@ class EditReviewForm extends React.Component {
     return starArr;
   }
 
-
-  handleSubmit() {
-    return;
-  }
-
   render() {
-    console.log("EDIT FORM", this.state);
+    console.log("EDIT FORM PROPS", this.props);
     let showStars = this.showEditStars(this.state.rating);
     return (
       <div className="edit-review-item-container">
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleUpdate}>
           <div className="edit-star-rating-container">
             {showStars}
           </div>
@@ -128,9 +136,19 @@ class EditReviewForm extends React.Component {
           </div>
 
           <div className="edit-review-form-buttons">
-            <button className="edit-cancel-button">Cancel</button>
-            <button className="edit-update-button">Update</button>
-            <button className="edit-delete-button">Delete</button>
+            <button 
+              className="edit-cancel-button"
+            >Cancel</button>
+            
+            <button 
+              className="edit-update-button"
+              onClick={this.clickUpdate}
+            >Update</button>
+
+            <button 
+              className="edit-delete-button"
+              onClick={this.clickDelete}
+            >Delete</button>
           </div>
         </form>
       </div>
