@@ -234,14 +234,15 @@ class ReviewItem extends React.Component {
             <p>{comment}</p>
             { (this.props.currentUserId === reviewerId) ? (
             <div className="bottom-review-buttons flex-edit-button">
-              <button 
-                className='review-edit-button'
-                onClick={e => this.clickEdit(e)}
-              >Edit Review</button>
+              <span>
+                <button 
+                  className='review-edit-button'
+                  onClick={e => this.clickEdit(e)}
+                >Edit Review</button>
+              </span>
             </div> ) : ""
             }
           </div>
-          { renderErrors }
       </div>
       )}
       </div>

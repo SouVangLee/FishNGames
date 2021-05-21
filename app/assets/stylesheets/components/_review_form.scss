@@ -117,9 +117,19 @@
   cursor: pointer;
 }
 
+.placeholder1 {
+  display: flex;
+  justify-content: flex-start;
+  width: 750px;
+  height: 35px;
+}
+
+.placeholder2 {
+  width: 420px;
+  height: 100%;
+}
+
 .review-error-list {
-  position: absolute;
-  margin-right: 40px;
   color: red;
 }
 
