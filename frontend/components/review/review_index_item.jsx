@@ -20,7 +20,7 @@ class ReviewItem extends React.Component {
     this.handleUpdate = this.handleUpdate.bind(this);
     this.showEditReviewStars = this.showEditReviewStars.bind(this);
     this.showReviewStars = this.showReviewStars.bind(this);
-    this.renderErrors = this.renderErrors.bind(this);
+    // this.renderErrors = this.renderErrors.bind(this);
   }
 
   clickEdit(e) {
