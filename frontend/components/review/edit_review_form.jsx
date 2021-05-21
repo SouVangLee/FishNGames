@@ -128,7 +128,9 @@ class EditReviewForm extends React.Component {
           </div>
 
           <div className="edit-review-form-buttons">
-            
+            <button className="edit-cancel-button">Cancel</button>
+            <button className="edit-update-button">Update</button>
+            <button className="edit-delete-button">Delete</button>
           </div>
         </form>
       </div>

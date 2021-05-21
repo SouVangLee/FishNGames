@@ -4,6 +4,7 @@
   background-color: rgba(247, 247, 247, 0.5);
   padding-bottom: 40px;
   border-bottom: 2px solid #d3d3d3;
+  margin-bottom: 40px;
 }
 
 .edit-star-rating-container {
@@ -86,4 +87,36 @@
 .edit-review-comment textarea {
   height: 100px;
   overflow: auto;
+  resize: none;
+}
+
+.edit-review-form-buttons {
+  margin-left: 15px;
+  margin-top: 15px;
+  height: 25px;
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-cancel-button,
+.edit-update-button,
+.edit-delete-button {
+  background-color: teal;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: 1px solid black;
+  width: 150px;
+  font-family: 'PT Sans Narrow', sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.edit-cancel-button:hover,
+.edit-update-button:hover,
+.edit-delete-button:hover {
+  background-color: rgb(30, 30, 30);
+  color: white;
+  cursor: pointer;
 }
