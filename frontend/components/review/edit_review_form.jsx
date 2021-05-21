@@ -56,6 +56,12 @@ class EditReviewForm extends React.Component {
     }
   }
 
+  handleInput(field) {
+    return (e) => {
+      this.setState({[field]: e.target.value})
+    }
+  }
+
   showEditStars(rating) {
     let starArr = [];
     let i = 0;
@@ -105,8 +111,26 @@ class EditReviewForm extends React.Component {
           <div className="edit-star-rating-container">
             {showStars}
           </div>
-        </form>
 
+          <div className="edit-review-header" >
+            <input 
+              type="text" 
+              onChange={this.handleInput('header')} 
+              value={this.state.header}
+            />
+          </div>
+
+          <div className="edit-review-comment">
+              <textarea 
+                value={this.state.comment}
+                onChange={this.handleInput('comment')}
+              />
+          </div>
+
+          <div className="edit-review-form-buttons">
+            
+          </div>
+        </form>
       </div>
     )
   }

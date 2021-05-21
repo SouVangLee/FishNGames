@@ -1,8 +1,23 @@
+.edit-review-item-container {
+  width: 100%;
+  height: 225px;
+  background-color: rgba(247, 247, 247, 0.5);
+  padding-bottom: 40px;
+  border-bottom: 2px solid #d3d3d3;
+}
+
 .edit-star-rating-container {
   display: flex;
   flex-direction: row;
-  margin-top: 10px;
-  margin-left: 10px;
+  margin-left: 15px;
+}
+
+.edit-star-rating-container div {
+  margin-top: 15px;
+}
+
+.edit-star-rating-container:hover {
+  cursor: pointer;
 }
 
 .edit-star-rating-container div:first-child {
@@ -35,7 +50,7 @@
   background-color: rgba(247, 247, 247, 0.5);
   padding-bottom: 40px;
   border-bottom: 2px solid #d3d3d3;
-  border: 2px solid red;
+  // border: 2px solid red;
 }
 
 .edit-active-star {
@@ -53,4 +68,22 @@
 
 .edit-not-active-background {
   background-color: rgb(112, 112, 112);
+}
+
+.edit-review-header, .edit-review-comment {
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.edit-review-header input, .edit-review-comment textarea {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  height: 25px;
+  width: 98%;
+}
+
+.edit-review-comment textarea {
+  height: 100px;
+  overflow: auto;
 }
