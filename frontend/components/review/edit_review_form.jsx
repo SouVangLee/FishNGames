@@ -3,6 +3,7 @@ import React from 'react';
 class EditReviewForm extends React.Component {
   constructor(props) {
     super(props);
+    console.log("CONSTRUCTOR PROPS", this.props);
 
     const { reviewerId, productId, header, comment, rating} = this.props.review;
     this.state = {
@@ -10,7 +11,8 @@ class EditReviewForm extends React.Component {
       productId: productId,
       header: header,
       comment: comment,
-      rating: rating
+      rating: rating,
+      showEditForm: this.props.showEditForm
     }
     this.handleStarClick = this.handleStarClick.bind(this);
     this.clickDelete = this.clickDelete.bind(this);
@@ -30,7 +32,15 @@ class EditReviewForm extends React.Component {
 
   handleUpdate(e) {
     e.preventDefault();
-    this.props.updateReview(this.state);
+    const { reviewerId, productId, header, comment, rating} = this.props.review;
+    let editReview = {
+      reviewerId: reviewerId,
+      productId: productId,
+      header: header,
+      comment: comment,
+      rating: rating,
+    }
+    this.props.updateReview(editReview);
     this.setState({ showEditForm: false});
   }
 
@@ -126,7 +136,6 @@ class EditReviewForm extends React.Component {
   }
 
   render() {
-    console.log("EDIT FORM PROPS", this.props);
     let showStars = this.showEditStars(this.state.rating);
     return (
       <div className="edit-review-item-container">
