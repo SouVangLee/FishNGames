@@ -108,7 +108,8 @@ class ReviewForm extends React.Component {
                 type="text" 
                 onChange={this.handleInput('header')} 
                 value={this.state.header}
-                placeholder="Enter in a header..."
+                maxLength={80}
+                placeholder="Enter in a header here... It cannot be greater than 80 characters..."
               />
             </div>
 
