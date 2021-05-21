@@ -1,0 +1,119 @@
+.edit-review-item-container {
+  width: 100%;
+  height: 275px;
+  background-color: rgba(247, 247, 247, 0.5);
+  padding-bottom: 40px;
+  border-bottom: 2px solid #d3d3d3;
+  margin-bottom: 30px;
+}
+
+.edit-star-rating-container {
+  display: flex;
+  flex-direction: row;
+  margin-left: 15px;
+}
+
+.edit-star-rating-container div {
+  margin-top: 15px;
+}
+
+.edit-star-rating-container:hover {
+  cursor: pointer;
+}
+
+.edit-star-rating-container div:first-child {
+  border: 1px solid black;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-star-rating-container div:not(first-child) {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-review-item-container *{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.edit-active-star {
+  font-size: 14px;
+  color: gold;
+}
+
+.edit-not-active-star {
+  font-size: 14px;
+  color: white;
+}
+.edit-active-background {
+  background-color: teal;
+}
+
+.edit-not-active-background {
+  background-color: rgb(112, 112, 112);
+}
+
+.edit-review-header, .edit-review-comment {
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.edit-review-header input, .edit-review-comment textarea {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  height: 25px;
+  width: 98%;
+}
+
+.edit-review-comment textarea {
+  height: 100px;
+  overflow: auto;
+  resize: none;
+}
+
+.cancel-delete-container {
+  margin-left: 15px;
+  margin-top: 15px;
+  height: 30px;
+  width: 315px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-cancel-button,
+.edit-update-button,
+.edit-delete-button {
+  background-color: teal;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: 1px solid black;
+  width: 150px;
+  height: 30px;
+  font-family: 'PT Sans Narrow', sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.edit-update-button {
+  margin-left: 15px;
+  margin-top: 15px;
+}
+
+.edit-cancel-button:hover,
+.edit-update-button:hover,
+.edit-delete-button:hover {
+  background-color: rgb(30, 30, 30);
+  color: white;
+  cursor: pointer;
+}

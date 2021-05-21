@@ -1,5 +1,5 @@
 import React from 'react';
-import ReviewItem from './review_index_item';
+import ReviewIndexItemContainer from './review_index_item_container';
 
 class Review extends React.Component {
   constructor(props) {
@@ -18,14 +18,12 @@ class Review extends React.Component {
 
 
   render() {
-    // console.log("REVIEW INDEX", this.props);
-
     let productReviews = this.props.reviews.filter((review) => (
       review.productId === this.props.product_id
     ));
 
     const reviewList = productReviews.map((review, index) => (
-     <ReviewItem 
+     <ReviewIndexItemContainer 
         key={index} 
         review={review} 
         currentUserId={this.props.currentUserId}

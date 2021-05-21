@@ -422,9 +422,9 @@ ActiveRecord::Base.transaction do
   product_13.photos.attach(io: footwear_1_1, filename: 'footwear_1_1.jpg')
 
   Review.destroy_all
-  review_1 = Review.create!(reviewer_id: 4, product_id: 1, rating: 5, comment: "So easy to use!")
-  review_2 = Review.create!(reviewer_id: 3, product_id: 2, rating: 5, comment: "This is a great product!")
-  review_3 = Review.create!(reviewer_id: 4, product_id: 24, rating: 5, comment: "This is nice.")
+  # review_1 = Review.create!(reviewer_id: 4, product_id: 1, rating: 5, comment: "So easy to use!")
+  # review_2 = Review.create!(reviewer_id: 3, product_id: 2, rating: 5, comment: "This is a great product!")
+  # review_3 = Review.create!(reviewer_id: 4, product_id: 24, rating: 5, comment: "This is nice.")
 
 
 end

@@ -12,6 +12,7 @@
 #
 class Review < ApplicationRecord
   validates :reviewer_id, :product_id, :rating, :comment, presence: true
+  validates_length_of :header, within: 1..80, too_long: 'cannot be greater than 80 characters!', too_short: 'cannot be empty!'
   validates :rating, inclusion: { in: [1, 2, 3, 4, 5], message: 'Please choose a rating between 1 and 5.'}
 
   belongs_to :product,
