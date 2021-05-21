@@ -15,7 +15,9 @@
 }
 
 .edit-star-rating-container div:not(first-child) {
-  border: 1px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
   width: 25px;
   height: 25px;
   display: flex;
@@ -36,12 +38,12 @@
   border: 2px solid red;
 }
 
-.edit-gold-star {
+.edit-active-star {
   font-size: 14px;
   color: gold;
 }
 
-.edit-grey-star {
+.edit-not-active-star {
   font-size: 14px;
   color: white;
 }
