@@ -4,14 +4,11 @@ class ReviewItem extends React.Component {
   constructor(props) {
     super(props);
 
-    const { reviewerId, productId, header, comment, rating, id} = this.props.review;
+    const { header, comment, rating } = this.props.review;
     this.state = {
-      reviewerId: reviewerId,
-      productId: productId,
       header: header,
       comment: comment,
       rating: rating,
-      id: id,
       showEditForm: false
     }
 
@@ -31,7 +28,7 @@ class ReviewItem extends React.Component {
   }
 
   clickDelete() {
-    this.props.deleteReview(this.state.reviewerId);
+    this.props.deleteReview(this.props.review.id);
     this.setState({ showEditForm: false});
     $(".review-edit-button").removeClass("hide");
   }
@@ -49,7 +46,8 @@ class ReviewItem extends React.Component {
 
   handleUpdate(e) {
     e.preventDefault();
-    const { reviewerId, productId, header, comment, rating, id} = this.state;
+    const { header, comment, rating } = this.state;
+    const { reviewerId, productId, id} = this.props.review;
     let editReview = {
       reviewerId: reviewerId,
       productId: productId,
