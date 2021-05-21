@@ -6,11 +6,11 @@ class EditReviewForm extends React.Component {
 
     const { reviewerId, productId, header, comment, rating} = this.props.review;
     this.state = {
-      reviewerId,
-      productId,
-      header,
-      comment,
-      rating,
+      reviewerId: reviewerId,
+      productId: productId,
+      header: header,
+      comment: comment,
+      rating: rating
     }
     this.handleStarClick = this.handleStarClick.bind(this);
     this.clickDelete = this.clickDelete.bind(this);
@@ -110,6 +110,21 @@ class EditReviewForm extends React.Component {
     return starArr;
   }
 
+  renderErrors() {
+    return (
+      <ul className="review-error-list">
+        {this.props.errors.map((error, i) =>(
+          <li key={`error-${i}`}>{error}</li>
+        ))}
+      </ul>
+    )
+  }
+
+  componentWillUnmount() {
+    const errors = [];
+    this.props.deleteErrors(errors);
+  }
+
   render() {
     console.log("EDIT FORM PROPS", this.props);
     let showStars = this.showEditStars(this.state.rating);
@@ -119,7 +134,6 @@ class EditReviewForm extends React.Component {
           <div className="edit-star-rating-container">
             {showStars}
           </div>
-
           <div className="edit-review-header" >
             <input 
               type="text" 
@@ -127,30 +141,24 @@ class EditReviewForm extends React.Component {
               value={this.state.header}
             />
           </div>
-
           <div className="edit-review-comment">
               <textarea 
                 value={this.state.comment}
                 onChange={this.handleInput('comment')}
               />
           </div>
+          <button className="edit-update-button">Update</button>
+        </form>
 
-          <div className="edit-review-form-buttons">
+        <div className="cancel-delete-container">
             <button 
               className="edit-cancel-button"
             >Cancel</button>
-            
-            <button 
-              className="edit-update-button"
-              onClick={this.clickUpdate}
-            >Update</button>
-
             <button 
               className="edit-delete-button"
               onClick={this.clickDelete}
             >Delete</button>
-          </div>
-        </form>
+        </div>
       </div>
     )
   }

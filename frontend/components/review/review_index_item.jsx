@@ -1,5 +1,5 @@
 import React from 'react';
-import EditReviewForm from './edit_review_form';
+import EditReviewFormContainer from './edit_review_form_container';
 
 class ReviewItem extends React.Component {
   constructor(props) {
@@ -72,7 +72,7 @@ class ReviewItem extends React.Component {
     return (
     <div> 
       { (this.state.showEditForm) ? (
-          <EditReviewForm 
+          <EditReviewFormContainer 
             review={this.props.review}
             updateReview={this.props.updateReview}
             deleteReview={this.props.deleteReview}
