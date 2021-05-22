@@ -73,10 +73,6 @@ class CategoryProducts extends React.Component{
 
 
   render() {
-    // console.log("category products props", this.props);
-    console.log("category product state", this.state);
-
-    const { minPrice, maxPrice } = this.state;
     let productArr = this.filterProducts();
     const productList = productArr.map(product => (
       <div className="product-info-link" key={`${product.id}`}>
@@ -111,16 +107,16 @@ class CategoryProducts extends React.Component{
                 Any Price
               </label>
               <label onClick={this.filterPrice("0", "10")}>
-                Under $10
+                Between $0 and $10
               </label>
               <label onClick={this.filterPrice("0", "25")}>
-                Under $25
+                Between $10 and $25
               </label>
               <label onClick={this.filterPrice("0", "50")} >
-                Under $50
+                Between $25 and $50
               </label>
               <label onClick={this.filterPrice("0", "100")} >
-                Under $100
+                Between $50 and $100
               </label>
             </div>
             <div className="custom-price-filter">
@@ -137,10 +133,9 @@ class CategoryProducts extends React.Component{
                   type="text" 
                   value={this.state.maxPrice} 
                   onChange={this.handleInput('maxPrice')} 
-                  placeholder="min price"
+                  placeholder="max price"
                 />
               </span>
-              <button onClick={this.filterPrice(minPrice, maxPrice)} >Filter!</button>
             </div>
           </section>
 

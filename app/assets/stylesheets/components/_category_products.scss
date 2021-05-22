@@ -29,7 +29,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid salmon;
+  border-right: 1px solid #ba6228;
+  margin-top: 50px;
 }
 
 .filter-section * {
@@ -46,10 +47,10 @@
 
 .price-filter-container {
   width: 80%;
-  // border: 2px solid green;
   display: flex;
   flex-direction: column;
   padding: 10px;
+  margin-left: 10px;
 }
 
 .price-filter-container label {
@@ -62,6 +63,16 @@
   color: teal;
 }
 
+.custom-price-filter {
+  padding: 10px;
+}
+.custom-price-filter input{
+  width: 125px;
+  height: 35px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
+
 .product-section {
   width: 75%;
   height: 100%;
@@ -69,6 +80,7 @@
   align-content: flex-start;
   flex-wrap: wrap;
   margin-top: 50px;
+  margin-left: 25px;
 }
 
 .product-info-link {
