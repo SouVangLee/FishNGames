@@ -13,10 +13,14 @@ class CategoryProducts extends React.Component{
         4: window.huntingLeaderboard,
         5: window.campingLeaderboard,
         6: window.clothingLeaderboard,
-        7: window.footwearLeaderboard
-      }
+        7: window.footwearLeaderboard,
+      },
+      minPrice: "",
+      maxPrice: ""
     }
 
+    this.handleInput = this.handleInput.bind(this);
+    this.filterPrice = this.filterPrice.bind(this);
   }
 
 
@@ -31,8 +35,24 @@ class CategoryProducts extends React.Component{
     }
   }
 
+  handleInput(field) {
+    return e => {
+      e.preventDefault();
+      this.setState({ [field]: e.target.value})
+    }
+  }
+
+  filterPrice(minPrice, maxPrice) {
+    return e => {
+      e.preventDefault();
+      this.setState({ minPrice, maxPrice })
+    }
+  }
+
 
   render() {
+    const { minPrice, maxPrice } = this.state;
+    console.log("category products props", this.props);
     const productList = this.props.products.map(product => (
       <div className="product-info-link" key={`${product.id}`}>
         <Link className="product-link" to={`/products/${product.id}`}>
@@ -59,8 +79,44 @@ class CategoryProducts extends React.Component{
         </div>
         
         <div className="category-body-container">
-          <section className="search-section">
-            <h2>Search Filter Coming Soon...</h2>
+          <section className="filter-section">
+            <h2>Filter By</h2>
+            <div className="price-filter-container">
+              <label onClick={this.filterPrice("", "")}>
+                Any Price
+              </label>
+              <label onClick={this.filterPrice(0, 10)}>
+                Under $10
+              </label>
+              <label onClick={this.filterPrice(0, 25)}>
+                Under $25
+              </label>
+              <label onClick={this.filterPrice(0, 50)} >
+                Under $50
+              </label>
+              <label onClick={this.filterPrice(0, 100)} >
+                Under $100
+              </label>
+            </div>
+            <div className="custom-price-filter">
+              <span>$&nbsp;
+                <input 
+                  type="text" 
+                  value={this.state.minPrice} 
+                  onChange={this.handleInput('minPrice')} 
+                  placeholder="min price"
+                />
+              </span>
+              <span>&nbsp; - &nbsp;
+                <input 
+                  type="text" 
+                  value={this.state.maxPrice} 
+                  onChange={this.handleInput('maxPrice')} 
+                  placeholder="min price"
+                />
+              </span>
+              <button onClick={this.filterPrice(minPrice, maxPrice)} >Filter!</button>
+            </div>
           </section>
 
           <section className="product-section">
