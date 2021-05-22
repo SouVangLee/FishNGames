@@ -111,10 +111,10 @@ class CategoryProducts extends React.Component{
               <label onClick={this.filterPrice("0", "10")}>
                 Between $0 and $10
               </label>
-              <label onClick={this.filterPrice("0", "25")}>
+              <label onClick={this.filterPrice("10", "25")}>
                 Between $10 and $25
               </label>
-              <label onClick={this.filterPrice("0", "50")} >
+              <label onClick={this.filterPrice("25", "50")} >
                 Between $25 and $50
               </label>
               <label onClick={this.filterPrice("50", "100")} >
