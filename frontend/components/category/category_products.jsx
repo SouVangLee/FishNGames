@@ -35,7 +35,7 @@ class CategoryProducts extends React.Component{
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.match.params.id !== this.props.match.params.id) {
       this.props.fetchCategoryProducts(this.props.match.params.id)
-      this.setState({ minPrice = "", maxPrice = "" })
+      this.setState({ minPrice: "", maxPrice: "" })
 
     }
   }
