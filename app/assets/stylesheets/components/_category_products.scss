@@ -92,6 +92,10 @@
   box-sizing: border-box;
 }
 
+.product-info-link:hover {
+  box-shadow: 0 0 5px 1px teal;
+}
+
 .product-link {
   width: 100%;
   height: 100%;
