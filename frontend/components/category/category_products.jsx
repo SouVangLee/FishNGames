@@ -16,16 +16,19 @@ class CategoryProducts extends React.Component{
         7: window.footwearLeaderboard,
       },
       minPrice: "",
-      maxPrice: ""
+      maxPrice: "",
+      products: []
     }
 
     this.handleInput = this.handleInput.bind(this);
     this.filterPrice = this.filterPrice.bind(this);
+    this.filterProducts = this.filterProducts.bind(this);
   }
 
 
   componentDidMount() {
-    this.props.fetchCategoryProducts(this.props.match.params.id);
+    this.props.fetchCategoryProducts(this.props.match.params.id)
+      .then(() => this.setState({ products: this.props.products }));
     window.scrollTo(0, 0);
   }
 
@@ -49,11 +52,33 @@ class CategoryProducts extends React.Component{
     }
   }
 
+  filterProducts() {
+    const { minPrice, maxPrice } = this.state;
+    const { products } = this.props;
+    if (minPrice === "" && maxPrice === "") return products;
+
+    let filteredProducts = this.props.products.filter(product => {
+      if (minPrice === "" && maxPrice !== "") {
+        return parseInt(product.price) <= parseInt(maxPrice);
+      }
+      else if (minPrice !== "" && maxPrice === "") {
+        return parseInt(product.price) >= parseInt(minPrice);
+      } else {
+        return parseInt(product.price) >= parseInt(minPrice) && parseInt(product.price) <= parseInt(maxPrice);
+      }
+    });
+
+    return filteredProducts;
+  }
+
 
   render() {
+    // console.log("category products props", this.props);
+    console.log("category product state", this.state);
+
     const { minPrice, maxPrice } = this.state;
-    console.log("category products props", this.props);
-    const productList = this.props.products.map(product => (
+    let productArr = this.filterProducts();
+    const productList = productArr.map(product => (
       <div className="product-info-link" key={`${product.id}`}>
         <Link className="product-link" to={`/products/${product.id}`}>
           <img src={product.photoUrls[0]} alt=""/>
@@ -85,16 +110,16 @@ class CategoryProducts extends React.Component{
               <label onClick={this.filterPrice("", "")}>
                 Any Price
               </label>
-              <label onClick={this.filterPrice(0, 10)}>
+              <label onClick={this.filterPrice("0", "10")}>
                 Under $10
               </label>
-              <label onClick={this.filterPrice(0, 25)}>
+              <label onClick={this.filterPrice("0", "25")}>
                 Under $25
               </label>
-              <label onClick={this.filterPrice(0, 50)} >
+              <label onClick={this.filterPrice("0", "50")} >
                 Under $50
               </label>
-              <label onClick={this.filterPrice(0, 100)} >
+              <label onClick={this.filterPrice("0", "100")} >
                 Under $100
               </label>
             </div>
