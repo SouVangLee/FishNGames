@@ -20,13 +20,57 @@
   margin: 0 auto;
   height: 50%;
   display: flex;
+  // border: 2px solid maroon;
 }
 
-.search-section {
+.filter-section {
   width: 25%;
   height: 100%;
-  // border: 1px solid salmon;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 1px solid #ba6228;
   margin-top: 50px;
+}
+
+.filter-section * {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.filter-section h2 {
+  width: 80%;
+  margin-top: 50px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #ba6228;
+}
+
+.price-filter-container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin-left: 10px;
+}
+
+.price-filter-container label {
+  font-size: 18px;
+  padding: 5px 0 5px 0;
+}
+
+.price-filter-container label:hover {
+  cursor: pointer;
+  color: teal;
+}
+
+.custom-price-filter {
+  padding: 10px;
+}
+.custom-price-filter input{
+  width: 125px;
+  height: 35px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
 }
 
 .product-section {
@@ -36,6 +80,7 @@
   align-content: flex-start;
   flex-wrap: wrap;
   margin-top: 50px;
+  margin-left: 25px;
 }
 
 .product-info-link {
