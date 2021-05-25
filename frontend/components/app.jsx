@@ -17,6 +17,7 @@ const App = () => (
     <ModalContainer />
     <Navbar />
     <Switch>
+      {/* <Route path="/search" component { SearchContainer } /> */}
       <ProtectedRoute exact path="/cart" component={ Cart } />
       <Route exact path="/categories/:id" component={CategoryProductsContainer} />
       <Route exact path="/products/:id" component={ ProductContainer } />
