@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { fetchAllProducts } from '../../actions/product_actions';
 import SearchIndex from './search_index';
 
+
 const mSTP = state => ({
   products: Object.values(state.entities.products)
 });

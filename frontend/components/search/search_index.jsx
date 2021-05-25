@@ -1,3 +1,5 @@
+import React from 'react';
+
 class SearchIndex extends React.Component {
   constructor(props) {
     super(props)
@@ -9,3 +11,5 @@ class SearchIndex extends React.Component {
     return null;
   }
 }
+
+export default SearchIndex;
