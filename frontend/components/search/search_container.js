@@ -7,7 +7,7 @@ const mSTP = state => ({
 });
 
 const mDTP = dispatch => ({
-  fetchAllProducts = () => dispatch(fetchAllProducts())
+  fetchAllProducts: () => dispatch(fetchAllProducts())
 });
 
 export default connect(mSTP, mDTP)(SearchIndex);
