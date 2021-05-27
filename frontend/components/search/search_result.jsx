@@ -9,6 +9,8 @@ class SearchResult extends React.Component {
       minPrice: "",
       maxPrice: ""
     }
+
+    this.filterProducts = this.filterProducts.bind(this);
   }
 
   componentDidMount() {
@@ -16,14 +18,13 @@ class SearchResult extends React.Component {
       .then(() => this.setState({ products: this.props.products }));
   }
 
-  filterProducts(searchQuery, productsArr) {
-    let query = queryString.parse(searchQuery);
-    let queryWords = query['?search'].split(" ");
-    queryWords = queryWords.map(word => word.toLowerCase());
+  filterProducts(queryWords, productsArr) {
+
+    let queryArr = queryWords.map(word => word.toLowerCase());
     
     let filteredProducts = productsArr.filter(product => {
-      for (let i = 0; i < queryWords.length; i++) {
-        if (product.toLowerCase().includes(queryWords[i])) {
+      for (let i = 0; i < queryArr.length; i++) {
+        if (product.name.toLowerCase().includes(queryArr[i])) {
           return product;
         }
       }
@@ -53,8 +54,15 @@ class SearchResult extends React.Component {
   }
 
   render() {
-    console.log("PROPS SEARCH RESULT", this.props);
-    console.log("QUERY STRING", queryString.parse(this.props.location.search));
+    if (!this.state.products) return null;
+
+    let queryStr = queryString.parse(this.props.location.search);
+    let queryWords = queryStr['?search'].split(" ");
+    let filteredProducts = this.filterProducts(queryWords, this.state.products);
+    console.log("filtered Products", filteredProducts);
+
+    // console.log("PROPS SEARCH RESULT", this.props);
+    // console.log("QUERY STRING", queryString.parse(this.props.location.search));
     return (
       <div>
         hi
