@@ -128,10 +128,6 @@ class SearchResult extends React.Component {
           </div>
         ) : (
           <div>
-            <div className="search-result">
-              <h2>This is what we found!</h2>
-            </div>
-
             <div className="category-body-container">
               <section className="filter-section">
                 <h2>Filter By</h2>
@@ -173,8 +169,10 @@ class SearchResult extends React.Component {
               </section>
 
               <section className="product-section">
-                <div className="search-result">
-                  { `${productList.length} Search Result for "${this.state.queryStr}"`}
+                <div className="search-result-container">
+                  <h2>
+                  { `${productList.length} Search Result${productList.length > 1 ? 's' : ''} for "${this.state.queryStr}"`}
+                  </h2>
                 </div>
               { productList }
               </section>

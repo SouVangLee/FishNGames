@@ -14,6 +14,7 @@ class SearchBar extends React.Component {
 
   handleSubmit() {
     const { searchInput } = this.state;
+    this.setState({ searchInput: ""});
     this.props.history.push({ pathname: '/search', search: `search=${searchInput}`});
   }
   
