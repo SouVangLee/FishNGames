@@ -12,8 +12,7 @@ class SearchBar extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
+  handleSubmit() {
     const { searchInput } = this.state;
     this.props.history.push({ pathname: '/search', search: `search=${searchInput}`});
   }
@@ -26,6 +25,8 @@ class SearchBar extends React.Component {
   }
 
   render() {
+    console.log("SEARCH BAR", this.props);
+    console.log("Search State", this.state);
     return (
       <div className="search-box">
         <form className="search-box-form" onSubmit={this.handleSubmit}>
@@ -37,4 +38,4 @@ class SearchBar extends React.Component {
   }
 }
 
-export default SearchBar;
+export default withRouter(SearchBar);
