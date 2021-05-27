@@ -13,6 +13,9 @@ class SearchResult extends React.Component {
 
     this.filterSearch = this.filterSearch.bind(this);
     this.renderProducts = this.renderProducts.bind(this);
+    this.handleInput = this.handleInput.bind(this);
+    this.filterPrice = this.filterPrice.bind(this);
+    this.filterProducts = this.filterProducts.bind(this);
   }
 
   componentDidMount() {
@@ -33,6 +36,20 @@ class SearchResult extends React.Component {
     }
   }
 
+  handleInput(field) {
+    return e => {
+      e.preventDefault();
+      this.setState({ [field]: e.target.value})
+    }
+  }
+  
+  filterPrice(minPrice, maxPrice) {
+    return e => {
+      e.preventDefault();
+      this.setState({ minPrice, maxPrice })
+    }
+  }
+
   filterSearch(queryWords, productsArr) {
     let queryArr = queryWords.map(word => word.toLowerCase());
     let productList = productsArr.filter(product => {
@@ -44,6 +61,25 @@ class SearchResult extends React.Component {
     });
     this.setState({ products: productList });
   }
+
+  filterProducts() {
+    const { minPrice, maxPrice, products } = this.state;
+    if (minPrice === "" && maxPrice === "") return products;
+
+    let filteredProducts = products.filter(product => {
+      if (minPrice === "" && maxPrice !== "") {
+        return parseInt(product.price) <= parseInt(maxPrice);
+      }
+      else if (minPrice !== "" && maxPrice === "") {
+        return parseInt(product.price) >= parseInt(minPrice);
+      } else {
+        return parseInt(product.price) >= parseInt(minPrice) && parseInt(product.price) <= parseInt(maxPrice);
+      }
+    });
+
+    return filteredProducts;
+  }
+
 
   renderProducts(filteredProducts) {
     const productList = filteredProducts.map(product => (
@@ -62,22 +98,70 @@ class SearchResult extends React.Component {
       </div>
     ));
 
-    return productList
+    return productList;
   }
 
   render() {
     if (!this.props.products.length || !this.state.products) return null;
-    const productList = this.renderProducts(this.state.products);
+    let productArr = this.filterProducts();
+    const productList = this.renderProducts(productArr);
     console.log("PROPS SEARCH RESULT", this.props);
     console.log("SEARCH RESULT STATE", this.state);
 
     return (
       <div >
-        { (!productList.length) ? (
+        { (!this.state.products.length) ? (
           <div>Could not find any products!</div>
         ) : (
           <div>
-            { productList }
+            <div className="search-result">
+              <h2>This is what we found!</h2>
+            </div>
+
+            <div className="category-body-container">
+              <section className="filter-section">
+                <h2>Filter By</h2>
+                <div className="price-filter-container">
+                  <label onClick={this.filterPrice("", "")}>
+                    Any Price
+                  </label>
+                  <label onClick={this.filterPrice("0", "10")}>
+                    Between $0 and $10
+                  </label>
+                  <label onClick={this.filterPrice("10", "25")}>
+                    Between $10 and $25
+                  </label>
+                  <label onClick={this.filterPrice("25", "50")} >
+                    Between $25 and $50
+                  </label>
+                  <label onClick={this.filterPrice("50", "100")} >
+                    Between $50 and $100
+                  </label>
+                </div>
+                <div className="custom-price-filter">
+                  <span>$&nbsp;
+                    <input 
+                      type="text" 
+                      value={this.state.minPrice} 
+                      onChange={this.handleInput('minPrice')} 
+                      placeholder="min price"
+                    />
+                  </span>
+                  <span>&nbsp; - &nbsp;
+                    <input 
+                      type="text" 
+                      value={this.state.maxPrice} 
+                      onChange={this.handleInput('maxPrice')} 
+                      placeholder="max price"
+                    />
+                  </span>
+                </div>
+              </section>
+
+              <section className="product-section">
+              { productList }
+              </section>
+            </div>
           </div>
         )}
       </div>
