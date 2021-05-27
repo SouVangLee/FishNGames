@@ -121,8 +121,8 @@ class SearchResult extends React.Component {
               <h2>WE SUGGEST:</h2>
                 <ul>
                   <li>Double check the spelling.</li>
-                  <li>Use general product term(s) or fewer keywords</li>
-                  <li>Try searching for an item that is less specific and refine results</li>
+                  <li>Use general product term(s) or fewer keywords.</li>
+                  <li>Try searching for an item that is less specific and refine results.</li>
                 </ul>
             </div>
           </div>
