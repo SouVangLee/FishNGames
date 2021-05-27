@@ -107,8 +107,6 @@ class SearchResult extends React.Component {
     if (!this.props.products.length || !this.state.products) return null;
     let productArr = this.filterProducts();
     const productList = this.renderProducts(productArr);
-    console.log("PROPS SEARCH RESULT", this.props);
-    console.log("SEARCH RESULT STATE", this.state);
 
     return (
       <div >
