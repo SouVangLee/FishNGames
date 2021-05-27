@@ -8,7 +8,8 @@ class SearchResult extends React.Component {
 
     this.state = {
       minPrice: "",
-      maxPrice: ""
+      maxPrice: "",
+      queryStr: ""
     }
 
     this.filterSearch = this.filterSearch.bind(this);
@@ -24,6 +25,7 @@ class SearchResult extends React.Component {
         let queryStr = queryString.parse(this.props.location.search);
         let queryWords = queryStr['?search'].split(" ");
         this.filterSearch(queryWords, this.props.products);
+        this.setState({ queryStr: queryStr['?search'] });
       });
   }
 
@@ -32,7 +34,7 @@ class SearchResult extends React.Component {
       let queryStr = queryString.parse(this.props.location.search);
       let queryWords = queryStr['?search'].split(" ");
       this.filterSearch(queryWords, this.props.products);
-      this.setState({ minPrice: "", maxPrice: "" })
+      this.setState({ minPrice: "", maxPrice: "",  queryStr: queryStr['?search'] })
     }
   }
 
@@ -111,7 +113,19 @@ class SearchResult extends React.Component {
     return (
       <div >
         { (!this.state.products.length) ? (
-          <div>Could not find any products!</div>
+          <div className="no-results-container">
+            <div className="no-results">
+              <h2>Sorry, your search for "{`${this.state.queryStr}`}" did not return any results.</h2>
+            </div>
+            <div className="no-results-suggestion">
+              <h2>WE SUGGEST:</h2>
+                <ul>
+                  <li>Double check the spelling.</li>
+                  <li>Use general product term(s) or fewer keywords</li>
+                  <li>Try searching for an item that is less specific and refine results</li>
+                </ul>
+            </div>
+          </div>
         ) : (
           <div>
             <div className="search-result">
@@ -159,6 +173,9 @@ class SearchResult extends React.Component {
               </section>
 
               <section className="product-section">
+                <div className="search-result">
+                  { `${productList.length} Search Result for "${this.state.queryStr}"`}
+                </div>
               { productList }
               </section>
             </div>
