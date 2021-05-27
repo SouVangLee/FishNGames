@@ -1,9 +1,13 @@
 import React from 'react';
 
-class SearchIndex extends React.Component {
+class SearchResult extends React.Component {
   constructor(props) {
     super(props)
 
+  }
+
+  componentDidMount() {
+    this.props.fetchAllProducts();
   }
 
   render() {
@@ -12,4 +16,4 @@ class SearchIndex extends React.Component {
   }
 }
 
-export default SearchIndex;
+export default SearchResult;
