@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 const queryString = require('querystring');
 
 class SearchResult extends React.Component {
@@ -10,7 +11,8 @@ class SearchResult extends React.Component {
       maxPrice: ""
     }
 
-    this.filterProducts = this.filterProducts.bind(this);
+    this.filterSearch = this.filterSearch.bind(this);
+    this.renderProducts = this.renderProducts.bind(this);
   }
 
   componentDidMount() {
@@ -18,63 +20,66 @@ class SearchResult extends React.Component {
       .then(() => {
         let queryStr = queryString.parse(this.props.location.search);
         let queryWords = queryStr['?search'].split(" ");
-        this.filterProducts(queryWords, this.props.products);
-      })
+        this.filterSearch(queryWords, this.props.products);
+      });
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps) {
     if (prevProps.location.search !== this.props.location.search) {
       let queryStr = queryString.parse(this.props.location.search);
       let queryWords = queryStr['?search'].split(" ");
-      this.filterProducts(queryWords, this.props.products);
+      this.filterSearch(queryWords, this.props.products);
       this.setState({ minPrice: "", maxPrice: "" })
     }
   }
 
-  filterProducts(queryWords, productsArr) {
+  filterSearch(queryWords, productsArr) {
     let queryArr = queryWords.map(word => word.toLowerCase());
-    let filteredProducts = productsArr.filter(product => {
+    let productList = productsArr.filter(product => {
       for (let i = 0; i < queryArr.length; i++) {
         if (product.name.toLowerCase().includes(queryArr[i])) {
           return product;
         }
       }
     });
-
-    this.setState({ products: filteredProducts });
+    this.setState({ products: productList });
   }
 
   renderProducts(filteredProducts) {
-    // const productList = productArr.map(product => (
-    //   <div className="product-info-link" key={`${product.id}`}>
-    //     <Link className="product-link" to={`/products/${product.id}`}>
-    //       <img src={product.photoUrls[0]} alt=""/>
-    //       <h2>{product.name}</h2>
-    //       <h3>
-    //         {new Intl.NumberFormat('en-US', {
-    //           style: 'currency',
-    //           currency: 'USD',
-    //           minimumFractionDigits: 2
-    //         }).format(product.price)}
-    //       </h3>
-    //     </Link>
-    //   </div>
-    // ));
+    const productList = filteredProducts.map(product => (
+      <div className="product-info-link" key={`${product.id}`}>
+        <Link className="product-link" to={`/products/${product.id}`}>
+          <img src={product.photoUrls[0]} alt=""/>
+          <h2>{product.name}</h2>
+          <h3>
+            {new Intl.NumberFormat('en-US', {
+              style: 'currency',
+              currency: 'USD',
+              minimumFractionDigits: 2
+            }).format(product.price)}
+          </h3>
+        </Link>
+      </div>
+    ));
 
     return productList
   }
 
   render() {
-    if (!this.state.products) return null;
-
-    // let filteredProducts = this.filterProducts(queryWords, this.props.products);
-
+    if (!this.props.products.length || !this.state.products) return null;
+    const productList = this.renderProducts(this.state.products);
     console.log("PROPS SEARCH RESULT", this.props);
     console.log("SEARCH RESULT STATE", this.state);
-    // console.log("QUERY STRING", queryString.parse(this.props.location.search));
+
     return (
-      <div>
-        hi
+      <div >
+        { (!productList.length) ? (
+          <div>Could not find any products!</div>
+        ) : (
+          <div>
+            { productList }
+          </div>
+        )}
       </div>
     )
   }
