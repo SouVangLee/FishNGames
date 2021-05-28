@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 class CategoryProducts extends React.Component{
   constructor(props) {
     super(props);
@@ -16,8 +17,7 @@ class CategoryProducts extends React.Component{
         7: window.footwearLeaderboard,
       },
       minPrice: "",
-      maxPrice: "",
-      products: []
+      maxPrice: ""
     }
 
     this.handleInput = this.handleInput.bind(this);

@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 
 import CategoryNavContainer from '../category/category_nav_container';
 import GreetingContainer from './greeting_container';
-import SearchBar from './search_bar';
+import SearchBar from '../search/search_bar';
+
 
 class Navbar extends React.Component {
   constructor(props) {

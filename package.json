@@ -6,6 +6,7 @@
     "@babel/preset-env": "^7.13.12",
     "@babel/preset-react": "^7.13.13",
     "babel-loader": "^8.2.2",
+    "querystring": "^0.2.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.3",
@@ -15,8 +16,8 @@
     "webpack": "^5.30.0",
     "webpack-cli": "^4.6.0"
   },
-    "devDependencies": {
-      "redux-logger": "^3.0.6"
+  "devDependencies": {
+    "redux-logger": "^3.0.6"
   },
   "description": "#FishNGames Coming Soon!...",
   "version": "1.0.0",

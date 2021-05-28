@@ -13,14 +13,14 @@ class Splash extends React.Component {
   }
 
   render() {
-    const arrID = [1, 28, 3, 19]; //23, 29
+    const hotItemsID = [1, 28, 3, 19]; //23, 29
 
     if (!this.props.products.length || 
         !Object.values(this.props.categories).length) {
       return null;
     } else {
       
-      const arrItems = arrID.map(id => (
+      const arrItems = hotItemsID.map(id => (
         <Link 
           className="hot-products-link" 
           to={`/products/${id + 1}`}
