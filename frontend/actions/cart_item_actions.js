@@ -18,6 +18,16 @@ export const fetchAllCartItems = () => dispatch => {
     .then(cartItems => dispatch(receiveAllCartItems(cartItems)));
 };
 
+export const createCartItem = cartItem => dispatch => {
+  return CartItemApiUtil.createCartItem(cartItem)
+    .then(cartItems => dispatch(receiveAllCartItems(cartItems)));
+};
+
+export const updateCartItem = cartItem => dispatch => {
+  return CartItemApiUtil.updateCartItem(cartItem)
+    .then(cartItems => dispatch(receiveAllCartItems(cartItems)));
+};
+
 export const deleteCartItem = cartItemId => dispatch => {
   return CartItemApiUtil.deleteCartItem(cartItemId)
     .then(() => dispatch(removeCartItem(cartItemId)));
