@@ -3,7 +3,7 @@ import {
   REMOVE_CART_ITEM
 } from '../actions/cart_item_actions';
 
-const CartItemReducer = (state = {}, action) => {
+const CartItemsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_ALL_CART_ITEMS:
@@ -17,4 +17,4 @@ const CartItemReducer = (state = {}, action) => {
   }
 };
 
-export default CartItemReducer;
+export default CartItemsReducer;
