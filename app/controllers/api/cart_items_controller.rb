@@ -16,12 +16,12 @@ class Api::CartItemsController < ApplicationController
       cart_items.each do |cart_item|
         product_ids[cart_item.product_id] = cart_item.id
       end
-      NEW_QUANTITY = @cart_item.quantity + @existing_item.quantity
+      new_quantity = @cart_item.quantity + @existing_item.quantity
       @existing_item = CartItem.find_by(id: product_ids[@cart_item.product_id])
       if @existing_item && @existing_item.update(
         user_id: @existing_item.user_id, 
         product_id: @existing_item.product_id,
-        quantity: NEW_QUANTITY
+        quantity: new_quantity
       )
         @cart_items = CartItem.all.select { |cart_item| cart_item.user_id == current_user.id }
         render "api/cart_items/index"
