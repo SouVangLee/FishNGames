@@ -50,6 +50,20 @@ class Api::CartItemsController < ApplicationController
     end
   end
 
+  def destroy
+    if current_user
+      @cart_item = CartItem.find_by(id: params[:id])
+      if @cart_item && @cart_item.destroy
+        @cart_items = CartItem.all.select { |cart_item| cart_item.user_id == current_user.id }
+        render "api/cart_items/index"
+      else
+        render json ["This item is no longer available!"], status: 422
+      end
+    else
+      render json: ["You must be signed in!"], status: 404
+    end
+  end
+
 
   private
   def cart_item_params
