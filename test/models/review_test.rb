@@ -9,6 +9,7 @@
 #  comment     :text             not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  header      :string           not null
 #
 require 'test_helper'
 
