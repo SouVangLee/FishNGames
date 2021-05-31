@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchProduct, fetchAllProducts } from '../../actions/product_actions';
+import { createCartItem } from '../../actions/cart_item_actions';
+
 import Product from './product_show';
 
 const mSTP = (state, ownProps) => {
@@ -13,7 +15,8 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => {
   return {
     fetchProduct: productId => dispatch(fetchProduct(productId)),
-    fetchAllProducts: () => dispatch(fetchAllProducts())
+    fetchAllProducts: () => dispatch(fetchAllProducts()),
+    createCartItem: cartItem => dispatch(createCartItem(cartItem))
   };
 };
 
