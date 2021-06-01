@@ -28,7 +28,10 @@ class CartItem extends React.Component {
       <div className="cart-item-container">
         <div className="cart-item-info">
           <img src={photoUrls[0]}/>
-          <h3>{ name }</h3>
+          <div className="item-name-container">
+            <h3>{ name }</h3>
+            <div className="remove-cart-item">Remove</div>
+          </div>
         </div>
         <div className="quantity-container">
           <input 

@@ -16,7 +16,7 @@
   width: 60%;
   height: 100%;
   display: flex;
-  border: 2px solid green;
+  // border: 2px solid green;
 }
 
 .cart-item-info img {
@@ -25,10 +25,29 @@
   object-fit: scale-down;
 }
 
-.cart-item-info h3 {
-  font-family: 'Montserrat', sans-serif;
+.item-name-container {
+  width: 100%;
+  // border: 2px solid black;
+}
 
-  text-align: center;
+.item-name-container h3 {
+  height: 30%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 500;
+  font-size: 16px;
+  padding-left: 10px;
+  padding-bottom: 25px;
+  // border: 2px solid maroon;
+}
+
+.remove-cart-item {
+  padding-left: 10px;
+  color: #ba6228;
+}
+
+.remove-cart-item:hover {
+  cursor: pointer;
+  color:teal;
 }
 
 .quantity-container, 
