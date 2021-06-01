@@ -16,9 +16,7 @@ class CartItemIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchAllCartItems()
-      .then(() => {
-        this.totalPrice();
-      });
+      .then(() => (this.totalPrice()));
   }
 
   renderCartItem() {
@@ -65,13 +63,13 @@ class CartItemIndex extends React.Component {
           <div className="product-subtotal-container">
             Product Subtotal
             <div className="total-price">
-              ${this.state.totalCost}
+              {this.formatPrice(this.state.totalCost)}
             </div>
           </div>
           <div className="cart-total-container">
             Cart Total*
             <div className="total-price">
-              ${this.state.totalCost}
+              {this.formatPrice(this.state.totalCost)}
             </div>
           </div>
           <div className="shipping-note-container">
