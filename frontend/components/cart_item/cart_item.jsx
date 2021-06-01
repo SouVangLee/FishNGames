@@ -13,12 +13,16 @@ class CartItem extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange() {
-    
+  handleChange(field) {
+    return e => {
+      e.preventDefault();
+      this.setState({ [field]: e.target.value});
+    }
   }
 
   render() {
     console.log("CART ITEM PROPS", this.props);
+    console.log("CART ITEM STATE", this.state);
     const { price, name, photoUrls } = this.props.cartItem;
     return (
       <div className="cart-item">
@@ -27,8 +31,10 @@ class CartItem extends React.Component {
         <input 
           type="text" 
           value={this.state.quantity}
-          onChange={this.handleChange}
+          onChange={this.handleChange('quantity')}
         />
+        <span>${ price }</span>
+        <span>${ parseInt(price) * this.state.quantity }</span>
       </div>
     )
   }

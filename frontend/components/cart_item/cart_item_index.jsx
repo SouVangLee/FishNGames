@@ -27,8 +27,14 @@ class CartItemIndex extends React.Component {
     console.log("CART ITEM INDEX", this.props);
     let cartItems = this.renderCartItem();
     return (
-      <div>
-        Im in Cart Items
+      <div className="cart-item-index-container">
+        <h2 className="shopping-cart-header">Shopping Cart</h2>
+        <div className="header-list">
+          <div className="product-header">Product</div>
+          <div className="quantity-header">Quantity</div>
+          <div className="price-header">Price</div>
+          <div className="subtotal-header">Subtotal</div>
+        </div>
         { cartItems }
       </div>
     )
