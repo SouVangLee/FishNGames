@@ -1,0 +1,27 @@
+.cart-item-container {
+  display: flex;
+  width: 80%;
+  height: 100%;
+  border-bottom: 2px solid purple;
+  margin: auto;
+  padding: 15px 10px 15px 10px; 
+}
+
+.cart-item-info {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  border: 2px solid green;
+}
+
+.cart-item-info img {
+  width: 150px;
+  height: 150px;
+  object-fit: scale-down;
+}
+
+.cart-item-info h3 {
+  font-family: 'Montserrat', sans-serif;
+  
+  text-align: center;
+}

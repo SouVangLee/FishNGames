@@ -25,9 +25,11 @@ class CartItem extends React.Component {
     console.log("CART ITEM STATE", this.state);
     const { price, name, photoUrls } = this.props.cartItem;
     return (
-      <div className="cart-item">
-        <img src={photoUrls[0]}/>
-        <h3>{ name }</h3>
+      <div className="cart-item-container">
+        <div className="cart-item-info">
+          <img src={photoUrls[0]}/>
+          <h3>{ name }</h3>
+        </div>
         <input 
           type="text" 
           value={this.state.quantity}
