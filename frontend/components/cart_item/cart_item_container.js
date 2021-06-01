@@ -3,11 +3,12 @@ import {
   fetchAllCartItems, 
   updateCartItem,
   deleteCartItem } from '../../actions/cart_item_actions';
-import CartItem from './cart_item';
+import CartItemIndex from './cart_item_index';
 
 const mSTP = (state, ownProps) => {
   return {
-    cartItems: Object.values(state.entities.cartItems)
+    cartItems: Object.values(state.entities.cartItems),
+    currentUserId: state.session.currentUserId 
   };
 };
 
@@ -19,4 +20,4 @@ const mDTP = dispatch => {
   }
 }
 
-export default connect(mSTP, mDTP)(CartItem);
+export default connect(mSTP, mDTP)(CartItemIndex);
