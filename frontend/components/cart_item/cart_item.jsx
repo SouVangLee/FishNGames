@@ -12,6 +12,7 @@ class CartItem extends React.Component {
     }
 
     this.handleChange = this.handleChange.bind(this);
+    this.formatPrice = this.formatPrice.bind(this);
   }
 
   handleChange(field) {
@@ -19,6 +20,16 @@ class CartItem extends React.Component {
       e.preventDefault();
       this.setState({ [field]: e.target.value});
     }
+  }
+
+  formatPrice(price) {
+    const formatPrice = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2
+    }).format(price);
+
+    return formatPrice;
   }
 
   render() {
@@ -43,8 +54,8 @@ class CartItem extends React.Component {
             onChange={this.handleChange('quantity')}
           />
         </div>
-        <div className="price-container">${ price }</div>
-        <div className="subtotal-container">${ parseInt(price) * this.state.quantity }</div>
+        <div className="price-container">{ this.formatPrice(price) }</div>
+        <div className="subtotal-container">{ this.formatPrice(price * this.state.quantity) }</div>
       </div>
     )
   }

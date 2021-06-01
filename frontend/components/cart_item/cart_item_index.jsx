@@ -5,11 +5,20 @@ class CartItemIndex extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      totalCost: 0
+    }
+
     this.renderCartItem = this.renderCartItem.bind(this);
+    this.totalPrice = this.totalPrice.bind(this);
+    this.formatPrice = this.formatPrice.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchAllCartItems()
+      .then(() => {
+        this.totalPrice();
+      });
   }
 
   renderCartItem() {
@@ -21,6 +30,22 @@ class CartItemIndex extends React.Component {
       />
     ));
     return cartItems;
+  }
+
+  formatPrice(price) {
+    const formatPrice = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2
+    }).format(price);
+
+    return formatPrice;
+  }
+
+  totalPrice() {
+    let totalCost = 0;
+    this.props.cartItems.map(cartItem => totalCost += (cartItem.price) * cartItem.quantity);
+    this.setState({ totalCost });
   }
 
   render() {
@@ -40,13 +65,13 @@ class CartItemIndex extends React.Component {
           <div className="product-subtotal-container">
             Product Subtotal
             <div className="total-price">
-              ${}100
+              ${this.state.totalCost}
             </div>
           </div>
           <div className="cart-total-container">
             Cart Total*
             <div className="total-price">
-              ${}100
+              ${this.state.totalCost}
             </div>
           </div>
           <div className="shipping-note-container">
