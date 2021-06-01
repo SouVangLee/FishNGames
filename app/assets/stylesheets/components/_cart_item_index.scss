@@ -57,6 +57,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  border-bottom: 1px solid #d3d3d3;
   // margin-top: 10px;
   // border: 2px solid red;
 }
@@ -87,4 +88,23 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+}
+
+.cart-checkout {
+  width: 70%;
+  margin: auto;
+  padding-top: 35px;
+}
+
+.cart-checkout button {
+  width: 300px;
+  height: 35px;
+  background-color: teal;
+  color: white;
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  margin-left: -10px;
+  text-align: center;
+  border: 1px solid black;
 }
