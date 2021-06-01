@@ -36,6 +36,20 @@ class CartItemIndex extends React.Component {
           <div className="subtotal-header">Subtotal</div>
         </div>
         { cartItems }
+        <div className="total-price-container">
+          <div className="product-subtotal-container">
+            Product Subtotal
+            <div>
+              ${}
+            </div>
+          </div>
+          <div className="cart-total-container">
+            Cart Total*
+          </div>
+          <div className="shipping-note-container">
+            *Shipping and taxes calculated in checkout
+          </div>
+        </div>
       </div>
     )
   }

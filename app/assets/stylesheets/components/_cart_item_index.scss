@@ -48,3 +48,21 @@
 .subtotal-header {
   text-align: end;
 }
+
+.total-price-container {
+  width: 70%;
+  height: 100px;
+  padding: 10px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  // margin-top: 10px;
+  border: 2px solid red;
+}
+
+.total-price-container div {
+  width: 35%;
+  height: 100%;
+  border: 2px solid green;
+}
