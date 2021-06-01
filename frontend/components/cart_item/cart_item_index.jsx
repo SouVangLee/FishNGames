@@ -39,12 +39,15 @@ class CartItemIndex extends React.Component {
         <div className="total-price-container">
           <div className="product-subtotal-container">
             Product Subtotal
-            <div>
-              ${}
+            <div className="total-price">
+              ${}100
             </div>
           </div>
           <div className="cart-total-container">
             Cart Total*
+            <div className="total-price">
+              ${}100
+            </div>
           </div>
           <div className="shipping-note-container">
             *Shipping and taxes calculated in checkout
