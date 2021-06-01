@@ -10,6 +10,7 @@ import CategoryProductsContainer from './category/category_products_container';
 import ProductContainer from './product/product_container';
 import SearchContainer from './search/search_container';
 import Footer from './footer';
+import CartItemContainer from './cart_item/cart_item_container';
 
 
 const App = () => (
@@ -18,7 +19,7 @@ const App = () => (
     <Navbar />
     <Switch>
       <Route path="/search" component={ SearchContainer } />
-      {/* <ProtectedRoute exact path="/cart" component={ Cart } /> */}
+      <ProtectedRoute exact path="/cart" component={ CartItemContainer } />
       <Route exact path="/categories/:id" component={CategoryProductsContainer} />
       <Route exact path="/products/:id" component={ ProductContainer } />
       <Route exact path="/" component={ SplashContainer } />
