@@ -9,10 +9,10 @@ const receiveAllCartItems = cartItems => ({
   cartItems
 });
 
-const removeCartItem = cartItemId => ({
-  type: REMOVE_CART_ITEM,
-  cartItemId
-});
+// const removeCartItem = cartItemId => ({
+//   type: REMOVE_CART_ITEM,
+//   cartItemId
+// });
 
 export const receiveErrors = errors => ({
   type: RECEIVE_CART_ITEM_ERRORS,
@@ -35,18 +35,18 @@ export const createCartItem = cartItem => dispatch => {
     );
 };
 
-export const updateCartItem = cartItem => dispatch => {
-  return CartItemApiUtil.updateCartItem(cartItem)
-    .then(
-      cartItems => dispatch(receiveAllCartItems(cartItems)),
-      errors => dispatch(receiveErrors(errors.responseJSON))  
-    );
-};
+// export const updateCartItem = cartItem => dispatch => {
+//   return CartItemApiUtil.updateCartItem(cartItem)
+//     .then(
+//       cartItems => dispatch(receiveAllCartItems(cartItems)),
+//       errors => dispatch(receiveErrors(errors.responseJSON))  
+//     );
+// };
 
-export const deleteCartItem = cartItemId => dispatch => {
-  return CartItemApiUtil.deleteCartItem(cartItemId)
-    .then(
-      () => dispatch(removeCartItem(cartItemId)),
-      errors => dispatch(receiveErrors(errors.responseJSON))
-    );
-};
+// export const deleteCartItem = cartItemId => dispatch => {
+//   return CartItemApiUtil.deleteCartItem(cartItemId)
+//     .then(
+//       () => dispatch(removeCartItem(cartItemId)),
+//       errors => dispatch(receiveErrors(errors.responseJSON))
+//     );
+// };

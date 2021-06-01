@@ -7,7 +7,7 @@ import CartItemErrorsReducer from './cart_item_errors_reducer';
 const errorsReducer = combineReducers({
   session: sessionErrorsReducer,
   review: ReviewErrorsReducer,
-  cartItem: CartItemErrorsReducer
+  // cartItem: CartItemErrorsReducer
 });
 
 export default errorsReducer;

@@ -7,6 +7,16 @@ import ReviewContainer from '../review/review_container';
 class Product extends React.Component{
   constructor(props) {
     super(props);
+
+    this.state = {
+      quantity: "1",
+      user_id: this.props.currentUserId,
+      product_id: parseInt(this.props.match.params.id)
+    }
+
+    this.handleInput = this.handleInput.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    // this.renderErrors = this.renderErrors.bind(this);
   }
 
   componentDidMount() {
@@ -15,8 +25,38 @@ class Product extends React.Component{
     window.scrollTo(0, 0);
   }
 
+  handleInput(field) {
+    return e => {
+      e.preventDefault();
+      this.setState({ [field]: e.target.value })
+    }
+  }
+
+  handleClick(e) {
+    e.preventDefault();
+    let cartItem = {
+      quantity: parseInt(this.state.quantity),
+      product_id: this.props.product.id,
+      user_id: this.props.currentUserId
+    }
+
+    this.props.createCartItem(cartItem)
+      .then(res => console.log(res));
+  }
+
+  // renderErrors() {
+  //   return (
+  //     <ul className="error-list">
+  //       {this.props.errors.map((error, i) => (
+  //         <li key={`error-${i}`}>{error}</li>
+  //       ))}
+  //     </ul>
+  //   );
+  // }
+
   render() {
-    console.log("PRODUCT SHOW", this.props);
+    console.log("PRODUCT SHOW PROPS", this.props);
+    console.log("PRODUCT SHOW state", this.state);
     if (!this.props.product) {
       return null;
     } else {
@@ -30,7 +70,7 @@ class Product extends React.Component{
     
     return (
       <div className="product-show-page">
-
+        {/* {this.renderErrors()} */}
         <div className="product-show-container">
           <section className="product-show-left">
             <ProductImage product={product}/>
@@ -47,10 +87,21 @@ class Product extends React.Component{
             </div>
 
             <div className="add-to-cart-container">
-              <div>Add to Carts Coming soon...</div>
-              {/* <label className="product-quantity">Quantity: 
-                <input type="text"/>
-              </label> */}
+              <div className="quantity-container">
+                <button className="minus-quantity">-</button>
+                <input 
+                  type="text" 
+                  onChange={this.handleInput("quantity")}
+                  value={this.state.quantity}
+                />
+                <button className="plus-quantity">+</button>
+              </div>
+
+              <button 
+                className="add-to-cart"
+                onClick={this.handleClick}
+              >
+              ADD TO CART</button>
             </div>
           </section>
         </div>

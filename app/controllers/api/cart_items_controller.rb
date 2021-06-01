@@ -10,7 +10,7 @@ class Api::CartItemsController < ApplicationController
 
   def create
     cart_items = CartItem.all.select { |cart_item| cart_item.user_id == current_user.id }
-    @cart_item = CartItem.new(product_params)
+    @cart_item = CartItem.new(cart_item_params)
     if current_user && cart_items.any? { |item| @cart_item.product_id == item.product_id }
       product_ids = {}
       cart_items.each do |cart_item|
