@@ -30,13 +30,15 @@ class CartItem extends React.Component {
           <img src={photoUrls[0]}/>
           <h3>{ name }</h3>
         </div>
-        <input 
-          type="text" 
-          value={this.state.quantity}
-          onChange={this.handleChange('quantity')}
-        />
-        <span>${ price }</span>
-        <span>${ parseInt(price) * this.state.quantity }</span>
+        <div className="quantity-container">
+          <input 
+            type="text" 
+            value={this.state.quantity}
+            onChange={this.handleChange('quantity')}
+          />
+        </div>
+        <div className="price-container">${ price }</div>
+        <div className="subtotal-container">${ parseInt(price) * this.state.quantity }</div>
       </div>
     )
   }

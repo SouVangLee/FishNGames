@@ -14,12 +14,13 @@
 .header-list {
   display: flex;
   justify-content: space-between;
-  width: 80%;
+  width: 70%;
   height: 20px;
   padding: 10px;
   margin: auto;
   background-color: rgb(245, 245, 245);
-  border: 2px solid blue;
+  // border: 2px solid blue;
+  margin-bottom: 25px;
 }
 
 .header-list div {
@@ -31,13 +32,13 @@
 .header-list div:first-child {
   width: 60%;
   height: 100%;
-  border: 2px solid green;
+  // border: 2px solid green;
 }
 
 .header-list div:not(:first-child) {
   width: 10%;
   height: 100%;
-  border: 2px solid orange;
+  // border: 2px solid orange;
 }
 
 .quantity-header, .price-header {
