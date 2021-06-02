@@ -5,10 +5,10 @@ class CartItem extends React.Component {
   constructor(props) {
     super(props)
 
-    const { quantity, price } = this.props.cartItem
+    const { quantity, price, name } = this.props.cartItem
     this.state = {
       quantity: String(quantity),
-      subtotal: parseInt(price) * quantity
+      name
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -56,7 +56,7 @@ class CartItem extends React.Component {
   }
 
   render() {
-    console.log("CART ITEM PROPS", this.props);
+    // console.log("CART ITEM PROPS", this.props);
     console.log("CART ITEM STATE", this.state);
     const { price, name, photoUrls, productId } = this.props.cartItem;
     return (
