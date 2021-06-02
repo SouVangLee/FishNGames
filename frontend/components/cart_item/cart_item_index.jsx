@@ -23,8 +23,10 @@ class CartItemIndex extends React.Component {
     let cartItems = this.props.cartItems.map((cartItem, i) => (
       <CartItem 
         key={`${i}-${cartItem}`} 
-        cartItem={cartItem} 
-        currentUserId={this.props.currentUserId}
+        cartItem={ cartItem } 
+        currentUserId={ this.props.currentUserId }
+        updateCartItem={ this.props.updateCartItem }
+        deleteCartItem={ this.props.deleteCartItem }
       />
     ));
     return cartItems;

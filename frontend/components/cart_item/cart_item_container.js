@@ -15,8 +15,8 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => {
   return {
     fetchAllCartItems: () => dispatch(fetchAllCartItems()),
-    // updateCartItem: cartItem => dispatch(updateCartItem(cartItem)),
-    // deleteCartItem: cartItemId => dispatch(deleteCartItem(cartItemId))
+    updateCartItem: cartItem => dispatch(updateCartItem(cartItem)),
+    deleteCartItem: cartItemId => dispatch(deleteCartItem(cartItemId))
   }
 }
 

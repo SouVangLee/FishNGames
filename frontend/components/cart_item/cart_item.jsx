@@ -13,6 +13,7 @@ class CartItem extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.formatPrice = this.formatPrice.bind(this);
+    this.clickDelete = this.clickDelete.bind(this);
   }
 
   handleChange(field) {
@@ -32,6 +33,11 @@ class CartItem extends React.Component {
     return formatPrice;
   }
 
+  clickDelete(){
+    console.log("inside delete");
+    this.props.deleteCartItem(this.props.cartItem.id);
+  }
+
   render() {
     console.log("CART ITEM PROPS", this.props);
     console.log("CART ITEM STATE", this.state);
@@ -44,7 +50,7 @@ class CartItem extends React.Component {
           </Link>
           <div className="item-name-container">
             <h3>{ name }</h3>
-            <div className="remove-cart-item">Remove</div>
+            <div className="remove-cart-item" onClick={this.clickDelete}>Remove</div>
           </div>
         </div>
         <div className="quantity-container">
