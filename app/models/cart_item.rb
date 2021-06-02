@@ -11,7 +11,7 @@
 #
 class CartItem < ApplicationRecord
   validates :user_id, :product_id, :quantity, presence: true
-  validates :quantity, numericality: { greater_than_or_equal_to: 1 }
+  validates :quantity, numericality: { greater_than_or_equal_to: 1, only_integer: true }
 
   belongs_to :user,
     foreign_key: :user_id,
