@@ -16,7 +16,14 @@ class CartItemIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchAllCartItems()
-      .then(() => (this.totalPrice()));
+      .then(() => {
+        let totalCost = this.totalPrice(this.props.cartItems);
+        this.setState({ totalCost });
+      });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    let prevTotalCost = this.totalPrice(prevProps)
   }
 
   renderCartItem() {
@@ -42,10 +49,10 @@ class CartItemIndex extends React.Component {
     return formatPrice;
   }
 
-  totalPrice() {
+  totalPrice(cartItems) {
     let totalCost = 0;
-    this.props.cartItems.map(cartItem => totalCost += (cartItem.price) * cartItem.quantity);
-    this.setState({ totalCost });
+    cartItems.map(cartItem => totalCost += (cartItem.price) * cartItem.quantity);
+    return totalCost;
   }
 
   render() {
