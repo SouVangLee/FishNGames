@@ -53,7 +53,7 @@ class Api::CartItemsController < ApplicationController
   def destroy
     if current_user
       @cart_item = CartItem.find_by(id: params[:id])
-      if @cart_item && @cart_item.destroy
+      if @cart_item && @cart_item.delete
         @cart_items = CartItem.all.select { |cart_item| cart_item.user_id == current_user.id }
         render "api/cart_items/index"
       else
