@@ -1,11 +1,11 @@
 class Api::CartItemsController < ApplicationController
   def index
-    if current_user
-      @cart_items = CartItem.all.select { |cart_item| cart_item.user_id == current_user.id }
+    # if current_user
+      @cart_items = CartItem.all #.select { |cart_item| cart_item.user_id == current_user.id }
       render "api/cart_items/index"
-    else
-      return nil
-    end
+    # else
+      # return nil
+    # end
   end
 
   def create
@@ -44,6 +44,8 @@ class Api::CartItemsController < ApplicationController
       if @cart_item && @cart_item.update(cart_item_params)
         @cart_items = CartItem.all.select { |cart_item| cart_item.user_id == current_user.id }
         render "api/cart_items/index"
+      else
+        render json @cart_item.errors.full_messages, status: 422
       end
     else
       render json: ["You must be signed in!"], status: 404
@@ -67,6 +69,6 @@ class Api::CartItemsController < ApplicationController
 
   private
   def cart_item_params
-    params.require(:cart_item).permit(:user_id, :product_id, :quantity)
+    params.require(:cartItem).permit(:user_id, :product_id, :quantity)
   end
 end

@@ -16,6 +16,23 @@ class CartItem extends React.Component {
     this.clickDelete = this.clickDelete.bind(this);
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.quantity !== this.state.quantity) {
+      const { id, productId, userId } = this.props.cartItem;
+      let updateItem = {
+        id,
+        productId,
+        userId,
+        quantity: parseInt(this.state.quantity)
+      }
+      console.log("UPDATE ITEM POJO", updateItem);
+      setTimeout(() => {
+        this.props.updateCartItem(updateItem)
+          .then(res => console.log("RESSS", res));
+      }, 2000);
+    }
+  }
+
   handleChange(field) {
     return e => {
       e.preventDefault();
