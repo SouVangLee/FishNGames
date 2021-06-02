@@ -1,11 +1,11 @@
 class Api::CartItemsController < ApplicationController
   def index
-    # if current_user
-      @cart_items = CartItem.all #.select { |cart_item| cart_item.user_id == current_user.id }
+    if current_user
+      @cart_items = CartItem.all.select { |cart_item| cart_item.user_id == current_user.id }
       render "api/cart_items/index"
-    # else
-      # return nil
-    # end
+    else
+      return nil
+    end
   end
 
   def create

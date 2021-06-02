@@ -23,7 +23,14 @@ class CartItemIndex extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    let prevTotalCost = this.totalPrice(prevProps)
+    if (prevProps.cartItems.length !== this.props.cartItems.length) {
+      this.props.fetchAllCartItems()
+        .then(res => {
+          let totalCost = this.totalPrice(this.props.cartItems);
+          this.setState({ totalCost });
+        });
+    }
+
   }
 
   renderCartItem() {
@@ -56,7 +63,8 @@ class CartItemIndex extends React.Component {
   }
 
   render() {
-    console.log("CART ITEM INDEX", this.props);
+    console.log("CART ITEM INDEX PROPS", this.props);
+    console.log("CART ITEM INDEX STATE", this.props);
     let cartItems = this.renderCartItem();
     return (
       <div className="cart-item-index-container">
