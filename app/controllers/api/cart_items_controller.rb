@@ -11,6 +11,10 @@ class Api::CartItemsController < ApplicationController
   def create
     cart_items = CartItem.all.select { |cart_item| cart_item.user_id == current_user.id }
     @cart_item = CartItem.new(cart_item_params)
+    if @cart_item.quantity < 1
+      render json: ["quantity cannot be less than 1"], status: 422
+    end
+    
     if current_user && cart_items.any? { |item| @cart_item.product_id == item.product_id }
       product_ids = {}
       cart_items.each do |cart_item|
