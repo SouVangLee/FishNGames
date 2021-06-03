@@ -11,7 +11,13 @@ class Navbar extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.fetchAllCartItems();
+  }
+
   render() {
+    console.log("NAVBAR PROPS", this.props);
+    
     return (
       <div className="navbar-container">
         <div className="navbar">

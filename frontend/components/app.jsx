@@ -3,7 +3,7 @@ import { Route, Link, Switch, Redirect } from 'react-router-dom';
 
 import ModalContainer from "./modal/modal_container";
 import { AuthRoute, ProtectedRoute } from '../util/route_utils';
-import Navbar from './navbar/navbar';
+import NavbarContainer from './navbar/navbar_container';
 import PageNotFound from './page_not_found';
 import SplashContainer from './splash/splash_container';
 import CategoryProductsContainer from './category/category_products_container';
@@ -16,7 +16,7 @@ import CartItemContainer from './cart_item/cart_item_container';
 const App = () => (
   <div className="app-div">
     <ModalContainer />
-    <Navbar />
+    <NavbarContainer/>
     <Switch>
       <Route path="/search" component={ SearchContainer } />
       <ProtectedRoute exact path="/cart" component={ CartItemContainer } />
