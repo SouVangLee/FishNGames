@@ -55,12 +55,9 @@
 
 
 .product-description {
-  // width: 100%;
-  // height: 100%;
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
-  // border: 2px solid red;
 }
 
 .product-price {
@@ -70,25 +67,20 @@
 }
 
 .add-to-cart-container {
-  // padding-top: 25px;
   border-top: 1px solid teal;
   width: 100%;
   height: 35%;
-  // padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  // border: 2px solid red;
 }
 
 .show-quantity-container {
   width: 140px;
   height: 60px;
-  // border: 2px solid orange;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  // padding: 10px 10px 10px 0;
 }
 
 .show-quantity-container * {
