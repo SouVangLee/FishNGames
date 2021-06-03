@@ -93,11 +93,9 @@ class Product extends React.Component{
           <section className="product-show-right">
             <div className="product-item-info">
               <h2 className="product-name">{product.name}</h2>
+              <div className="product-price">{price}</div>
               <h3>Description</h3>
               <p className="product-description">{product.description}</p>
-
-              <label className="product-price">{price}</label>
-              <br/>
             </div>
 
             <div className="add-to-cart-container">
