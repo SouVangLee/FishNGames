@@ -13,6 +13,8 @@ class Navbar extends React.Component {
     this.state = {
       numberOfCartItems: 0
     }
+
+    this.checkSignedIn = this.checkSignedIn.bind(this);
   }
 
   componentDidMount() {
@@ -38,6 +40,12 @@ class Navbar extends React.Component {
     }
   }
 
+  checkSignedIn() {
+    if (!this.props.currentUserId) {
+      return alert("Please sign in or sign up.");
+    }
+  }
+
   render() {
     console.log("NAVBAR PROPS", this.props);
     console.log("NAVBAR state", this.state);
@@ -55,7 +63,7 @@ class Navbar extends React.Component {
           <div className="signin-cart-container">
             <GreetingContainer />
             <div className="shopping-cart-container">
-              <Link className="cart-link" to="/cart">
+              <Link className="cart-link" to="/cart" onClick={ this.checkSignedIn }>
               <span className="number-of-cart-items">
                 { this.state.numberOfCartItems }
               </span>

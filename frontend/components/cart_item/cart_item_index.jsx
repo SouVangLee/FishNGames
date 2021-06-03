@@ -12,6 +12,7 @@ class CartItemIndex extends React.Component {
     this.renderCartItem = this.renderCartItem.bind(this);
     this.totalPrice = this.totalPrice.bind(this);
     this.formatPrice = this.formatPrice.bind(this);
+    this.checkOut = this.checkOut.bind(this);
   }
 
   componentDidMount() {
@@ -70,6 +71,11 @@ class CartItemIndex extends React.Component {
     let totalCost = 0;
     cartItems.map(cartItem => totalCost += (cartItem.price) * cartItem.quantity);
     return totalCost;
+  }
+
+  checkOut() {
+    let checkOutItems = this.props.cartItems.map(cartItem => cartItem);
+    checkOutItems.forEach(cartItem => this.props.deleteCartItem(cartItem.id));
   }
 
   render() {
