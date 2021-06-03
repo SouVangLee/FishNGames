@@ -9,15 +9,23 @@ import SearchBar from '../search/search_bar';
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      numberOfCartItems: 0
+    }
+
   }
 
   componentDidMount() {
-    this.props.fetchAllCartItems();
+    this.props.fetchAllCartItems()
+      .then(() => {
+        this.setState({ numberOfCartItems: this.props.cartItems.length })
+      })
   }
 
   render() {
     console.log("NAVBAR PROPS", this.props);
-    
+    console.log("NAVBAR state", this.state);
     return (
       <div className="navbar-container">
         <div className="navbar">
@@ -31,8 +39,12 @@ class Navbar extends React.Component {
 
           <div className="signin-cart-container">
             <GreetingContainer />
-            <div className="shopping-cart">
-              <Link className="cart-link" to="/cart"/>
+            <div className="shopping-cart-container">
+              <Link className="cart-link" to="/cart">
+              <span className="number-of-cart-items">
+                { this.state.numberOfCartItems }
+              </span>
+              </Link>
             </div>
           </div>
         </div>
