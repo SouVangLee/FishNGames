@@ -15,7 +15,8 @@ class Product extends React.Component{
     }
 
     this.handleInput = this.handleInput.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.addToCart = this.addToCart.bind(this);
+    this.updateQuantity = this.updateQuantity.bind(this);
     // this.renderErrors = this.renderErrors.bind(this);
   }
 
@@ -32,7 +33,20 @@ class Product extends React.Component{
     }
   }
 
-  handleClick(e) {
+  updateQuantity(field) {
+    return e => {
+      e.preventDefault();
+      let newQuantity = parseInt(this.state.quantity)
+      if (field === '+') {
+        newQuantity++;
+      } else {
+        newQuantity--;
+      }
+      this.setState({ quantity: String(newQuantity) });
+    }
+  }
+
+  addToCart(e) {
     e.preventDefault();
     let cartItem = {
       quantity: parseInt(this.state.quantity),
@@ -87,19 +101,19 @@ class Product extends React.Component{
             </div>
 
             <div className="add-to-cart-container">
-              <div className="quantity-container">
-                <button className="minus-quantity">-</button>
+              <div className="show-quantity-container">
+                <button className="minus-quantity" onClick={ this.updateQuantity('-')}>-</button>
                 <input 
                   type="text" 
                   onChange={this.handleInput("quantity")}
                   value={this.state.quantity}
                 />
-                <button className="plus-quantity">+</button>
+                <button className="plus-quantity" onClick={ this.updateQuantity('+') }>+</button>
               </div>
 
               <button 
                 className="add-to-cart"
-                onClick={this.handleClick}
+                onClick={this.addToCart}
               >
               ADD TO CART</button>
             </div>

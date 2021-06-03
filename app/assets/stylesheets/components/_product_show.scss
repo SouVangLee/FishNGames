@@ -67,13 +67,17 @@
   padding-bottom: 15px;
 }
 
-
-
-
 .add-to-cart-container {
   padding-top: 25px;
   border-top: 1px solid teal;
   width: 100%;
   height: 40%;
-  display:block;
+  display: flex;
+  border: 2px solid red;
+}
+
+.show-quantity-container {
+  width: 100%;
+  height: 100%;
+  border: 2px solid orange;
 }
