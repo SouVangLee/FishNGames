@@ -25,10 +25,8 @@ class CartItem extends React.Component {
         userId,
         quantity: parseInt(this.state.quantity)
       }
-      console.log("UPDATE ITEM POJO", updateItem);
       setTimeout(() => {
-        this.props.updateCartItem(updateItem)
-          .then(res => console.log("RESSS", res));
+        this.props.updateCartItem(updateItem);
       }, 1500);
     }
   }

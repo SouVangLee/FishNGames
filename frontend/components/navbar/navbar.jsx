@@ -23,8 +23,12 @@ class Navbar extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.cartItems.length !== this.props.cartItems.length) {
-      this.setState({ numberOfCartItems: this.props.cartItems.length });
+    if ((prevProps.cartItems.length !== this.props.cartItems.length) ||
+    (prevProps.currentUserId !== this.props.currentUserId)) {
+      this.props.fetchAllCartItems()
+      .then(() => {
+        this.setState({ numberOfCartItems: this.props.cartItems.length });
+      })
     }
   }
 

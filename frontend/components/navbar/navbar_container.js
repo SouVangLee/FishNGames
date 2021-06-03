@@ -4,7 +4,8 @@ import Navbar from './navbar';
 
 const mSTP = state => {
   return {
-    cartItems: Object.values(state.entities.cartItems)
+    cartItems: Object.values(state.entities.cartItems),
+    currentUserId: state.session.currentUserId
   }
 }
 
