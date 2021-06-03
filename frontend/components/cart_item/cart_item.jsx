@@ -29,7 +29,7 @@ class CartItem extends React.Component {
       setTimeout(() => {
         this.props.updateCartItem(updateItem)
           .then(res => console.log("RESSS", res));
-      }, 2000);
+      }, 1500);
     }
   }
 
