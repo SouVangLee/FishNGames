@@ -55,7 +55,9 @@ class Product extends React.Component{
     }
 
     this.props.createCartItem(cartItem)
-      .then(res => console.log(res));
+      .then(() => {
+        this.props.fetchAllProducts();
+      });
   }
 
   // renderErrors() {

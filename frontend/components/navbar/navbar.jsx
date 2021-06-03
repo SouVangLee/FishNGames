@@ -13,7 +13,6 @@ class Navbar extends React.Component {
     this.state = {
       numberOfCartItems: 0
     }
-
   }
 
   componentDidMount() {
@@ -21,6 +20,12 @@ class Navbar extends React.Component {
       .then(() => {
         this.setState({ numberOfCartItems: this.props.cartItems.length })
       })
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.cartItems.length !== this.props.cartItems.length) {
+      this.setState({ numberOfCartItems: this.props.cartItems.length });
+    }
   }
 
   render() {
