@@ -42,10 +42,15 @@ class ItemToCart extends React.Component {
 
   render() {
     // console.log("ITEM TO CART PROPS", this.props);
+    if (!this.state) return null;
     console.log("ITEM TO CART STATE", this.state);
+    const { addQuantity, price, productName } = this.state; 
     return (
       <div className="add-item-modal-child" onClick={e => e.stopPropagation()}>
-
+        <div className="add-item-container">
+          <span>{addQuantity} Item(s) Added to Cart</span>
+          <span>${Number(price) * addQuantity}</span>
+        </div>
       </div>
     )
   }

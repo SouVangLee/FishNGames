@@ -4,6 +4,25 @@
   right: 0;
   height: 100%;
   width: 500px;
+  padding: 25px;
   border: 1px solid white;
   background-color: white;
+}
+
+.add-item-container {
+  width: 55%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border: 2px solid red;
+}
+
+.add-item-container span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.add-item-container span:nth-child(2n) {
+  font-size: 14px;
 }
