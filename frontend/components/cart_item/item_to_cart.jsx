@@ -18,8 +18,7 @@ class ItemToCart extends React.Component {
         if (!prevIdList.includes(cartItem.id)) {
           this.setState({ 
             addQuantity: cartItem.quantity, 
-            productName: cartItem.name, 
-            price: cartItem.price 
+            product: cartItem
           });
           break;
         }
@@ -31,8 +30,7 @@ class ItemToCart extends React.Component {
           let difference = cartItem.quantity - prev[cartItem.name]
           this.setState({ 
             addQuantity: difference, 
-            productName: cartItem.name, 
-            price: cartItem.price 
+            product: cartItem
           });
           break;
         }
@@ -44,12 +42,22 @@ class ItemToCart extends React.Component {
     // console.log("ITEM TO CART PROPS", this.props);
     if (!this.state) return null;
     console.log("ITEM TO CART STATE", this.state);
-    const { addQuantity, price, productName } = this.state; 
+    const { addQuantity, product } = this.state; 
     return (
       <div className="add-item-modal-child" onClick={e => e.stopPropagation()}>
         <div className="add-item-container">
           <span>{addQuantity} Item(s) Added to Cart</span>
-          <span>${Number(price) * addQuantity}</span>
+          <span>${Number(product.price) * addQuantity}</span>
+        </div>
+
+        <div className="add-item-info">
+          <img src={product.photoUrls[0]}/>
+          <span>{product.name}</span>
+        </div>
+
+        <div className="add-item-cart-total">
+          <span>Cart Total: ${421.21}</span>
+          <span>*Taxes calculated during checkout</span>
         </div>
       </div>
     )
