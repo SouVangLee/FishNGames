@@ -74,7 +74,7 @@ class ItemToCart extends React.Component {
       <div className="add-item-modal-child" onClick={e => e.stopPropagation()}>
         <div className="add-item-container">
           <span>{addQuantity} Item(s) Added to Cart</span>
-          <span>${Number(product.price) * addQuantity}</span>
+          <span>{this.formatPrice(Number(product.price) * addQuantity)}</span>
         </div>
 
         <div className="add-item-info">
