@@ -7,7 +7,11 @@ class ItemToCart extends React.Component {
 
   render() {
     console.log("ITEM TO CART PROPS", this.props);
-    return null;
+    return (
+      <div className="add-item-modal-child" onClick={e => e.stopPropagation()}>
+
+      </div>
+    )
   }
 }
 
