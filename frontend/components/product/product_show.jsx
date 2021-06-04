@@ -51,7 +51,8 @@ class Product extends React.Component{
   checkSignedIn(e) {
     e.preventDefault();
     if (!this.props.currentUserId) {
-      return alert("Please sign in or sign up.");
+      alert("Please sign in or sign up.");
+      this.props.openModal('login');
     } else {
       this.addToCart(e);
     }
@@ -65,13 +66,15 @@ class Product extends React.Component{
       user_id: this.props.currentUserId
     }
 
-    this.props.createCartItem(cartItem)
-      .then(() => {
-        this.props.fetchAllProducts()
-          .then(() => {
-            this.props.openModal('addItemToCart');
-          })
-      });
+    this.props.createCartItem(cartItem);
+    this.props.openModal('addItemToCart');
+
+      // .then(() => {
+      //   this.props.fetchAllProducts()
+      //     .then(() => {
+      //       this.props.openModal('addItemToCart');
+      //     })
+      // });
   }
 
   // renderErrors() {

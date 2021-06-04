@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { closeModal } from "../../actions/modal_actions";
 import ItemToCart from './item_to_cart';
+import { withRouter } from 'react-router-dom';
 
 const mSTP = state => {
   return {
@@ -14,4 +15,4 @@ const mDTP = dispatch => {
   }
 }
 
-export default connect(mSTP, mDTP)(ItemToCart);
+export default withRouter(connect(mSTP, mDTP)(ItemToCart));
