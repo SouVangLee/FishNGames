@@ -79,10 +79,10 @@ class CartItemIndex extends React.Component {
   }
 
   render() {
-    // console.log("CART ITEM INDEX PROPS", this.props);
-    // console.log("CART ITEM INDEX STATE", this.state);
+    console.log("CART ITEM INDEX PROPS", this.props);
+    console.log("CART ITEM INDEX STATE", this.state);
+
     let cartItems = this.renderCartItem();
-    // console.log("CART ITEM INDEX LIST", cartItems);
     return (
       <div className="cart-item-index-container">
         <h2 className="shopping-cart-header">Shopping Cart</h2>
@@ -95,7 +95,6 @@ class CartItemIndex extends React.Component {
         </div>
 
         { cartItems }
-        {/* { console.log("CART ITEM",cartItems)} */}
 
         <div className="total-price-container">
           <div className="product-subtotal-container">
@@ -116,7 +115,7 @@ class CartItemIndex extends React.Component {
         </div>
 
         <div className="cart-checkout">
-          <button>CHECKOUT</button>
+          <button onClick={this.checkOut}>CHECKOUT</button>
         </div>
       </div>
     )

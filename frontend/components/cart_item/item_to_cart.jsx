@@ -9,6 +9,10 @@ class ItemToCart extends React.Component {
     this.directToCart = this.directToCart.bind(this);
   }
 
+  componentWillUnmount() {
+    this.setState({});
+  }
+
   componentDidUpdate(prevProps) {
     let prev = {};
     prevProps.cartItems.forEach(cartItem => prev[cartItem.name] = cartItem.quantity);
