@@ -9,6 +9,7 @@
 #  comment     :text             not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  header      :string           not null
 #
 class Review < ApplicationRecord
   validates :reviewer_id, :product_id, :rating, :comment, presence: true

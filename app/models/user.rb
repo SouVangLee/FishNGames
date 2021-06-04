@@ -18,6 +18,10 @@ class User < ApplicationRecord
   has_many :reviews,
     foreign_key: :reviewer_id,
     class_name: "Review"
+  
+  has_many :cart_items,
+    foreign_key: :user_id,
+    class_name: "CartItem"
 
   attr_reader :password;
 

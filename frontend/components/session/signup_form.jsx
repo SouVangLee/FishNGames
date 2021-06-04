@@ -49,45 +49,47 @@ class SignupForm extends React.Component {
   
   render() {
     return (
-      <div className="signup-form-container">
-        <h2>Create an Account!</h2>
+      <div className="modal-child" onClick={e => e.stopPropagation()}>
+        <div className="signup-form-container">
+          <h2>Create an Account!</h2>
 
-        {this.renderErrors()}
+          {this.renderErrors()}
 
-        <form onSubmit={this.handleSubmit}>
+          <form onSubmit={this.handleSubmit}>
 
-          <label className="signup-label">Name
+            <label className="signup-label">Name
+              <br/>
+              <input 
+                type="text"
+                value={this.state.name}
+                onChange={this.handleChange('name')}
+              />
+            </label>
             <br/>
-            <input 
-              type="text"
-              value={this.state.name}
-              onChange={this.handleChange('name')}
-            />
-          </label>
-          <br/>
-          
-          <label className="signup-label">Email
+            
+            <label className="signup-label">Email
+              <br/>
+              <input 
+                type="text"
+                value={this.state.email}
+                onChange={this.handleChange('email')}
+              />
+            </label>
             <br/>
-            <input 
-              type="text"
-              value={this.state.email}
-              onChange={this.handleChange('email')}
-            />
-          </label>
-          <br/>
 
-          <label className="signup-label last">Password
+            <label className="signup-label last">Password
+              <br/>
+              <input 
+                type="password"
+                value={this.state.password}
+                onChange={this.handleChange('password')}
+              />
+            </label>
             <br/>
-            <input 
-              type="password"
-              value={this.state.password}
-              onChange={this.handleChange('password')}
-            />
-          </label>
-          <br/>
 
-          <button className="signup-button">Sign Up!</button>
-        </form>
+            <button className="signup-button">Sign Up!</button>
+          </form>
+        </div>
       </div>
     );
   }

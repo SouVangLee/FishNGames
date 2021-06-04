@@ -8,7 +8,7 @@
   height: 600px;
   display: flex;
   justify-content: center;
-  padding-bottom: 50px;
+  padding-bottom: 75px;
   border-bottom: 1px solid teal;
 }
 
@@ -32,7 +32,7 @@
 
 .product-item-info {
   width: 100%;
-  height: 60%;
+  height: 65%;
   display: block;
 }
 
@@ -50,30 +50,84 @@
 .product-item-info h3 {
   font-weight: 600;
   font-size: 20px;
-  padding-bottom: 15px;
+  padding-bottom: 10px;
 }
 
 
 .product-description {
   font-weight: 400;
-  font-size: 16px;
-  line-height: 22px;
-  padding-bottom: 50px;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .product-price {
   font-weight: 600;
   font-size: 30px;
-  padding-bottom: 15px;
+  padding-bottom: 35px;
+}
+
+.add-to-cart-container {
+  border-top: 1px solid teal;
+  width: 100%;
+  height: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.show-quantity-container {
+  width: 140px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.show-quantity-container * {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.minus-quantity, 
+.plus-quantity,
+.add-to-cart {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  background-color: teal;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 16px;
+  border: 1px solid black;
+}
+
+.minus-quantity {
+  font-size: 24px;
 }
 
 
-
-
-.add-to-cart-container {
-  padding-top: 25px;
-  border-top: 1px solid teal;
+.add-to-cart {
   width: 100%;
-  height: 40%;
-  display:block;
+  height: 40px;
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 50px;
+}
+
+.add-to-cart:hover,
+.minus-quantity:hover,
+.plus-quantity:hover {
+  background-color: rgb(30, 30, 30);
+  color: white;
+  cursor: pointer;
+}
+
+.show-quantity-container input {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 10px;
+  font-size: 16px;
+
 }

@@ -56,6 +56,7 @@ class LoginForm extends React.Component {
   render() {
 
     return (
+      <div className="modal-child" onClick={e => e.stopPropagation()}>
         <div className="login-form-container">
           <h2>Sign In!</h2>
 
@@ -93,8 +94,7 @@ class LoginForm extends React.Component {
             >CREATE AN ACCOUNT
           </button>
         </div>
-        
-        
+      </div> 
     );
   }  
 }

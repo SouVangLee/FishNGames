@@ -3,23 +3,23 @@ import { Route, Link, Switch, Redirect } from 'react-router-dom';
 
 import ModalContainer from "./modal/modal_container";
 import { AuthRoute, ProtectedRoute } from '../util/route_utils';
-import Navbar from './navbar/navbar';
-import Cart from './cart/cart';
+import NavbarContainer from './navbar/navbar_container';
 import PageNotFound from './page_not_found';
 import SplashContainer from './splash/splash_container';
 import CategoryProductsContainer from './category/category_products_container';
 import ProductContainer from './product/product_container';
 import SearchContainer from './search/search_container';
 import Footer from './footer';
+import CartItemContainer from './cart_item/cart_item_container';
 
 
 const App = () => (
   <div className="app-div">
     <ModalContainer />
-    <Navbar />
+    <NavbarContainer/>
     <Switch>
       <Route path="/search" component={ SearchContainer } />
-      <ProtectedRoute exact path="/cart" component={ Cart } />
+      <ProtectedRoute exact path="/cart" component={ CartItemContainer } />
       <Route exact path="/categories/:id" component={CategoryProductsContainer} />
       <Route exact path="/products/:id" component={ ProductContainer } />
       <Route exact path="/" component={ SplashContainer } />
