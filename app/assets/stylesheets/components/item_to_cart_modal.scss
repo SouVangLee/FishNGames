@@ -10,9 +10,8 @@
 }
 
 .add-item-container {
-  width: 60%;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 10px;
 }
@@ -21,6 +20,10 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   font-weight: 600;
+}
+
+.add-item-container span:first-child {
+  margin-right: 25px;
 }
 
 .add-item-container span:nth-child(2n) {
