@@ -87,8 +87,10 @@ class ItemToCart extends React.Component {
           <span>*Taxes calculated during checkout</span>
         </div>
 
-        <button onClick={ this.directToCart}>VIEW CART</button>
-        <button onClick={() => this.props.closeModal()}>CONTINUE SHOPPING</button>
+        <div className="add-item-cart-button-container"> 
+          <button onClick={ this.directToCart}>VIEW CART</button>
+          <button onClick={() => this.props.closeModal()}>CONTINUE SHOPPING</button>
+        </div>
       </div>
     )
   }
