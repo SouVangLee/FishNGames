@@ -27,8 +27,8 @@ class Navbar extends React.Component {
   componentDidUpdate(prevProps) {
     if ((prevProps.cartItems.length !== this.props.cartItems.length) ||
     (prevProps.currentUserId !== this.props.currentUserId)) {
-      console.log("prevprops userid", prevProps.currentUserId);
-      console.log("props userid", this.props.currentUserId);
+      // console.log("prevprops userid", prevProps.currentUserId);
+      // console.log("props userid", this.props.currentUserId);
       this.props.fetchAllCartItems()
       .then(() => {
         this.setState({ numberOfCartItems: this.props.cartItems.length });
@@ -47,8 +47,8 @@ class Navbar extends React.Component {
   }
 
   render() {
-    console.log("NAVBAR PROPS", this.props);
-    console.log("NAVBAR state", this.state);
+    // console.log("NAVBAR PROPS", this.props);
+    // console.log("NAVBAR state", this.state);
     return (
       <div className="navbar-container">
         <div className="navbar">
