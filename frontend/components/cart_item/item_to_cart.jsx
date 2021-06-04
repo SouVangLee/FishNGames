@@ -6,6 +6,7 @@ class ItemToCart extends React.Component {
   }
 
   render() {
+    console.log("ITEM TO CART PROPS", this.props);
     return null;
   }
 }

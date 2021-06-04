@@ -1,7 +1,7 @@
 import React from 'react';
 import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from '../session/signup_form_container';
-import ItemToCart from '../cart_item/item_to_cart';
+import ItemToCartContainer from '../cart_item/item_to_cart_container';
 
 function Modal({modal, closeModal}) {
   if (!modal) {
@@ -16,7 +16,7 @@ function Modal({modal, closeModal}) {
       component = <SignupFormContainer />;
       break;
     case 'addItemToCart':
-      component= <ItemToCart />;
+      component= <ItemToCartContainer />;
       break;
     default:
       return null;  
