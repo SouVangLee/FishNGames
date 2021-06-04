@@ -17,6 +17,7 @@ class Product extends React.Component{
     this.handleInput = this.handleInput.bind(this);
     this.addToCart = this.addToCart.bind(this);
     this.updateQuantity = this.updateQuantity.bind(this);
+    this.checkSignedIn = this.checkSignedIn.bind(this);
     // this.renderErrors = this.renderErrors.bind(this);
   }
 
@@ -43,6 +44,16 @@ class Product extends React.Component{
         newQuantity--;
       }
       this.setState({ quantity: String(newQuantity) });
+    }
+  }
+
+  
+  checkSignedIn(e) {
+    e.preventDefault();
+    if (!this.props.currentUserId) {
+      return alert("Please sign in or sign up.");
+    } else {
+      this.addToCart(e);
     }
   }
 
@@ -113,7 +124,7 @@ class Product extends React.Component{
 
               <button 
                 className="add-to-cart"
-                onClick={this.addToCart}
+                onClick={ this.checkSignedIn }
               >
               ADD TO CART</button>
             </div>
