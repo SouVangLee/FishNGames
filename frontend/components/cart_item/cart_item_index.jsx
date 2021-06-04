@@ -32,16 +32,16 @@ class CartItemIndex extends React.Component {
         });
     }
 
-    for (let i = 0; i < prevProps.cartItems.length; i++) {
-      if (prevProps.cartItems[i].quantity !== this.props.cartItems[i].quantity) {
-        this.props.fetchAllCartItems()
-        .then(res => {
-          let totalCost = this.totalPrice(this.props.cartItems);
-          this.setState({ totalCost });
-        });
-        break;
-      }
-    }
+    // for (let i = 0; i < prevProps.cartItems.length; i++) {
+    //   if (prevProps.cartItems[i].quantity !== this.props.cartItems[i].quantity) {
+    //     this.props.fetchAllCartItems()
+    //     .then(res => {
+    //       let totalCost = this.totalPrice(this.props.cartItems);
+    //       this.setState({ totalCost });
+    //     });
+    //     break;
+    //   }
+    // }
   }
 
   renderCartItem() {
