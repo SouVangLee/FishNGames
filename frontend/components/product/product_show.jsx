@@ -68,13 +68,6 @@ class Product extends React.Component{
 
     this.props.createCartItem(cartItem);
     this.props.openModal('addItemToCart');
-
-      // .then(() => {
-      //   this.props.fetchAllProducts()
-      //     .then(() => {
-      //       this.props.openModal('addItemToCart');
-      //     })
-      // });
   }
 
   // renderErrors() {
@@ -88,8 +81,6 @@ class Product extends React.Component{
   // }
 
   render() {
-    console.log("PRODUCT SHOW PROPS", this.props);
-    console.log("PRODUCT SHOW state", this.state);
     if (!this.props.product) {
       return null;
     } else {
