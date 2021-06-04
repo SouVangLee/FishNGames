@@ -27,7 +27,7 @@ class ItemToCart extends React.Component {
     } else {
       for (let i = 0; i < this.props.cartItems.length; i++) {
         let cartItem = this.props.cartItems[i];
-        if (prev[cartItem.name] !== undefined && prev[cartItem.name] !== cartItem.quantity) {
+        if (prev[cartItem.name] !== cartItem.quantity) {
           let difference = cartItem.quantity - prev[cartItem.name]
           this.setState({ 
             addQuantity: difference, 
