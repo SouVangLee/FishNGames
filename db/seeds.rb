@@ -9,6 +9,9 @@ require 'open-uri'
 
 ActiveRecord::Base.transaction do
   User.destroy_all
+  Category.destroy_all
+  Product.destroy_all
+
   user1 = User.create!(
     name: 'SuperAdmin',
     email: 'superadmin@superadmin.com',
@@ -33,14 +36,13 @@ ActiveRecord::Base.transaction do
     password: '123123'
   )
 
-  Category.destroy_all
-  fishing_category = Category.create!(name: 'fishing')
-  boating_category = Category.create!(name: 'boating')
-  shooting_category = Category.create!(name: 'shooting')
-  hunting_category = Category.create!(name: 'hunting')
-  camping_category = Category.create!(name: 'camping')
-  clothing_category = Category.create!(name: 'clothing')
-  footwear_category = Category.create!(name: 'footwear')
+  fishing_category = Category.create!(name: 'fishing') #id: 1
+  boating_category = Category.create!(name: 'boating') #id: 2
+  shooting_category = Category.create!(name: 'shooting') #id: 3
+  hunting_category = Category.create!(name: 'hunting') #id: 4
+  camping_category = Category.create!(name: 'camping') #id: 5
+  clothing_category = Category.create!(name: 'clothing') #id: 6
+  footwear_category = Category.create!(name: 'footwear') #id: 7
 
   category_fishing = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/categories/category_fishing.jpg')
   fishing_category.photos.attach(io: category_fishing, filename: 'category_fishing.jpg')
@@ -56,11 +58,6 @@ ActiveRecord::Base.transaction do
 
   category_hunting = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/categories/category_hunting.jpg')
   hunting_category.photos.attach(io: category_hunting, filename: 'category_hunting.jpg')
-
-
-
-
-  Product.destroy_all
 
   product_1 = Product.create!(
     name: 'Ultra-Light Trout Rod',
@@ -82,7 +79,8 @@ ActiveRecord::Base.transaction do
     name: 'Fly-fishing Trout Rod',
     price: 50.00,
     quantity: 5,
-    description: 'Are regular fishing rods too easy? Need a challenge? Learn how to fly fish!',
+    description: ('Affordable, entry level fly fishing rod great for fishing in small streams and rivers. It
+    is 9 feet long with a size 5 weight.'),
     category_id: 1
   )
 
@@ -96,7 +94,7 @@ ActiveRecord::Base.transaction do
     name: 'Swimming Fish Lure',
     price: 9.99,
     quantity: 50,
-    description: 'A 6 inch swimming lure that mimicks how bait fish swim!',
+    description: 'A 6 inch side-to-side, swimming action lure that mimicks how minnows swim! It has a weight of 1oz.',
     category_id: 1
   )
 
@@ -108,7 +106,7 @@ ActiveRecord::Base.transaction do
     name: 'Green Pumpkin Senko',
     price: 3.99,
     quantity: 100,
-    description: 'A plastic worm-like bait that is great for all fish.',
+    description: 'A 6 inch plastic worm-like bait that is great for targeting largemouth and smallmouth bass.',
     category_id: 1
   )
 
@@ -132,7 +130,7 @@ ActiveRecord::Base.transaction do
     name: 'Mini Mackeral Lure',
     price: 11.99,
     quantity: 20,
-    description: 'Small swimming lure that has the pattern of a mackeral.',
+    description: 'A 5-inch swimming lure that has the pattern of a mackeral. It is great for fishing in the surf.',
     category_id: 1
   )
 
@@ -144,7 +142,7 @@ ActiveRecord::Base.transaction do
     name: 'Yellow-Orange Mini Spinner',
     price: 3.87,
     quantity: 18,
-    description: 'A mini spinner that is great for river trout fishing on fly fishing rods.',
+    description: 'A 1/8-oz mini spinner that is great for river trout fishing on fly fishing rods.',
     category_id: 1
   )
 
@@ -155,7 +153,7 @@ ActiveRecord::Base.transaction do
     name: 'Black and Copper Vertical Jig',
     price: 15.75,
     quantity: 64,
-    description: 'A heavy vertical jig that is great for deep waters in the ocean.',
+    description: 'A 3-oz vertical jig that is great for deep waters in the ocean. It is great for targeting rockfish and lingcod.',
     category_id: 1
   )
 
@@ -172,7 +170,7 @@ ActiveRecord::Base.transaction do
     name: 'Little Boat',
     price: 5000,
     quantity: 1,
-    description: 'Tired of not catching any fish? Need a little help covering water distance? Get this little boat!',
+    description: 'A beautiful 16 foot boat that can cover water in lakes and reservoirs.',
     category_id: 2
   )
 
@@ -183,7 +181,7 @@ ActiveRecord::Base.transaction do
     name: 'Blue Kayak',
     price: 2000,
     quantity: 1,
-    description: 'Well balanced kayak that is great for kayak fishing.',
+    description: 'A 14 foot, well-balanced kayak that is great for kayak fishing.',
     category_id: 2
   )
 
@@ -194,7 +192,7 @@ ActiveRecord::Base.transaction do
     name: 'Big Boat',
     price: 10000,
     quantity: 1,
-    description: 'A great boat that is fast',
+    description: 'A 20 foot boat that is great for ocean fishing.',
     category_id: 2
   )
 
@@ -230,7 +228,7 @@ ActiveRecord::Base.transaction do
     name: 'Glock',
     price: 500,
     quantity: 1,
-    description: 'Planning on going to the shooting range but you need a gun? Get a glock.',
+    description: '9mm Glock, with the signature "Safe Action" trigger system. It has the capacity of 17 rounds in the standard magazine.',
     category_id: 3
   )
 
@@ -253,7 +251,7 @@ ActiveRecord::Base.transaction do
     name: '9mm Ammo',
     price: 500,
     quantity: 200,
-    description: '9mm Ammo that can be used for practice shooting targets.',
+    description: '500 Blank 9mm ammo with a boxer-primed bass casing.',
     category_id: 3
   )
 
@@ -264,7 +262,7 @@ ActiveRecord::Base.transaction do
     name: 'Paper target',
     price: 10,
     quantity: 200,
-    description: 'Paper targets for the shooting range.',
+    description: 'B-27S Standard Paper targets for the shooting range.',
     category_id: 3
   )
 
