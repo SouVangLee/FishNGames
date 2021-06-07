@@ -59,6 +59,7 @@ ActiveRecord::Base.transaction do
   category_hunting = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/categories/category_hunting.jpg')
   hunting_category.photos.attach(io: category_hunting, filename: 'category_hunting.jpg')
 
+  #FISHING
   product_1 = Product.create!(
     name: 'Ultra-Light Trout Rod',
     price: 40.00,
@@ -191,7 +192,7 @@ ActiveRecord::Base.transaction do
   fishing_12_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_12_1.jpg')
   fishing_product_12.photos.attach(io: fishing_12_1, filename: 'fishing_12_1.jpg')
 
-  #
+  #BOATING
 
   product_3 = Product.create!(
     name: 'Little Boat',
@@ -283,6 +284,7 @@ ActiveRecord::Base.transaction do
   boating_9_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/boating/boating_9_1.jpg')
   boating_product_9.photos.attach(io: boating_9_1, filename: 'boating_9_1.jpg')
 
+  #SHOOTING
 
   product_5 = Product.create!(
     name: 'Glock',
@@ -291,7 +293,6 @@ ActiveRecord::Base.transaction do
     description: '9mm Glock, with the signature "Safe Action" trigger system. It has the capacity of 17 rounds in the standard magazine.',
     category_id: 3
   )
-
   shooting_1_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/boating/shooting_1_1.jpg')
   product_5.photos.attach(io: shooting_1_1, filename: 'shooting_1_1.jpg')
 
@@ -302,7 +303,6 @@ ActiveRecord::Base.transaction do
     description: "STNGR AR-15 Free Float Handguard HWK",
     category_id: 3
   )
-
   shooting_2_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/shooting/shooting_2_1.jpg')
   product_6.photos.attach(io: shooting_2_1, filename: 'shooting_2_1.jpg')
 
@@ -314,7 +314,6 @@ ActiveRecord::Base.transaction do
     description: '500 Blank 9mm ammo with a boxer-primed bass casing.',
     category_id: 3
   )
-
   shooting_3_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/shooting/shooting_3_1.jpg')
   shooting_product_3.photos.attach(io: shooting_3_1, filename: 'shooting_3_1.jpg')
 
@@ -325,10 +324,30 @@ ActiveRecord::Base.transaction do
     description: 'B-27S Standard Paper targets for the shooting range.',
     category_id: 3
   )
-
   shooting_4_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/shooting/shooting_4_1.jpg')
   shooting_product_4.photos.attach(io: shooting_4_1, filename: 'shooting_4_1.jpg')
 
+  shooting_product_5 = Product.create!(
+    name: 'Slim Shooter Electronic Ear Muffs',
+    price: 65.31,
+    quantity: 200,
+    description: 'Well-built ear muffs for the shooting range to reduce noise cancellation.',
+    category_id: 3
+  )
+  shooting_5_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/shooting/shooting_5_1.jpg')
+  shooting_product_5.photos.attach(io: shooting_5_1, filename: 'shooting_5_1.jpg')
+
+  shooting_product_6 = Product.create!(
+    name: 'Black Gun Holster',
+    price: 36.31,
+    quantity: 200,
+    description: 'A black gun holster that uses quick-draw, safety locking mechanism.',
+    category_id: 3
+  )
+  shooting_6_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/shooting/shooting_6_1.jpg')
+  shooting_product_6.photos.attach(io: shooting_6_1, filename: 'shooting_6_1.jpg')
+
+  #HUNTING
 
   product_7 = Product.create!(
     name: 'Hunting Rifle',
@@ -337,7 +356,6 @@ ActiveRecord::Base.transaction do
     description: 'A great hunting rifle.',
     category_id: 4
   )
-
   hunting_1_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/hunting/hunting_1_1.jpg')
   product_7.photos.attach(io: hunting_1_1, filename: 'hunting_1_1.jpg')
 
