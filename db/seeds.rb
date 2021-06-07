@@ -59,7 +59,9 @@ ActiveRecord::Base.transaction do
   category_hunting = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/categories/category_hunting.jpg')
   hunting_category.photos.attach(io: category_hunting, filename: 'category_hunting.jpg')
 
+
   #FISHING
+
   product_1 = Product.create!(
     name: 'Ultra-Light Trout Rod',
     price: 40.00,
@@ -421,8 +423,6 @@ ActiveRecord::Base.transaction do
   camping_1_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/camping/camping_1_1.jpg')
   product_9.photos.attach(io: camping_1_1, filename: 'camping_1_1.jpg')
 
-
-
   product_10 = Product.create!(
     name: 'LED headlamps',
     price: 30.00,
@@ -430,7 +430,6 @@ ActiveRecord::Base.transaction do
     description: '300-lumen beam headlamp. Very bright and easy to charge.',
     category_id: 5
   )
-
   camping_2_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/camping/camping_2_1.jpg')
   product_10.photos.attach(io: camping_2_1, filename: 'camping_2_1.jpg')
 
@@ -441,7 +440,6 @@ ActiveRecord::Base.transaction do
     description: 'Portable mini camping stove great for taking on camping trips.',
     category_id: 5
   )
-
   camping_3_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/camping/camping_3_1.jpg')
   camping_product_3.photos.attach(io: camping_3_1, filename: 'camping_3_1.jpg')
 
@@ -452,7 +450,6 @@ ActiveRecord::Base.transaction do
     description: 'A big blue, comfortable, sleeping bag.',
     category_id: 5
   )
-
   camping_4_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/camping/camping_4_1.jpg')
   camping_product_4.photos.attach(io: camping_4_1, filename: 'camping_4_1.jpg')
   
@@ -463,10 +460,61 @@ ActiveRecord::Base.transaction do
     description: 'A big tent that can fit up to 8 people.',
     category_id: 5
   )
-
   camping_5_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/camping/camping_5_1.jpg')
   camping_product_5.photos.attach(io: camping_5_1, filename: 'camping_5_1.jpg')
 
+  camping_product_6 = Product.create!(
+    name: 'Camping Cooking Kit',
+    price: 29.99,
+    quantity: 6,
+    description: 'A multi-use camping cooking kit, great for the outdoors!',
+    category_id: 5
+  )
+  camping_6_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/camping/camping_6_1.jpg')
+  camping_product_6.photos.attach(io: camping_6_1, filename: 'camping_6_1.jpg')
+
+  camping_product_7 = Product.create!(
+    name: 'Large Camping Cooler',
+    price: 59.99,
+    quantity: 7,
+    description: 'A well-built, hand-held large cooler. Can store up to 60 cans!',
+    category_id: 5
+  )
+  camping_7_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/camping/camping_7_1.jpg')
+  camping_product_7.photos.attach(io: camping_7_1, filename: 'camping_7_1.jpg')
+
+  camping_product_8 = Product.create!(
+    name: 'Thermal Mosquito Repellent',
+    price: 21.29,
+    quantity: 8,
+    description: 'A thermal mosquito repellent that is great for repelling mosquitoes.',
+    category_id: 5
+  )
+  camping_8_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/camping/camping_8_1.jpg')
+  camping_product_8.photos.attach(io: camping_8_1, filename: 'camping_8_1.jpg')
+
+  camping_product_9 = Product.create!(
+    name: 'Black Sleeping Bag',
+    price: 19.99,
+    quantity: 9,
+    description: 'A large, black sleeping bag. The zipper can open it all the way like a blanket.',
+    category_id: 5
+  )
+  camping_9_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/camping/camping_9_1.jpg')
+  camping_product_9.photos.attach(io: camping_9_1, filename: 'camping_9_1.jpg')
+
+  camping_product_10 = Product.create!(
+    name: '550 Paracord',
+    price: 15.57,
+    quantity: 10,
+    description: '100 foot Army-Pattern 550 Paracord. It is great cordage.',
+    category_id: 5
+  )
+  camping_10_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/camping/camping_10_1.jpg')
+  camping_product_10.photos.attach(io: camping_10_1, filename: 'camping_10_1.jpg')
+
+
+  #CLOTHING
 
   product_11 = Product.create!(
     name: 'Comfortable Jacket',
