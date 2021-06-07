@@ -366,7 +366,6 @@ ActiveRecord::Base.transaction do
     description: 'Great Binoculars that let you see 3-5x range.',
     category_id: 4
   )
-
   hunting_2_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/hunting/hunting_2_1.jpg')
   product_8.photos.attach(io: hunting_2_1, filename: 'hunting_2_1.jpg')
 
@@ -377,7 +376,6 @@ ActiveRecord::Base.transaction do
     description: 'A powerful compound bow that is great for hunting small game.',
     category_id: 4
   )
-
   hunting_3_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/hunting/hunting_3_1.jpg')
   hunting_product_3.photos.attach(io: hunting_3_1, filename: 'hunting_3_1.jpg')
 
@@ -388,10 +386,30 @@ ActiveRecord::Base.transaction do
     description: 'A turkey decoy used to attract other nearby turkeys.',
     category_id: 4
   )
-
   hunting_4_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/hunting/hunting_4_1.jpg')
   hunting_product_4.photos.attach(io: hunting_4_1, filename: 'hunting_4_1.jpg')
 
+  hunting_product_5 = Product.create!(
+    name: 'Multi-tool kit',
+    price: 52.67,
+    quantity: 3,
+    description: 'A multi-tool kit with very sharp and defined tools.',
+    category_id: 4
+  )
+  hunting_5_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/hunting/hunting_5_1.jpg')
+  hunting_product_5.photos.attach(io: hunting_5_1, filename: 'hunting_5_1.jpg')
+
+  hunting_product_6 = Product.create!(
+    name: 'Black Deer Caller',
+    price: 26.67,
+    quantity: 3,
+    description: 'A black deer caller that imatates mature and young buck calls.',
+    category_id: 4
+  )
+  hunting_6_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/hunting/hunting_6_1.jpg')
+  hunting_product_6.photos.attach(io: hunting_6_1, filename: 'hunting_6_1.jpg')
+
+  #CAMPING
 
   product_9 = Product.create!(
     name: '2-Person Tent',
@@ -400,7 +418,6 @@ ActiveRecord::Base.transaction do
     description: 'Light-weight backpack tent. Easy to carry during camping trips.',
     category_id: 5
   )
-
   camping_1_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/camping/camping_1_1.jpg')
   product_9.photos.attach(io: camping_1_1, filename: 'camping_1_1.jpg')
 
