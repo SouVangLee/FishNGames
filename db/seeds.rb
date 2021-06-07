@@ -152,44 +152,45 @@ ActiveRecord::Base.transaction do
   fishing_product_8.photos.attach(io: fishing_8_1, filename: 'fishing_8_1.jpg')
 
   fishing_product_9 = Product.create!(
-    name: 'Yellow-Black Mini Spinner'
-    price: 4.57
-    quantity: 20
-    description: 'A yellow-black 1/8-oz mini spinner with a gold platted spoon. It is great for targeting river trout.'
+    name: 'Yellow-Black Mini Spinner',
+    price: 4.57,
+    quantity: 20,
+    description: 'A yellow-black 1/8-oz mini spinner with a gold platted spoon. It is great for targeting river trout.',
+    category_id: 1
   )
   fishing_9_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_9_1.jpg')
   fishing_product_9.photos.attach(io: fishing_9_1, filename: 'fishing_9_1.jpg')
 
   fishing_product_10 = Product.create!(
-    name: 'White and Yellow Spinner Bait'
-    price: 6.67
-    quantity: 100
-    description: 'A white and yellow 1/4 oz spinner bait. It is great for targeting largemouth and smallmouth bass.'
+    name: 'White and Yellow Spinner Bait',
+    price: 6.67,
+    quantity: 100,
+    description: 'A white and yellow 1/4 oz spinner bait. It is great for targeting largemouth and smallmouth bass.',
+    category_id: 1
   )
   fishing_10_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_10_1.jpg')
   fishing_product_10.photos.attach(io: fishing_10_1, filename: 'fishing_10_1.jpg')
 
   fishing_product_11 = Product.create!(
-    name: 'BlueGill Pattern Hard Crankbait'
-    price: 8.97
-    quantity: 101
-    description: 'A 1 oz BlueGill pattern, hard crankbait. It creates a lot of noise and ripples in the water, causing aggressive bass and catfish to target it.'
+    name: 'BlueGill Pattern Hard Crankbait',
+    price: 8.97,
+    quantity: 101,
+    description: 'A 1 oz BlueGill pattern, hard crankbait. It creates a lot of noise and ripples in the water, causing aggressive bass and catfish to target it.',
+    category_id: 1
   )
   fishing_11_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_11_1.jpg')
   fishing_product_11.photos.attach(io: fishing_11_1, filename: 'fishing_11_1.jpg')
 
   fishing_product_12 = Product.create!(
-    name: 'Orange-Black Swimmer Bait'
-    price: 5.89
-    quantity: 123
-    description: 'A 1/4 oz orange-black swimmer bait. It has a great tail action that will attract aggressive fish.'
+    name: 'Orange-Black Swimmer Bait',
+    price: 5.89,
+    quantity: 123,
+    description: 'A 1/4 oz orange-black swimmer bait. It has a great tail action that will attract aggressive fish.',
+    category_id: 1
   )
   fishing_12_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_12_1.jpg')
   fishing_product_12.photos.attach(io: fishing_12_1, filename: 'fishing_12_1.jpg')
 
-  #
-  #
-  #
   #
 
   product_3 = Product.create!(
@@ -199,7 +200,6 @@ ActiveRecord::Base.transaction do
     description: 'A beautiful 16 foot boat that can cover water in lakes and reservoirs.',
     category_id: 2
   )
-
   boating_1_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/boating/boating_1_1.jpg')
   product_3.photos.attach(io: boating_1_1, filename: 'boating_1_1.jpg')
 
@@ -210,7 +210,6 @@ ActiveRecord::Base.transaction do
     description: 'A 14 foot, well-balanced kayak that is great for kayak fishing.',
     category_id: 2
   )
-
   boating_2_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/boating/boating_2_1.jpg')
   product_4.photos.attach(io: boating_2_1, filename: 'boating_2_1.jpg')
 
@@ -221,7 +220,6 @@ ActiveRecord::Base.transaction do
     description: 'A 20 foot boat that is great for ocean fishing.',
     category_id: 2
   )
-
   boating_3_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/boating/boating_3_1.jpg')
   boating_product_3.photos.attach(io: boating_3_1, filename: 'boating_3_1.jpg')
 
@@ -232,7 +230,6 @@ ActiveRecord::Base.transaction do
     description: 'An adult size, orange life jacket.',
     category_id: 2
   )
-
   boating_4_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/boating/boating_4_1.jpg')
   boating_product_4.photos.attach(io: boating_4_1, filename: 'boating_4_1.jpg')
 
@@ -243,12 +240,49 @@ ActiveRecord::Base.transaction do
     description: 'A blue, synthetic paddle used for kayaking.',
     category_id: 2
   )
-
   boating_5_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/boating/boating_5_1.jpg')
   boating_product_5.photos.attach(io: boating_5_1, filename: 'boating_5_1.jpg')
 
+  boating_product_6 = Product.create!(
+    name: 'White Boat Fender',
+    price: 45.54,
+    quantity: 102,
+    description: 'A white boat fender used to protect boats from being hit by surrounding objects.',
+    category_id: 2
+  )
+  boating_6_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/boating/boating_6_1.jpg')
+  boating_product_6.photos.attach(io: boating_6_1, filename: 'boating_6_1.jpg')
 
-  
+  boating_product_7 = Product.create!(
+    name: 'Triple Black Propeller',
+    price: 65.23,
+    quantity: 123,
+    description: 'A Triple black propeller for small boats.',
+    category_id: 2
+  )
+  boating_7_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/boating/boating_7_1.jpg')
+  boating_product_7.photos.attach(io: boating_7_1, filename: 'boating_7_1.jpg')
+
+  boating_product_8 = Product.create!(
+    name: 'Lowrance Fish Finder',
+    price: 235.31,
+    quantity: 123,
+    description: 'A Lowrance fish finder that shows three different maps of the current area and location.',
+    category_id: 2
+  )
+  boating_8_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/boating/boating_8_1.jpg')
+  boating_product_8.photos.attach(io: boating_8_1, filename: 'boating_8_1.jpg')
+
+  boating_product_9 = Product.create!(
+    name: '10 Pound Silver Anchor',
+    price: 79.32,
+    quantity: 123,
+    description: 'A 10 Pound Silver Anchor for small kayaks and boats.',
+    category_id: 2
+  )
+  boating_9_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/boating/boating_9_1.jpg')
+  boating_product_9.photos.attach(io: boating_9_1, filename: 'boating_9_1.jpg')
+
 
   product_5 = Product.create!(
     name: 'Glock',
