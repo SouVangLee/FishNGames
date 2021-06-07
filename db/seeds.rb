@@ -69,7 +69,6 @@ ActiveRecord::Base.transaction do
     ),
     category_id: 1
   )
-
   fishing_1_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_1.jpg')
   fishing_1_2 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_1_2.jpg')
   product_1.photos.attach(io: fishing_1_1, filename: 'fishing_1.jpg')
@@ -83,7 +82,6 @@ ActiveRecord::Base.transaction do
     is 9 feet long with a size 5 weight.'),
     category_id: 1
   )
-
   fishing_2_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_2_1.jpg')
   fishing_2_2 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_2_2.jpg')
   product_2.photos.attach(io: fishing_2_1, filename: 'fishing_2_1.jpg')
@@ -97,7 +95,6 @@ ActiveRecord::Base.transaction do
     description: 'A 6 inch side-to-side, swimming action lure that mimicks how minnows swim! It has a weight of 1oz.',
     category_id: 1
   )
-
   fishing_3_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_3.jpg')
   fishing_product_3.photos.attach(io: fishing_3_1, filename:'fishing_3.jpg')
 
@@ -109,7 +106,6 @@ ActiveRecord::Base.transaction do
     description: 'A 6 inch plastic worm-like bait that is great for targeting largemouth and smallmouth bass.',
     category_id: 1
   )
-
   fishing_4_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_4_1.jpg')
   fishing_product_4.photos.attach(io: fishing_4_1, filename:'fishing_4_1.jpg')
   
@@ -120,7 +116,6 @@ ActiveRecord::Base.transaction do
     description: 'A 1-inch diameter red bobber that helps indicate when a fish has striked your bait.',
     category_id: 1
   )
-
   fishing_5_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_5_1.jpg')
   fishing_5_2 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_5_2.jpg')
   fishing_product_5.photos.attach(io: fishing_5_1, filename: 'fishing_5_1.jpg')
@@ -133,10 +128,8 @@ ActiveRecord::Base.transaction do
     description: 'A 5-inch swimming lure that has the pattern of a mackeral. It is great for fishing in the surf.',
     category_id: 1
   )
-
   fishing_6_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_6_1.jpg')
   fishing_product_6.photos.attach(io: fishing_6_1, filename: 'fishing_6_1.jpg')
-
  
   fishing_product_7 = Product.create!(
     name: 'Yellow-Orange Mini Spinner',
@@ -145,7 +138,6 @@ ActiveRecord::Base.transaction do
     description: 'A 1/8-oz mini spinner that is great for river trout fishing on fly fishing rods.',
     category_id: 1
   )
-
   fishing_7_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_7_1.jpg')
   fishing_product_7.photos.attach(io: fishing_7_1, filename: 'fishing_7_1.jpg')
 
@@ -156,10 +148,44 @@ ActiveRecord::Base.transaction do
     description: 'A 3-oz vertical jig that is great for deep waters in the ocean. It is great for targeting rockfish and lingcod.',
     category_id: 1
   )
-
   fishing_8_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_8_1.jpg')
   fishing_product_8.photos.attach(io: fishing_8_1, filename: 'fishing_8_1.jpg')
 
+  fishing_product_9 = Product.create!(
+    name: 'Yellow-Black Mini Spinner'
+    price: 4.57
+    quantity: 20
+    description: 'A yellow-black 1/8-oz mini spinner with a gold platted spoon. It is great for targeting river trout.'
+  )
+  fishing_9_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_9_1.jpg')
+  fishing_product_9.photos.attach(io: fishing_9_1, filename: 'fishing_9_1.jpg')
+
+  fishing_product_10 = Product.create!(
+    name: 'White and Yellow Spinner Bait'
+    price: 6.67
+    quantity: 100
+    description: 'A white and yellow 1/4 oz spinner bait. It is great for targeting largemouth and smallmouth bass.'
+  )
+  fishing_10_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_10_1.jpg')
+  fishing_product_10.photos.attach(io: fishing_10_1, filename: 'fishing_10_1.jpg')
+
+  fishing_product_11 = Product.create!(
+    name: 'BlueGill Pattern Hard Crankbait'
+    price: 8.97
+    quantity: 101
+    description: 'A 1 oz BlueGill pattern, hard crankbait. It creates a lot of noise and ripples in the water, causing aggressive bass and catfish to target it.'
+  )
+  fishing_11_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_11_1.jpg')
+  fishing_product_11.photos.attach(io: fishing_11_1, filename: 'fishing_11_1.jpg')
+
+  fishing_product_12 = Product.create!(
+    name: 'Orange-Black Swimmer Bait'
+    price: 5.89
+    quantity: 123
+    description: 'A 1/4 oz orange-black swimmer bait. It has a great tail action that will attract aggressive fish.'
+  )
+  fishing_12_1 = open('https://fish-n-games-seeds.s3-us-west-1.amazonaws.com/fishing/fishing_12_1.jpg')
+  fishing_product_12.photos.attach(io: fishing_12_1, filename: 'fishing_12_1.jpg')
 
   #
   #
