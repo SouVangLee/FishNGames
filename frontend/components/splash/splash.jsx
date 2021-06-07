@@ -13,7 +13,6 @@ class Splash extends React.Component {
   }
 
   render() {
-    console.log("SPLASH", this.props);
     const hotItemsID = [1, 28, 3, 19]; //23, 29
 
     if (!this.props.products.length || 

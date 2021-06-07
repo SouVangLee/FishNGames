@@ -49,7 +49,6 @@ class CartItem extends React.Component {
   }
 
   clickDelete(){
-    console.log("inside delete");
     this.props.deleteCartItem(this.props.cartItem.id);
   }
 
