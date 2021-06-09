@@ -6,37 +6,39 @@ class CartItemIndex extends React.Component {
     super(props);
 
     this.state = {
-      totalCost: 0
+      totalCost: 0,
+      cartItems: this.props.cartItems
     }
 
     this.renderCartItem = this.renderCartItem.bind(this);
     this.totalPrice = this.totalPrice.bind(this);
     this.formatPrice = this.formatPrice.bind(this);
     this.checkOut = this.checkOut.bind(this);
+    this.updateCartItemIndexState = this.updateCartItemIndexState.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchAllCartItems()
       .then(() => {
         let totalCost = this.totalPrice(this.props.cartItems);
-        this.setState({ totalCost });
+        this.setState({ totalCost, cartItems: this.props.cartItems });
       });
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevProps.cartItems.length !== this.props.cartItems.length) {
+    if ((prevProps.cartItems.length !== this.props.cartItems.length)) {
       this.props.fetchAllCartItems()
         .then(res => {
           let totalCost = this.totalPrice(this.props.cartItems);
-          this.setState({ totalCost });
+          this.setState({ totalCost, cartItems: this.props.cartItems });
         });
     } else {
       for (let i = 0; i < prevProps.cartItems.length; i++) {
-        if (prevProps.cartItems[i].quantity !== this.props.cartItems[i].quantity) {
+        if (this.state.cartItems.length && (prevProps.cartItems[i].quantity !== this.state.cartItems[i].quantity)) {
           this.props.fetchAllCartItems()
           .then(res => {
             let totalCost = this.totalPrice(this.props.cartItems);
-            this.setState({ totalCost });
+            this.setState({ totalCost, cartItems: this.props.cartItems });
           });
           break;
         }
@@ -45,13 +47,15 @@ class CartItemIndex extends React.Component {
   }
 
   renderCartItem() {
-    let cartItems = this.props.cartItems.map((cartItem, i) => (
+    let cartItems = this.state.cartItems.map((cartItem, i) => (
       <CartItem 
         key={`${i}-${cartItem}`} 
         cartItem={ cartItem } 
         currentUserId={ this.props.currentUserId }
         updateCartItem={ this.props.updateCartItem }
         deleteCartItem={ this.props.deleteCartItem }
+        fetchAllCartItems={ this.props.fetchAllCartItems }
+        updateCartItemIndexState= { this.updateCartItemIndexState }
       />
     ));
     return cartItems;
@@ -78,10 +82,14 @@ class CartItemIndex extends React.Component {
     checkOutItems.forEach(cartItem => this.props.deleteCartItem(cartItem.id));
   }
 
+  updateCartItemIndexState(items) {
+    this.setState({ cartItems: items});
+  }
+
   render() {
     console.log("CART ITEM INDEX PROPS", this.props);
     console.log("CART ITEM INDEX STATE", this.state);
-
+    if (!this.state.cartItems) return null;
     let cartItems = this.renderCartItem();
     return (
       <div className="cart-item-index-container">

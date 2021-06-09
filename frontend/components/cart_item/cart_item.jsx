@@ -49,10 +49,17 @@ class CartItem extends React.Component {
   }
 
   clickDelete(){
-    this.props.deleteCartItem(this.props.cartItem.id);
+    this.props.fetchAllCartItems()
+      .then(res => {
+        let newCartItems = Object.values(res.cartItems)
+        this.props.updateCartItemIndexState(newCartItems);
+        setTimeout(this.props.deleteCartItem(this.props.cartItem.id), 500);
+      });
   }
 
   render() {
+    console.log("SINGLE CART ITEM PROPS", this.props);
+    console.log("SINGLE CART ITEM STATE", this.state);
     const { price, name, photoUrls, productId } = this.props.cartItem;
     return (
       <div className="cart-item-container">
