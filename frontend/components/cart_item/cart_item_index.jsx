@@ -14,7 +14,6 @@ class CartItemIndex extends React.Component {
     this.totalPrice = this.totalPrice.bind(this);
     this.formatPrice = this.formatPrice.bind(this);
     this.checkOut = this.checkOut.bind(this);
-    this.updateCartItemIndexState = this.updateCartItemIndexState.bind(this);
   }
 
   componentDidMount() {
@@ -33,7 +32,7 @@ class CartItemIndex extends React.Component {
       for (let i = 0; i < prevProps.cartItems.length; i++) {
         if ((prevProps.cartItems[i].quantity !== this.props.cartItems[i].quantity)) {
           let totalCost = this.totalPrice(this.props.cartItems);
-          this.setState({ totalCost });
+          this.setState({ totalCost, cartItems: this.props.cartItems });
           break;
         }
       }
@@ -42,14 +41,12 @@ class CartItemIndex extends React.Component {
 
   renderCartItem() {
     let cartItems = this.state.cartItems.map((cartItem, i) => (
-      <li key={`${i}-${cartItem}`}>
+      <li key={`${i}-${cartItem.id}`}>
         <CartItem 
           cartItem={ cartItem } 
           currentUserId={ this.props.currentUserId }
           updateCartItem={ this.props.updateCartItem }
           deleteCartItem={ this.props.deleteCartItem }
-          // fetchAllCartItems={ this.props.fetchAllCartItems }
-          // updateCartItemIndexState= { this.updateCartItemIndexState }
         />
       </li>
     ));
