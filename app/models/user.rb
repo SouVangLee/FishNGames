@@ -13,6 +13,7 @@
 class User < ApplicationRecord
   validates :name, :email, :session_token, :password_digest, presence: true
   validates :email, uniqueness: true
+  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
   validates :password, length: { minimum: 6, allow_nil: true }
 
   has_many :reviews,
