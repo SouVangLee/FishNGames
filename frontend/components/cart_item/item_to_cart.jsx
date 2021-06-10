@@ -68,9 +68,6 @@ class ItemToCart extends React.Component {
   }
 
   render() {
-    console.log("ITEM TO CART PROPS", this.props);
-    console.log("ITEM TO CART STATE", this.state);
-
     if (!this.state) return null;
     let totalCost = this.totalPrice(this.props.cartItems);
     const { addQuantity, product } = this.state; 

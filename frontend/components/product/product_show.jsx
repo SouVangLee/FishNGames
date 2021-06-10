@@ -60,8 +60,14 @@ class Product extends React.Component{
 
   addToCart(e) {
     e.preventDefault();
+    let quantity;
+    if (this.state.quantity < 0) {
+      quantity = 1;
+    } else {
+      quantity = parseInt(this.state.quantity)
+    }
     let cartItem = {
-      quantity: parseInt(this.state.quantity),
+      quantity,
       product_id: this.props.product.id,
       user_id: this.props.currentUserId
     }

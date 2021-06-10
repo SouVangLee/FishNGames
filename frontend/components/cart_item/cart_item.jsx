@@ -53,8 +53,6 @@ class CartItem extends React.Component {
   }
 
   render() {
-    console.log("SINGLE CART ITEM PROPS", this.props);
-    console.log("SINGLE CART ITEM STATE", this.state);
     const { price, name, photoUrls, productId } = this.props.cartItem;
     return (
       <div className="cart-item-container">
@@ -68,7 +66,6 @@ class CartItem extends React.Component {
           </div>
         </div>
         <div className="quantity-container">
-          {/* { this.props.cartItem.quantity } */}
           <input 
             type="text" 
             value={this.state.quantity}
