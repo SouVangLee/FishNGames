@@ -120,24 +120,25 @@ class CategoryProducts extends React.Component{
               <label onClick={this.filterPrice("50", "100")} >
                 Between $50 and $100
               </label>
-            </div>
-            <div className="custom-price-filter">
-              <span>$&nbsp;
-                <input 
-                  type="text" 
-                  value={this.state.minPrice} 
-                  onChange={this.handleInput('minPrice')} 
-                  placeholder="min price"
-                />
-              </span>
-              <span>&nbsp; - &nbsp;
-                <input 
-                  type="text" 
-                  value={this.state.maxPrice} 
-                  onChange={this.handleInput('maxPrice')} 
-                  placeholder="max price"
-                />
-              </span>
+            
+              <div className="custom-price-filter">
+                <span>$&nbsp;
+                  <input 
+                    type="text" 
+                    value={this.state.minPrice} 
+                    onChange={this.handleInput('minPrice')} 
+                    placeholder="min"
+                  />
+                </span>
+                <span>&nbsp; - &nbsp;
+                  <input 
+                    type="text" 
+                    value={this.state.maxPrice} 
+                    onChange={this.handleInput('maxPrice')} 
+                    placeholder="max"
+                  />
+                </span>
+              </div>
             </div>
           </section>
 
