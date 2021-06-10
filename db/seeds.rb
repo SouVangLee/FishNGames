@@ -36,6 +36,42 @@ ActiveRecord::Base.transaction do
     password: '123123'
   )
 
+  user5 = User.create!(
+    name: 'Jeff',
+    email: 'jeff@jeff.com',
+    password: '123123'
+  )
+
+  user6 = User.create!(
+    name: 'Fred',
+    email: 'fred@fred.com',
+    password: '123123'
+  )
+
+  user7 = User.create!(
+    name: 'Jameson',
+    email: 'jameson@jameson.com',
+    password: '123123'
+  )
+
+  user8 = User.create!(
+    name: 'Ashley',
+    email: 'ashley@ashley.com',
+    password: '123123'
+  )
+
+  user9 = User.create!(
+    name: 'Steven',
+    email: 'steven@steven.com',
+    password: '123123'
+  )
+
+  user10 = User.create!(
+    name: 'Isabella',
+    email: 'isabella@isabella.com',
+    password: '123123'
+  )
+
   fishing_category = Category.create!(name: 'fishing') #id: 1
   boating_category = Category.create!(name: 'boating') #id: 2
   shooting_category = Category.create!(name: 'shooting') #id: 3
@@ -566,6 +602,6 @@ ActiveRecord::Base.transaction do
   review_1 = Review.create!(reviewer_id: 4, product_id: 1, rating: 5, header: "best product ever!", comment: "So easy to use!")
   review_2 = Review.create!(reviewer_id: 3, product_id: 2, rating: 5, header: "I wish I found out sooner!", comment: "This is a great product!")
   review_3 = Review.create!(reviewer_id: 4, product_id: 24, rating: 5, header: "Super easy to use!", comment: "This is nice.")
-
+  review_4 = Review.create!(reviewer_id: 7, product_id: 1, rating: 4, header: "Nice fishing rod!", comment: "It's a nice fishing rod but I didnt catch anything.")
 
 end
