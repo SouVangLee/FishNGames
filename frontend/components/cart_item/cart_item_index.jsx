@@ -42,15 +42,16 @@ class CartItemIndex extends React.Component {
 
   renderCartItem() {
     let cartItems = this.state.cartItems.map((cartItem, i) => (
-      <CartItem 
-        key={`${i}-${cartItem}`} 
-        cartItem={ cartItem } 
-        currentUserId={ this.props.currentUserId }
-        updateCartItem={ this.props.updateCartItem }
-        deleteCartItem={ this.props.deleteCartItem }
-        // fetchAllCartItems={ this.props.fetchAllCartItems }
-        // updateCartItemIndexState= { this.updateCartItemIndexState }
-      />
+      <li key={`${i}-${cartItem}`}>
+        <CartItem 
+          cartItem={ cartItem } 
+          currentUserId={ this.props.currentUserId }
+          updateCartItem={ this.props.updateCartItem }
+          deleteCartItem={ this.props.deleteCartItem }
+          // fetchAllCartItems={ this.props.fetchAllCartItems }
+          // updateCartItemIndexState= { this.updateCartItemIndexState }
+        />
+      </li>
     ));
     return cartItems;
   }
@@ -83,7 +84,7 @@ class CartItemIndex extends React.Component {
   render() {
     console.log("CART ITEM INDEX PROPS", this.props);
     console.log("CART ITEM INDEX STATE", this.state);
-    if (!this.state.cartItems) return null;
+
     let cartItems = this.renderCartItem();
     return (
       <div className="cart-item-index-container">
