@@ -23,21 +23,15 @@ class CartItemIndex extends React.Component {
       });
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (prevProps.cartItems.length !== this.props.cartItems.length) {
-      this.props.fetchAllCartItems()
-        .then(res => {
-          let totalCost = this.totalPrice(this.props.cartItems);
-          this.setState({ totalCost });
-        });
+  componentDidUpdate(prevProps) {
+    if ((prevProps.cartItems.length !== this.props.cartItems.length)) {
+      let totalCost = this.totalPrice(this.props.cartItems);
+      this.setState({ totalCost });
     } else {
       for (let i = 0; i < prevProps.cartItems.length; i++) {
-        if (prevProps.cartItems[i].quantity !== this.props.cartItems[i].quantity) {
-          this.props.fetchAllCartItems()
-          .then(res => {
-            let totalCost = this.totalPrice(this.props.cartItems);
-            this.setState({ totalCost });
-          });
+        if ((prevProps.cartItems[i].quantity !== this.props.cartItems[i].quantity)) {
+          let totalCost = this.totalPrice(this.props.cartItems);
+          this.setState({ totalCost });
           break;
         }
       }
@@ -46,13 +40,14 @@ class CartItemIndex extends React.Component {
 
   renderCartItem() {
     let cartItems = this.props.cartItems.map((cartItem, i) => (
-      <CartItem 
-        key={`${i}-${cartItem}`} 
-        cartItem={ cartItem } 
-        currentUserId={ this.props.currentUserId }
-        updateCartItem={ this.props.updateCartItem }
-        deleteCartItem={ this.props.deleteCartItem }
-      />
+      <li key={`${i}-${cartItem.id}`}>
+        <CartItem 
+          cartItem={ cartItem } 
+          currentUserId={ this.props.currentUserId }
+          updateCartItem={ this.props.updateCartItem }
+          deleteCartItem={ this.props.deleteCartItem }
+        />
+      </li>
     ));
     return cartItems;
   }
@@ -78,10 +73,11 @@ class CartItemIndex extends React.Component {
     checkOutItems.forEach(cartItem => this.props.deleteCartItem(cartItem.id));
   }
 
-  render() {
-    console.log("CART ITEM INDEX PROPS", this.props);
-    console.log("CART ITEM INDEX STATE", this.state);
+  updateCartItemIndexState(items) {
+    this.setState({ cartItems: items});
+  }
 
+  render() {
     let cartItems = this.renderCartItem();
     return (
       <div className="cart-item-index-container">

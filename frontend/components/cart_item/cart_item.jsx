@@ -5,7 +5,7 @@ class CartItem extends React.Component {
   constructor(props) {
     super(props)
 
-    const { quantity, price, name } = this.props.cartItem
+    const { quantity, name } = this.props.cartItem
     this.state = {
       quantity: String(quantity),
       name
@@ -49,7 +49,7 @@ class CartItem extends React.Component {
   }
 
   clickDelete(){
-    this.props.deleteCartItem(this.props.cartItem.id);
+    this.props.deleteCartItem(this.props.cartItem.id)
   }
 
   render() {
