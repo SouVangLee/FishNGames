@@ -7,7 +7,7 @@ class CartItemIndex extends React.Component {
 
     this.state = {
       totalCost: 0,
-      cartItems: this.props.cartItems
+      cartItems: []
     }
 
     this.renderCartItem = this.renderCartItem.bind(this);
@@ -27,19 +27,13 @@ class CartItemIndex extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     if ((prevProps.cartItems.length !== this.props.cartItems.length)) {
-      this.props.fetchAllCartItems()
-        .then(res => {
-          let totalCost = this.totalPrice(this.props.cartItems);
-          this.setState({ totalCost, cartItems: this.props.cartItems });
-        });
+      let totalCost = this.totalPrice(this.props.cartItems);
+      this.setState({ totalCost, cartItems: this.props.cartItems });
     } else {
       for (let i = 0; i < prevProps.cartItems.length; i++) {
-        if (this.state.cartItems.length && (prevProps.cartItems[i].quantity !== this.state.cartItems[i].quantity)) {
-          this.props.fetchAllCartItems()
-          .then(res => {
-            let totalCost = this.totalPrice(this.props.cartItems);
-            this.setState({ totalCost, cartItems: this.props.cartItems });
-          });
+        if ((prevProps.cartItems[i].quantity !== this.props.cartItems[i].quantity)) {
+          let totalCost = this.totalPrice(this.props.cartItems);
+          this.setState({ totalCost });
           break;
         }
       }
@@ -54,8 +48,8 @@ class CartItemIndex extends React.Component {
         currentUserId={ this.props.currentUserId }
         updateCartItem={ this.props.updateCartItem }
         deleteCartItem={ this.props.deleteCartItem }
-        fetchAllCartItems={ this.props.fetchAllCartItems }
-        updateCartItemIndexState= { this.updateCartItemIndexState }
+        // fetchAllCartItems={ this.props.fetchAllCartItems }
+        // updateCartItemIndexState= { this.updateCartItemIndexState }
       />
     ));
     return cartItems;

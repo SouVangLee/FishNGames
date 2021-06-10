@@ -5,7 +5,7 @@ class CartItem extends React.Component {
   constructor(props) {
     super(props)
 
-    const { quantity, price, name } = this.props.cartItem
+    const { quantity, name } = this.props.cartItem
     this.state = {
       quantity: String(quantity),
       name
@@ -49,12 +49,16 @@ class CartItem extends React.Component {
   }
 
   clickDelete(){
-    this.props.fetchAllCartItems()
-      .then(res => {
-        let newCartItems = Object.values(res.cartItems)
-        this.props.updateCartItemIndexState(newCartItems);
-        setTimeout(this.props.deleteCartItem(this.props.cartItem.id), 500);
-      });
+    this.props.deleteCartItem(this.props.cartItem.id)
+
+    // this.props.fetchAllCartItems()
+    //   .then(res => {
+    //     let newCartItems = Object.values(res.cartItems).filter(cartItem => {
+    //       return cartItem.id !== this.props.cartItem.id;
+    //     });
+    //     this.props.updateCartItemIndexState(newCartItems);
+    //   })
+      // setTimeout(this.props.deleteCartItem(this.props.cartItem.id), 500);
   }
 
   render() {
