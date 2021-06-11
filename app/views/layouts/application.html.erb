@@ -5,6 +5,16 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta property="og:title" content="Project Title" />
+    <meta property='og:image' content="<%= image_url('fish_n_games.jpg') %>"/>
+    <meta property="og:description"
+      content="A BassProShop website clone built with Ruby on Rails and React + Redux."
+    />
+
+    <meta property="og:url"
+      content="https://fish-n-games.herokuapp.com/"
+    />
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
 
