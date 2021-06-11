@@ -116,12 +116,6 @@ Below is a code snippet of how all the products will be rendered when a category
 }
 ```
 
-## Upcoming Features
-* Implement an update button to allow users to update their reviews.
-* Implement  shopping cart system to allow users to add/edit/remove products in their shopping cart.
-* Implement search bar that returns a list of products by similar name.
-* Implement filter for products based on price.
-
 ## Built with
 * Rails on Ruby (Back End)
 * React + Redux (Front End)
