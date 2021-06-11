@@ -117,7 +117,7 @@ Below is a code snippet of how all the products will be rendered when a category
 ```
 
 ## Built with
-* Rails on Ruby (Back End)
+* Ruby on Rails (Back End)
 * React + Redux (Front End)
 * PostgresSQL (Database)
 * HTML + CSS
