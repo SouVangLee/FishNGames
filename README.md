@@ -92,6 +92,12 @@ componentDidUpdate(prevProps) {
     ));
     return cartItems;
   }
+  
+  totalPrice(cartItems) {
+    let totalCost = 0;
+    cartItems.map(cartItem => totalCost += (cartItem.price) * cartItem.quantity);
+    return totalCost;
+  }
 ```
 
 ## Built with
