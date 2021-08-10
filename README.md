@@ -61,59 +61,37 @@ subtotal price and total price of all the items in the shopping cart.
 
 ## Code Snippets
 
-Below is a code snippet of how all the products will be rendered when a category is clicked.
+Below is a code snippet of how the items in the cart will be updated and rendered if there is a change in quantity or if additional items are added.
 
 ```jsx
-  componentDidMount() {
-    this.props.fetchCategoryProducts(this.props.match.params.id);
-    window.scrollTo(0, 0);
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (prevProps.match.params.id !== this.props.match.params.id) {
-      this.props.fetchCategoryProducts(this.props.match.params.id)
+componentDidUpdate(prevProps) {
+    if ((prevProps.cartItems.length !== this.props.cartItems.length)) {
+      let totalCost = this.totalPrice(this.props.cartItems);
+      this.setState({ totalCost });
+    } else {
+      for (let i = 0; i < prevProps.cartItems.length; i++) {
+        if ((prevProps.cartItems[i].quantity !== this.props.cartItems[i].quantity)) {
+          let totalCost = this.totalPrice(this.props.cartItems);
+          this.setState({ totalCost });
+          break;
+        }
+      }
     }
   }
 
-  render() {
-    const productList = this.props.products.map(product => (
-      <div className="product-info-link" key={`${product.id}`}>
-        <Link className="product-link" to={`/products/${product.id}`}>
-          <img src={product.photoUrls[0]} alt=""/>
-          <h2>{product.name}</h2>
-          <h3>
-            {new Intl.NumberFormat('en-US', {
-              style: 'currency',
-              currency: 'USD',
-              minimumFractionDigits: 2
-            }).format(product.price)}
-          </h3>
-        </Link>
-      </div>
+  renderCartItem() {
+    let cartItems = this.props.cartItems.map((cartItem, i) => (
+      <li key={`${i}-${cartItem.id}`}>
+        <CartItem 
+          cartItem={ cartItem } 
+          currentUserId={ this.props.currentUserId }
+          updateCartItem={ this.props.updateCartItem }
+          deleteCartItem={ this.props.deleteCartItem }
+        />
+      </li>
     ));
-
-    return (
-      <div className="category-container">
-        <div className="category-banner">
-          <img 
-            className="category-image" 
-            src={this.state.banners[this.props.match.params.id]}
-          />
-        </div>
-        
-        <div className="category-body-container">
-          <section className="search-section">
-            <h2>Search Filter Coming Soon...</h2>
-          </section>
-
-          <section className="product-section">
-            {productList}
-          </section>
-        </div>
-      </div>
-    )
+    return cartItems;
   }
-}
 ```
 
 ## Built with
